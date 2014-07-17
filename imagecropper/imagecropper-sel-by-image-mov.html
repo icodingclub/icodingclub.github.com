@@ -18,31 +18,25 @@
 
         <div class="demo">
 
-            <p>
-                <label>Image File:</label>
-                <input type="file" id="imageLoader" name="imageLoader" />
-            </p>
-
-            <div class="imageCropper">
-                <div class="titleLabel ">Zoom and pan</div>
-
-                <div class="content">
-                    <canvas id="panel" width="220" height="220"></canvas>
-
-                    <div class="slider">
-                        <input type="range" id='scaleSlider' data-dojo-attach-event="oninput:updateScale,onchange:updateScale" type='range' min='1' max='3' step='0.1' value='1'>
-                    </div>
 
 
-                    <button class="button secondary cropLogoBtn" type="button" data-dojo-attach-event="onclick:cropLogo" id="cropLogoBtn">Done</button>
-                </div>
+            <table>
+                <tr>
+                    <td>
+                        <canvas id="panel" width="380" height="380"></canvas>
+                    </td>
+                    <td>
+                        <div id="results">
+                            <img id="crop_result" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
 
-            </div>
+            <button id="cropImgButtn">Crop</button>
+            <input id='scaleSlider' type='range' min='1' max='3.0' step='0.01' value='1.0' />
 
         </div>
-
-
-
     </div>
 
 
@@ -51,104 +45,53 @@
         footer
     </footer>
 
-    <script type="text/javascript">
+
+
+    <script>
     var imageCropper = {
 
-        baseClass: "imageCropperDialog",
-
-        ctx: null,
-
-        basePage: null,
-
+        ctx: document.getElementById("panel").getContext("2d"),
         image: new Image(),
-
         scale: 1,
 
         click: false,
-
         baseX: 0,
-
         baseY: 0,
-
         lastPointX: 0,
-
         lastPointY: 0,
-
-        cutoutWidth: 20,
-
-        windowWidth: 180,
-
-        cropedFile: null,
-
-        imageScaleConstant: 1,
-
-        CUTOUT_FILL_STYLE: "rgba(238, 238, 238, 0.5)",
-
-        canvasBackgroundColor: "#FFFFFF",
+        cutoutWidth: 40,
+        windowWidth: 300,
 
         init: function() {
+            this.image.src = 'steve-jobs.jpg';
+            this.image.onload = this.onImageLoad.bind(this);
+            document.getElementById("cropImgButtn").onclick = this.showCropedImage.bind(this);
+            document.getElementById("scaleSlider").oninput = this.updateScale.bind(this);
 
-            this.ctx = document.getElementById("panel").getContext("2d");
-
-            var imageUploader = document.getElementById('imageLoader');
-
-            imageLoader.addEventListener('change', this.handleImage.bind(this), false);
-        },
-
-        handleImage: function(event) {
-            console.log("Image picked");
-            var reader = new FileReader();
-
-
-            reader.onload = function(event) {
-                console.log("Image loaded");
-                var img = new Image();
-                img.onload = function() {
-
-                     console.log("Image loaded 2");
-                    this.initCanvas(img);
-                }.bind(this);
-                img.src = event.target.result;
-            }.bind(this);
-
-            reader.readAsDataURL(event.target.files[0]);
 
         },
 
-        initCanvas: function(image) {
-            this.image.src = image.src;
-            this.setScaleConstant();
-            this.drawimage(this.getOffsetValue(this.image.width), this.getOffsetValue(this.image.height));
-            this.initEventsOnCanvas();
-        },
+        onImageLoad: function() {
 
-        initEventsOnCanvas: function() {
+            this.drawimage(0, 0);
             this.ctx.canvas.onmousedown = this.onMouseDown.bind(this);
             this.ctx.canvas.onmousemove = this.onMouseMove.bind(this);
             this.ctx.canvas.onmouseup = this.onMouseUp.bind(this);
         },
 
-        getOffsetValue: function(value) {
-            return this.cutoutWidth + ((this.windowWidth - (value * this.imageScaleConstant)) / 2);
-        },
-
-        setScaleConstant: function() {
-            this.imageScaleConstant = (this.windowWidth / ((this.image.width > this.image.height) ? this.image.width : this.image.height));
-        },
-
         drawimage: function(x, y) {
 
-            this.ctx.clearRect(this.cutoutWidth, this.cutoutWidth, this.ctx.canvas.width, this.ctx.canvas.height);
+            var w = this.ctx.canvas.width,
+                h = this.ctx.canvas.height;
 
-            //Making default background color to white, gif images was giving problem.    
-            this.ctx.fillStyle = this.canvasBackgroundColor;
-            this.ctx.fillRect(this.cutoutWidth, this.cutoutWidth, this.ctx.canvas.width, this.ctx.canvas.height);
+            this.ctx.clearRect(0, 0, w, h);
+
             this.baseX = this.baseX + (x - this.lastPointX);
             this.baseY = this.baseY + (y - this.lastPointY);
             this.lastPointX = x;
             this.lastPointY = y;
-            this.ctx.drawImage(this.image, this.baseX, this.baseY, Math.floor(this.image.width * this.scale * this.imageScaleConstant), Math.floor(this.image.height * this.scale * this.imageScaleConstant));
 
+            this.ctx.drawImage(this.image, this.baseX, this.baseY, Math.floor(this.image.width * this.scale), Math.floor(this.image.height * this.scale));
             this.drawCutout();
 
 
@@ -156,7 +99,8 @@
 
         drawCutout: function() {
 
-            this.ctx.fillStyle = this.CUTOUT_FILL_STYLE;
+            this.ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
+
             this.ctx.beginPath();
             this.ctx.rect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
 
@@ -166,17 +110,18 @@
             this.ctx.lineTo(this.cutoutWidth + this.windowWidth, this.cutoutWidth + this.windowWidth);
             this.ctx.lineTo(this.cutoutWidth + this.windowWidth, this.cutoutWidth);
             this.ctx.closePath();
+
             this.ctx.fill();
 
         },
 
         onMouseDown: function(e) {
-            var loc = this.windowToCanvas(e.clientX, e.clientY);
-
             e.preventDefault();
+            var loc = this.windowToCanvas(e.clientX, e.clientY);
             this.click = true;
             this.lastPointX = loc.x;
             this.lastPointY = loc.y;
+
         },
 
         onMouseMove: function(e) {
@@ -195,58 +140,32 @@
         },
 
         windowToCanvas: function(x, y) {
-            var canvas = this.ctx.canvas,
-                bbox = canvas.getBoundingClientRect();
+            var canvas = this.ctx.canvas;
+            var bbox = canvas.getBoundingClientRect();
             return {
                 x: x - bbox.left * (canvas.width / bbox.width),
                 y: y - bbox.top * (canvas.height / bbox.height)
             };
         },
 
-        dataURItoBlob: function(dataURI) {
-            var byteString = atob(dataURI.split(",")[1]),
-                ab = new ArrayBuffer(byteString.length),
-                ia = new Uint8Array(ab),
-                i;
+        showCropedImage: function() {
 
-            for (i = 0; i < byteString.length; i++) {
-                ia[i] = byteString.charCodeAt(i);
-            }
-
-            return new Blob([ab]);
-        },
-
-        getCropedFile: function() {
-            var tempCtx, tempCanvas;
-
-            tempCanvas = document.createElement("canvas");
-            tempCtx = tempCanvas.getContext("2d");
-            tempCanvas.width = this.windowWidth;
-            tempCanvas.height = this.windowWidth;
-            tempCtx.drawImage(this.ctx.canvas, this.cutoutWidth, this.cutoutWidth, this.windowWidth, this.windowWidth, 0, 0, this.windowWidth, this.windowWidth);
-            return this.dataURItoBlob(tempCanvas.toDataURL());
+            var temp_ctx, temp_canvas;
+            temp_canvas = document.createElement('canvas');
+            temp_ctx = temp_canvas.getContext('2d');
+            temp_canvas.width = this.windowWidth;
+            temp_canvas.height = this.windowWidth;
+            temp_ctx.drawImage(this.ctx.canvas, this.cutoutWidth, this.cutoutWidth, this.windowWidth, this.windowWidth, 0, 0, this.windowWidth, this.windowWidth);
+            var vData = temp_canvas.toDataURL();
+            document.getElementById('crop_result').src = vData;
         },
 
         updateScale: function(e) {
             this.scale = e.target.value;
             this.drawimage(this.lastPointX, this.lastPointY);
-            this.updateSliderLookForWebkit();
-        },
-
-        updateSliderLookForWebkit: function() {
-            var val;
-
-            val = (this.scaleSlider.value - this.scaleSlider.min) / (this.scaleSlider.max - this.scaleSlider.min);
-            this.scaleSlider.style.backgroundImage = "-webkit-gradient(linear,left top,right top,color-stop(" + val + ", #4765b1),color-stop(" + val + ", #DDDDDD))";
-        },
-
-        cropLogo: function() {
-            this.basePage.uploadLogo(this.getCropedFile());
-            this.hide();
         }
 
-    }
-
+    };
 
     imageCropper.init();
     </script>

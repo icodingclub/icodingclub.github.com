@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <div class="wrraper table">
         <div class="tableRow">
             <header class="content tableCell">
@@ -16,21 +17,53 @@
             </header>
         </div>
 
+        <div class="tableRow contentWrraper">
 
-        <p>
-            <div class="content" style="border:1px solid gray">
-                <canvas id="panel" width="620" height="220"></canvas>
+            <div class="content tableCell">
+
+
+
+                <table>
+                    <tr>
+                        <td>
+                            <canvas id="panel" width="380" height="380"></canvas>
+                            <p>
+                                <input type="button" id="cropBttn" value="Crop Image">
+                            </p>
+                        </td>
+                        <td>
+                            <div id="results">
+                                <img src="" id="croppedImage">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+
             </div>
 
-        </p>
-        <br>
-        <p>
-            <input type="button" id="cropBttn" value="Crop Image">
-        </p>
+            <div class="add tableCell">
+                <h1>advertisment</h1>
 
-        <p>
-            <img src="" id="croppedImage">
-        </p>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- icocding club sidebar_square -->
+                <!--
+                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="3275485060"></ins>
+
+
+
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+            -->
+
+            </div>
+
+        </div>
+
+
 
     </div>
 
@@ -74,7 +107,7 @@
 
         initCanvas: function(image) {
             this.image = new Image();
-            this.image.src = "Google.png";
+            this.image.src = "steve-jobs.jpg";
             this.image.onload = function() {
                 this.ctx.canvas.width = this.image.width;
                 this.ctx.canvas.height = this.image.height;
@@ -239,7 +272,7 @@
             tempCtx.canvas.height = this.image.height;
 
             console.log(this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
-            tempCtx.drawImage(this.image,this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY),0,0,(this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
+            tempCtx.drawImage(this.image, this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY), 0, 0, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
 
             //e(this.ctx.canvas,this.cutoutWidth, this.cutoutWidth, this.windowWidth, this.windowWidth, 0, 0,this.windowWidth, this.windowWidth);
             var imageData = tempCtx.canvas.toDataURL();
