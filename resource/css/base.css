@@ -1,0 +1,140 @@
+/* reset browser styles - start*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1.2;
+}
+ul {
+    padding-left: 1.4em;
+    list-style: square;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* reset browser styles -  end */
+
+/* reusable style - start */
+
+.table {
+    display: table;
+    table-layout: fixed;
+}
+.tableRow {
+    display: table-row;
+    vertical-align: top;
+}
+.tableCell {
+    display: table-cell;
+    vertical-align: top;
+}
+/* reusable style - end */
+
+/* body structure - start*/
+
+.wrraper {
+    margin: 45px 100px;
+    padding: 10px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, .7);
+}
+.content {
+    max-width: 1400px;
+    min-width: 800px;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.add {
+    max-width: 300px;
+    min-width: 300px;
+    height: 800px;
+    margin: 5px;
+    text-align: center;
+}
+.add h1 {
+    background-color: #e3e3e3;
+    color: #606060;
+    margin: 0;
+    margin-bottom: 4px;
+    padding: 2px;
+    line-height: 1.1em;
+    text-transform: uppercase;
+}
+header, footer {
+    width: 100%;
+}
+header {
+    height: 96px;
+}
+footer {
+    height: 96px;
+    background-color: #778899;
+}
+/* body structure - end*/
+
+/* body style - start*/
+
+body {
+    background: #345 url(/resource/image/bg.gif) 0 0 fixed;
+    background: -webkit-linear-gradient(rgba(204, 229, 255, .15), rgba(0, 0, 0, .3)) fixed, #345 url(/resource/image/bg.gif) 0 0 fixed;
+    background: linear-gradient(rgba(204, 229, 255, .15), rgba(0, 0, 0, .3)) fixed, #345 url(/resource/image/bg.gif) 0 0 fixed;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.logo {
+    margin: 10px 0 0 10px;
+}
+.content>h1 {
+    background-color: #e3e3e3;
+    color: #606060;
+    padding: 10px 20px;
+    margin-left: -30px;
+    margin-top: 0;
+    position: relative;
+    width: 97%;
+    font-size: 20px;
+}
+.arrow {
+    width: 1px;
+    height: 0;
+    line-height: 0;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #c8c8c8;
+    top: 100%;
+    left: 0;
+    position: absolute;
+}
+.topic {
+    margin: 10px;
+    background: #FFF;
+    padding: 10px;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin: 15px 25px;
+    font-size: 0.9rem;
+}
+.topic h1 {
+    font-size: 1.2em;
+      text-transform: uppercase;
+      color: #49484B;
+}
+.topic p {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.demo{
+
+
+}
+/* body style - end*/
