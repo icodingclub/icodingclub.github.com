@@ -18,7 +18,6 @@ ul {
     list-style: square;
 }
 table {
-    border-collapse: collapse;
     border-spacing: 0;
 }
 /* reset browser styles -  end */
@@ -50,7 +49,7 @@ table {
 }
 .content {
     max-width: 1400px;
-    min-width: 800px;
+    min-width: 770px;
     width: 100%;
     padding-bottom: 10px;
 }
@@ -60,21 +59,20 @@ table {
     height: 800px;
     margin: 5px;
     text-align: center;
+     background: #f2f2f2;
+  padding: 1em;
 }
-.add h1 {
-    background-color: #e3e3e3;
-    color: #606060;
-    margin: 0;
-    margin-bottom: 4px;
-    padding: 2px;
-    line-height: 1.1em;
-    text-transform: uppercase;
+
+.add h1{
+
+    color: #c4c4c4;
+     text-transform: uppercase;
 }
 header, footer {
     width: 100%;
 }
 header {
-    height: 96px;
+    height: 80px;
 }
 footer {
     height: 96px;
@@ -88,53 +86,129 @@ body {
     background: #345 url(/resource/image/bg.gif) 0 0 fixed;
     background: -webkit-linear-gradient(rgba(204, 229, 255, .15), rgba(0, 0, 0, .3)) fixed, #345 url(/resource/image/bg.gif) 0 0 fixed;
     background: linear-gradient(rgba(204, 229, 255, .15), rgba(0, 0, 0, .3)) fixed, #345 url(/resource/image/bg.gif) 0 0 fixed;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #323A3F;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 .logo {
     margin: 10px 0 0 10px;
 }
 .content>h1 {
-    background-color: #e3e3e3;
-    color: #606060;
-    padding: 10px 20px;
+ 
     margin-left: -30px;
-    margin-top: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
     position: relative;
     width: 97%;
-    font-size: 20px;
+
+    font-size: 1em;
+    font-weight: normal;
+    padding: 3px 0 3px 30px;
+    text-transform: uppercase;
+    background: #428BCA;
+    color: white;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
+
+.content > h2{
+    color: #3576BE;
+    font-weight: normal;
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.content ol{
+    margin: 10px 0 40px 10px;
+      background: #EEE;
+  padding: 1em;
+  border-left: 5px solid #69c773;
+  width: 600px;
+   
+}
+
+.content ol li{
+     line-height: 1.1em;
+     margin-left: 20px;
+
+
+}
+
 .arrow {
     width: 1px;
     height: 0;
     line-height: 0;
     border-left: 20px solid transparent;
-    border-top: 10px solid #c8c8c8;
+    border-top: 10px solid #4274ca;
     top: 100%;
     left: 0;
     position: absolute;
 }
 .topic {
-    margin: 10px;
-    background: #FFF;
-    padding: 10px;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    margin: 15px 25px;
+    padding: 3px 7px;
+    margin: 10px 15px;
     font-size: 0.9rem;
+    display: inline-block;
+    width: 42%;
+
+        background: #f2f2f2;
+  padding: 1em;
+  border-left: 6px solid #69c773;
 }
+
+.topic .image {
+    margin: 2px;
+    margin-right: 8px;
+    padding: 2px;
+    display: inline-block;
+    float: left;
+}
+
 .topic h1 {
-    font-size: 1.2em;
-      text-transform: uppercase;
-      color: #49484B;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #2e6da3;
+    margin-bottom: 10px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
-.topic p {
+.topic .content p {
     color: #333;
     font-size: 1em;
-    line-height: 1.5;
 }
 
-.demo{
-
+.topic .content .readMore{
+    margin: 1px 0 2px 5px;
+    color: #237DAC;;
+     line-height: 1.2;
+      font-size: .9em;
 
 }
+
+.topic .content .tech{
+    margin: 10px 0 0 5px;
+    font-style: normal;
+color: #858585;
+font-size: .8em;
+word-wrap: break-word;
+}
+.clearBoth{
+    clear: both;
+}
+
+.upperCase{
+    text-transform: uppercase;
+}
+
+.demo {} .instruction {
+    margin: 2px 0 15px 45px;
+}
+
+.gitHubIcon{
+    margin: 0 0 0 50px;
+}
+
 /* body style - end*/

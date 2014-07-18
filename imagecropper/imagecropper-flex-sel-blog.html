@@ -1,0 +1,391 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>icodingclub</title>
+    <link href="/resource/css/base.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrraper table">
+        <div class="tableRow">
+            <header class="content tableCell">
+                <img class="logo" src="resource/image/icodingclub.jpg">
+            </header>
+        </div>
+
+        <div class="tableRow contentWrraper">
+
+            <div class="content tableCell">
+
+
+                <h1>All Articles
+                    <span class="arrow"></span>
+                </h1>
+
+                <div class="topic">
+                    <h1>A Sample topic</h1>
+                    <p>Topic description and more and more</p>
+
+                    <p>Tech:</p>
+
+                </div>
+
+                <div class="topic">
+                    <h1>A Sample topic</h1>
+                    <p>Topic description and more and more</p>
+
+                    <p>Tech:</p>
+
+                </div>
+
+                <div class="topic">
+                    <h1>A Sample topic</h1>
+                    <p>Topic description and more and more</p>
+
+                    <p>Tech:</p>
+
+                </div>
+
+
+              
+
+
+<pre class="prettyprint lang-html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="ISO-8859-1"&gt;
+    &lt;title&gt;icodingclub&lt;/title&gt;
+    &lt;link href="/resource/css/base.css" rel="stylesheet"&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class="wrraper table"&gt;
+        &lt;div class="tableRow"&gt;
+            &lt;header class="content tableCell"&gt;
+                &lt;img class="logo" src="/resource/image/icodingclub.jpg"&gt;
+            &lt;/header&gt;
+        &lt;/div&gt;
+
+        &lt;div class="tableRow contentWrraper"&gt;
+
+            &lt;div class="content tableCell"&gt;
+
+                &lt;ol class="instruction"&gt;
+                    &lt;li&gt;Click and select a region&lt;/li&gt;
+                    &lt;li&gt;Resize box by dragging small boxs&lt;/li&gt;
+                    &lt;li&gt;Click on "Crop" button to crop image&lt;/li&gt;
+                &lt;/ol&gt;
+
+                &lt;table&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;canvas id="panel" width="380" height="380"&gt;&lt;/canvas&gt;
+                            &lt;p&gt;
+                                &lt;input type="button" id="cropBttn" value="Crop"&gt;
+                            &lt;/p&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;div id="results"&gt;
+                                &lt;img src="" id="croppedImage"&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+
+
+
+            &lt;/div&gt;
+
+            &lt;div class="add tableCell"&gt;
+                &lt;h1&gt;advertisment&lt;/h1&gt;
+
+                &lt;script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"&gt;&lt;/script&gt;
+                &lt;!-- icocding club sidebar_square --&gt;
+                &lt;!--
+                &lt;ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="3275485060"&gt;&lt;/ins&gt;
+
+
+
+                &lt;script&gt;
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                &lt;/script&gt;
+
+            --&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+
+
+    &lt;/div&gt;
+
+    &lt;footer&gt;
+
+        footer
+    &lt;/footer&gt;
+
+    &lt;script type="text/javascript"&gt;
+    var imageCropper = {
+
+        ctx: null,
+
+        image: null,
+
+        click: false,
+
+        downPointX: 0,
+
+        downPointY: 0,
+
+        lastPointX: 0,
+
+        lastPointY: 0,
+
+        hoverBoxSize: 5,
+
+        cropedFile: null,
+
+        resize: false,
+
+        canvasBackgroundColor: "#FFFFFF",
+
+        init: function() {
+            this.ctx = document.getElementById("panel").getContext("2d");
+            var imageUploader = document.getElementById('imageLoader');
+            this.initCanvas();
+            document.getElementById("cropBttn").onclick = this.cropImage.bind(this);
+        },
+
+
+        initCanvas: function(image) {
+            this.image = new Image();
+            this.image.src = "steve-jobs.jpg";
+            this.image.onload = function() {
+                this.ctx.canvas.width = this.image.width;
+                this.ctx.canvas.height = this.image.height;
+                this.reDrawCanvas();
+                this.initEventsOnCanvas();
+            }.bind(this);
+
+        },
+
+        initEventsOnCanvas: function() {
+            this.ctx.canvas.onmousedown = this.onMouseDown.bind(this);
+            this.ctx.canvas.onmouseup = this.onMouseUp.bind(this);
+        },
+
+
+        onMouseDown: function(e) {
+            var loc = this.windowToCanvas(e.clientX, e.clientY);
+            e.preventDefault();
+            this.click = true;
+            if (!this.resize) {
+                this.ctx.canvas.onmousemove = this.onMouseMove.bind(this);
+                this.downPointX = loc.x;
+                this.downPointY = loc.y;
+                this.lastPointX = loc.x;
+                this.lastPointY = loc.y;
+            }
+        },
+
+        onMouseMove: function(e) {
+            e.preventDefault();
+            if (this.click) {
+                var loc = this.windowToCanvas(e.clientX, e.clientY);
+                this.lastPointX = loc.x;
+                this.lastPointY = loc.y;
+                this.reDrawCanvas();
+            }
+
+        },
+
+        onMouseUp: function(e) {
+            e.preventDefault();
+
+            this.ctx.canvas.onmousemove = this.onImageResize.bind(this);
+            this.click = false;
+
+        },
+        onMouseDownForResize: function(e) {
+            var loc = this.windowToCanvas(e.clientX, e.clientY);
+
+            e.preventDefault();
+            this.click = true;
+        },
+
+
+        reDrawCanvas: function() {
+            this.clearCanvas();
+            this.drawImage();
+            this.drawSelRect();
+            this.drawResizerBox();
+        },
+
+        clearCanvas: function() {
+
+            this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+            //Making default background color to white, gif images was giving problem.    
+            this.ctx.fillStyle = this.canvasBackgroundColor;
+            this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+
+        },
+
+        drawImage: function() {
+
+            this.ctx.drawImage(this.image, 0, 0);
+        },
+
+        drawSelRect: function() {
+
+            this.ctx.strokeStyle = '#000000';
+            this.ctx.lineWidth = 1;
+            this.ctx.strokeRect(this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
+
+        },
+
+        onImageResize: function(e) {
+
+            var centerPointX = (this.lastPointX + this.downPointX) / 2;
+            var centerPointY = (this.lastPointY + this.downPointY) / 2;
+
+            var loc = this.windowToCanvas(e.clientX, e.clientY);
+            this.ctx.fillStyle = '#FF0000';
+            this.ctx.lineWidth = 1;
+
+
+            if (this.isResizeBoxHover(loc, centerPointX, this.downPointY)) {
+                if (this.click) {
+                    this.downPointY = loc.y;
+                    this.reDrawCanvas();
+                }
+            } else if (this.isResizeBoxHover(loc, this.lastPointX, centerPointY)) {
+                if (this.click) {
+                    this.lastPointX = loc.x;
+                    this.reDrawCanvas();
+                }
+            } else if (this.isResizeBoxHover(loc, centerPointX, this.lastPointY)) {
+                if (this.click) {
+                    this.lastPointY = loc.y;
+                    this.reDrawCanvas();
+                }
+            } else if (this.isResizeBoxHover(loc, this.downPointX, centerPointY)) {
+                if (this.click) {
+                    this.downPointX = loc.x;
+                    this.reDrawCanvas();
+                }
+
+            } else {
+                this.resize = false;
+                this.reDrawCanvas();
+            }
+        },
+
+
+        isResizeBoxHover: function(loc, xPoint, yPoint) {
+            var hoverMargin = 3;
+
+            if (loc.x &gt; (xPoint - this.hoverBoxSize - hoverMargin) && loc.x &lt; (xPoint + this.hoverBoxSize + hoverMargin) && loc.y &gt; (yPoint - this.hoverBoxSize - hoverMargin) && loc.y &lt; (yPoint + 5 + hoverMargin)) {
+                this.ctx.fillRect(xPoint - this.hoverBoxSize, yPoint - this.hoverBoxSize, this.hoverBoxSize * 2, this.hoverBoxSize * 2);
+                this.resize = true;
+                return true;
+            }
+            return false;
+
+        },
+
+
+        drawResizerBox: function() {
+
+            var centerPointX = (this.lastPointX + this.downPointX) / 2;
+            var centerPointY = (this.lastPointY + this.downPointY) / 2;
+
+            this.ctx.fillStyle = '#000000';
+            this.ctx.lineWidth = 1;
+            this.ctx.fillRect(centerPointX - this.hoverBoxSize, this.downPointY - this.hoverBoxSize, this.hoverBoxSize * 2, this.hoverBoxSize * 2);
+            this.ctx.fillRect(this.lastPointX - this.hoverBoxSize, centerPointY - this.hoverBoxSize, this.hoverBoxSize * 2, this.hoverBoxSize * 2);
+            this.ctx.fillRect(centerPointX - this.hoverBoxSize, this.lastPointY - this.hoverBoxSize, this.hoverBoxSize * 2, this.hoverBoxSize * 2);
+            this.ctx.fillRect(this.downPointX - this.hoverBoxSize, centerPointY - this.hoverBoxSize, this.hoverBoxSize * 2, this.hoverBoxSize * 2);
+
+        },
+
+        windowToCanvas: function(x, y) {
+            var canvas = this.ctx.canvas,
+                bbox = canvas.getBoundingClientRect();
+            return {
+                x: x - bbox.left * (canvas.width / bbox.width),
+                y: y - bbox.top * (canvas.height / bbox.height)
+            };
+        },
+
+        cropImage: function() {
+
+            var tempCtx = document.createElement('canvas').getContext('2d');
+            tempCtx.canvas.width = this.image.width;
+            tempCtx.canvas.height = this.image.height;
+
+            console.log(this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
+            tempCtx.drawImage(this.image, this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY), 0, 0, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
+
+            //e(this.ctx.canvas,this.cutoutWidth, this.cutoutWidth, this.windowWidth, this.windowWidth, 0, 0,this.windowWidth, this.windowWidth);
+            var imageData = tempCtx.canvas.toDataURL();
+            document.getElementById('croppedImage').src = imageData;
+        }
+
+    }
+
+
+    imageCropper.init();
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</pre>
+
+
+
+            </div>
+
+            <div class="add tableCell">
+            	<h1>advertisment</h1>
+         
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- icocding club sidebar_square -->
+                      <!--
+                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="3275485060"></ins>
+
+
+
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+            -->
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+
+
+    <footer>
+
+        footer
+    </footer>
+</body>
+
+</html>

@@ -16,27 +16,59 @@
             </header>
         </div>
 
-        <div class="demo">
+
+        <div class="tableRow contentWrraper">
+
+            <div class="content tableCell">
+
+                <ol class="instruction">
+                    <li>Move image to get in focus.</li>
+                    <li>Zoom it by slider</li>
+                    <li>Click on "Crop" button to crop image</li>
+                </ol>
+
+                <table>
+                    <tr>
+                        <td>
+                            <canvas id="panel" width="380" height="380"></canvas>
+                        </td>
+                        <td>
+                            <div id="results">
+                                <img id="crop_result" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <button id="cropImgButtn">Crop</button>
+                <input id='scaleSlider' type='range' min='1' max='3.0' step='0.01' value='1.0' />
 
 
 
-            <table>
-                <tr>
-                    <td>
-                        <canvas id="panel" width="380" height="380"></canvas>
-                    </td>
-                    <td>
-                        <div id="results">
-                            <img id="crop_result" />
-                        </div>
-                    </td>
-                </tr>
-            </table>
+            </div>
 
-            <button id="cropImgButtn">Crop</button>
-            <input id='scaleSlider' type='range' min='1' max='3.0' step='0.01' value='1.0' />
+            <div class="add tableCell">
+                <h1>advertisment</h1>
+
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- icocding club sidebar_square -->
+                <!--
+                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="3275485060"></ins>
+
+
+
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+
+            -->
+
+            </div>
 
         </div>
+
+
+
     </div>
 
 
