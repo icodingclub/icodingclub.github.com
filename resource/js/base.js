@@ -51,12 +51,11 @@ function doGet(url, callback) {
 //         this.addGoogleAddBlock();
 
 var demoBuilder = {
-    showAdd: true,
 
     init: function(url) {
        
         this.buildDemoBlock(url);
-        this.addGoogleAddBlock();
+       
     },
 
     buildDemoBlock: function(url) {
@@ -88,18 +87,6 @@ var demoBuilder = {
         script.src = 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst';
         body.appendChild(script);
 
-    },
-
-    addGoogleAddBlock: function() {
-
-        if (this.showAdd) {
-            var body = document.getElementsByTagName('body')[0];
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-            body.appendChild(script);
-        }
     }
-
 
 };
