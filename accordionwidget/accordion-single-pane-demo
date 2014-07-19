@@ -1,0 +1,53 @@
+<html>
+<head>
+<style type="text/css">
+.singlePaneAccordion {
+ width: 500px;
+ margin: auto;
+}
+
+.singlePaneAccordion h1 {
+ background: #e3e3e3;
+ text-align: center;
+ line-height: 2em;
+ cursor: pointer;
+ font-size: 1.2em;
+ font-weight: bold;
+ border-bottom: 1px solid #C5C5C5;
+ border-top: 1px solid white;
+ margin: 0px;
+}
+
+.singlePaneAccordion div {
+ margin: 0;
+ line-height: 2em;
+ font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+ <div class="singlePaneAccordion">
+  <h1>HTML</h1>
+  <div>HyperText Markup Language</div>
+  <h1>CSS</h1>
+  <div>Cascading Style Sheets</div>
+  <h1>JS</h1>
+  <div>JavaScript</div>
+ </div>
+ <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+ <script type="text/javascript">
+ (function() {
+  $(".singlePaneAccordion").children("div").hide();
+  $(".singlePaneAccordion").children("h1").on("click", function() {
+   $(this).siblings('div').slideUp(300);
+   $(this).next('div').slideDown(300);
+  });
+ })();
+</script>
+</body>
+</html>
+
+
+
+
+

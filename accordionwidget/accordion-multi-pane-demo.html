@@ -1,0 +1,51 @@
+ 
+ <html>
+<head>
+<style type="text/css">
+.multiPaneAccordion {
+ width: 500px;
+ margin: auto;
+}
+
+.multiPaneAccordion h1 {
+ background: #e3e3e3;
+ text-align: center;
+ line-height: 2em;
+ cursor: pointer;
+ font-size: 1.2em;
+ font-weight: bold;
+ border-bottom: 1px solid #C5C5C5;
+ border-top: 1px solid white;
+ margin: 0px;
+}
+
+.multiPaneAccordion div {
+ margin: 0;
+ line-height: 2em;
+ font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+ <div class="multiPaneAccordion">
+  <h1>HTML</h1>
+  <div>HyperText Markup Language</div>
+  <h1>CSS</h1>
+  <div>Cascading Style Sheets</div>
+  <h1>JS</h1>
+  <div>JavaScript</div>
+ </div>
+ <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+ <script type="text/javascript">
+  (function() {
+   $(".multiPaneAccordion").children("div").hide();
+   $(".multiPaneAccordion").children("h1").on("click", function() {
+    $(this).next('div').slideToggle();
+   });
+  })();
+ </script>
+</body>
+</html>
+ 
+ 
+ 

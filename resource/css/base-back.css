@@ -108,11 +108,22 @@ a:hover {
 
     font-size: 1em;
     font-weight: normal;
-    padding: 3px 0 3px 30px;
+    padding: 4px 0 4px 30px;
     text-transform: uppercase;
     background: #428BCA;
     color: white;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.arrow {
+    width: 1px;
+    height: 0;
+    line-height: 0;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #4274ca;
+    top: 100%;
+    left: 0;
+    position: absolute;
 }
 
 .content > h2{
@@ -137,16 +148,7 @@ a:hover {
 
 }
 
-.arrow {
-    width: 1px;
-    height: 0;
-    line-height: 0;
-    border-left: 20px solid transparent;
-    border-top: 10px solid #4274ca;
-    top: 100%;
-    left: 0;
-    position: absolute;
-}
+
 .topic {
     padding: 3px 7px;
     margin: 10px 15px;
@@ -176,8 +178,11 @@ a:hover {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 .topic .content p {
+    margin: 0 !important;
+    padding: 0;
     color: #333;
     font-size: 1em;
+    width: 55%;
 }
 
 .topic .content .readMore{
