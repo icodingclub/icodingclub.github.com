@@ -2,12 +2,12 @@
 
 <head>
     <style type="text/css">
-    .multiPaneAccordion {
+    
+    .singlePaneAccordion {
         width: 500px;
-        margin: auto;
     }
 
-    .multiPaneAccordion h1 {
+    .singlePaneAccordion h1 {
         background: #e3e3e3;
         text-align: center;
         line-height: 2em;
@@ -18,8 +18,8 @@
         border-top: 1px solid white;
         margin: 0px;
     }
-    
-    .multiPaneAccordion div {
+
+    .singlePaneAccordion div {
         margin: 0;
         line-height: 2em;
         font-size: 1.2em;
@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <div class="multiPaneAccordion">
+    <div class="singlePaneAccordion">
         <h1>HTML</h1>
         <div>HyperText Markup Language</div>
         <h1>CSS</h1>
@@ -39,9 +39,10 @@
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript">
     (function() {
-        $(".multiPaneAccordion").children("div").hide();
-        $(".multiPaneAccordion").children("h1").on("click", function() {
-            $(this).next('div').slideToggle();
+        $(".singlePaneAccordion").children("div").hide();
+        $(".singlePaneAccordion").children("h1").on("click", function() {
+            $(this).siblings('div').slideUp(300);
+            $(this).next('div').slideDown(300);
         });
     })();
     </script>

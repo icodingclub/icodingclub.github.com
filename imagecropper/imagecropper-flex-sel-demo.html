@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>icodingclub - HTML5 Canvas image cropper using HTML and Javascript</title>
-</head>
 
 <body>
     <table>
@@ -24,23 +23,36 @@
     </table>
     <script type="text/javascript">
     var imageCropper = {
+
         ctx: null,
+
         image: null,
+
         click: false,
+
         downPointX: 0,
+
         downPointY: 0,
+
         lastPointX: 0,
+
         lastPointY: 0,
+
         hoverBoxSize: 5,
+
         cropedFile: null,
+
         resize: false,
+
         canvasBackgroundColor: "#FFFFFF",
+
         init: function() {
             this.ctx = document.getElementById("panel").getContext("2d");
             var imageUploader = document.getElementById('imageLoader');
             this.initCanvas();
             document.getElementById("cropBttn").onclick = this.cropImage.bind(this);
         },
+
         initCanvas: function(image) {
             this.image = new Image();
             this.image.src = "steve-jobs.jpg";
@@ -51,10 +63,12 @@
                 this.initEventsOnCanvas();
             }.bind(this);
         },
+
         initEventsOnCanvas: function() {
             this.ctx.canvas.onmousedown = this.onMouseDown.bind(this);
             this.ctx.canvas.onmouseup = this.onMouseUp.bind(this);
         },
+
         onMouseDown: function(e) {
             var loc = this.windowToCanvas(e.clientX, e.clientY);
             e.preventDefault();
@@ -67,6 +81,7 @@
                 this.lastPointY = loc.y;
             }
         },
+
         onMouseMove: function(e) {
             e.preventDefault();
             if (this.click) {
@@ -76,36 +91,43 @@
                 this.reDrawCanvas();
             }
         },
+
         onMouseUp: function(e) {
             e.preventDefault();
             this.ctx.canvas.onmousemove = this.onImageResize.bind(this);
             this.click = false;
         },
+
         onMouseDownForResize: function(e) {
             var loc = this.windowToCanvas(e.clientX, e.clientY);
             e.preventDefault();
             this.click = true;
         },
+
         reDrawCanvas: function() {
             this.clearCanvas();
             this.drawImage();
             this.drawSelRect();
             this.drawResizerBox();
         },
+
         clearCanvas: function() {
             this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
             //Making default background color to white, gif images was giving problem.    
             this.ctx.fillStyle = this.canvasBackgroundColor;
             this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
         },
+
         drawImage: function() {
             this.ctx.drawImage(this.image, 0, 0);
         },
+
         drawSelRect: function() {
             this.ctx.strokeStyle = '#000000';
             this.ctx.lineWidth = 1;
             this.ctx.strokeRect(this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
         },
+
         onImageResize: function(e) {
             var centerPointX = (this.lastPointX + this.downPointX) / 2;
             var centerPointY = (this.lastPointY + this.downPointY) / 2;
@@ -137,6 +159,7 @@
                 this.reDrawCanvas();
             }
         },
+
         isResizeBoxHover: function(loc, xPoint, yPoint) {
             var hoverMargin = 3;
             if (loc.x > (xPoint - this.hoverBoxSize - hoverMargin) && loc.x < (xPoint + this.hoverBoxSize + hoverMargin) && loc.y > (yPoint - this.hoverBoxSize - hoverMargin) && loc.y < (yPoint + 5 + hoverMargin)) {
@@ -146,6 +169,7 @@
             }
             return false;
         },
+
         drawResizerBox: function() {
             var centerPointX = (this.lastPointX + this.downPointX) / 2;
             var centerPointY = (this.lastPointY + this.downPointY) / 2;
@@ -156,6 +180,7 @@
             this.ctx.fillRect(centerPointX - this.hoverBoxSize, this.lastPointY - this.hoverBoxSize, this.hoverBoxSize * 2, this.hoverBoxSize * 2);
             this.ctx.fillRect(this.downPointX - this.hoverBoxSize, centerPointY - this.hoverBoxSize, this.hoverBoxSize * 2, this.hoverBoxSize * 2);
         },
+
         windowToCanvas: function(x, y) {
             var canvas = this.ctx.canvas,
                 bbox = canvas.getBoundingClientRect();
@@ -164,6 +189,7 @@
                 y: y - bbox.top * (canvas.height / bbox.height)
             };
         },
+
         cropImage: function() {
             var tempCtx = document.createElement('canvas').getContext('2d');
             tempCtx.canvas.width = this.image.width;
@@ -175,6 +201,8 @@
             document.getElementById('croppedImage').src = imageData;
         }
     }
+
+    
     imageCropper.init();
     </script>
 </body>

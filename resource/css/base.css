@@ -1,14 +1,13 @@
 body {
     background-color: #EEF0F8;
-    font-family: Georgia, "Times New Roman", Times, serif;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: small;
-    margin: 0px;
+    font-size: 1em;
+    margin: 0;
     background-color: #EEF0F8;
 }
 header {
     background-color: #1086C1;
-    margin: 10px 10px 0px 10px;
+    margin: 4px 10px 0px 10px;
     height: 108px;
     padding: 5px 0 0 25px;
 }
@@ -23,14 +22,31 @@ div#tableContainer {
 div#tableRow {
     display: table-row;
 }
-section#drinks {
-    display: table-cell;
-    background-color: #efe5d0;
-    width: 20%;
-    padding: 15px;
-    vertical-align: top;
+
+h1 {
+    font-size: 120%;
+    color: #333333;
 }
-.logo {
+h2 {
+    font-size: 110%;
+}
+a:link {
+    color: #237DAC;
+    text-decoration: none;
+}
+a:hover {
+   color: #237DAC;
+    text-decoration: underline;
+}
+a:visited {
+   color: #237DAC;
+    text-decoration: none;
+}
+
+.logo:hover{
+    text-decoration: none;
+}
+.logo h1{
     color: #FFFFFF;
     font-size: 4em;
     line-height: 1em;
@@ -101,6 +117,7 @@ article.article .heading h1 {
     margin: 0;
     padding: 0;
     text-transform: uppercase;
+    font-size: .9em;
 }
 article.article .image {
     display: table-cell;
@@ -120,6 +137,7 @@ article.article .content {
 }
 article.article .content .desc {
     margin: 2px 2px 5px 2px;
+    font-size: 1em;
 }
 article.article .content .tech {
     margin: 12px 2px 1px 2px;
@@ -127,37 +145,13 @@ article.article .content .tech {
 }
 article.article .content .readMore {
     margin: 1px 2px 5px 2px;
-    font-size: 1.1em;
+    font-size: .9em;
     text-transform: uppercase;
     color: #237DAC;
+    vertical-align: bottom;
 }
 
-h1 {
-    font-size: 120%;
-    color: #333333;
-}
-h2 {
-    font-size: 110%;
-}
-.slogan {
-    color: #954b4b;
-}
-.beanheading {
-    text-align: center;
-    line-height: 1.8em;
-}
-a:link {
-    color: #237DAC;
-    text-decoration: none;
-}
-a:hover {
-   color: #237DAC;
-    text-decoration: underline;
-}
-a:visited {
-   color: #237DAC;
-    text-decoration: none;
-}
+
 
 
 .demo-wrraper{
