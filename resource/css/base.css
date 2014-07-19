@@ -1,0 +1,204 @@
+body {
+    background-color: #EEF0F8;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: small;
+    margin: 0px;
+    background-color: #EEF0F8;
+}
+header {
+    background-color: #1086C1;
+    margin: 10px 10px 0px 10px;
+    height: 108px;
+    padding: 5px 0 0 25px;
+}
+header, #tableContainer {
+    padding-left: 100px;
+}
+div#tableContainer {
+    display: table;
+    border-spacing: 8px;
+    max-width: 2000px;
+}
+div#tableRow {
+    display: table-row;
+}
+section#drinks {
+    display: table-cell;
+    background-color: #efe5d0;
+    width: 20%;
+    padding: 15px;
+    vertical-align: top;
+}
+.logo {
+    color: #FFFFFF;
+    font-size: 4em;
+    line-height: 1em;
+    font-family: "Courier New", "Courier", monospace;
+}
+/* added section#blog for blog */
+
+section.main {
+    display: table-cell;
+    font-size: 105%;
+    padding: 15px;
+    vertical-align: top;
+    background-color: #FFFFFF;
+}
+
+
+
+.section-heading {
+    margin-left: -35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 6px 40px 6px 30px;
+    background: rgb(229, 76, 16);
+    background: -webkit-linear-gradient(rgb(229, 76, 16), rgb(173, 54, 8));
+    background: -moz-linear-gradient(rgb(229, 76, 16), rgb(173, 54, 8));
+    background: -o-linear-gradient(rgb(229, 76, 16), rgb(173, 54, 8));
+    background: linear-gradient(rgb(229, 76, 16), rgb(173, 54, 8));
+    color: white;
+}
+.arrow {
+    width: 1px;
+    height: 0;
+    line-height: 0;
+    border-left: 20px solid transparent;
+    border-top: 10px solid rgb(173, 54, 8);
+    top: 100%;
+    left: 0;
+    position: absolute;
+}
+aside.add {
+    display: table-cell;
+    font-size: 105%;
+    padding: 15px;
+    vertical-align: top;
+    width: 300px;
+    background-color: #f4f4f4;
+}
+article.article {
+    width: 47%;
+    min-width: 400px;
+    display: inline-block;
+    background-color: #f4f4f4;
+    margin: 10px 20px 50px 0;
+    vertical-align: top;
+     border-left: 5px solid #69c773;
+}
+article.article .heading {
+    padding: 10px;
+}
+article.article .heading h1 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+article.article .image {
+    display: table-cell;
+    width: 120px;
+    vertical-align: top;
+    margin: 0 12px;
+}
+article.article .body {
+    display: table;
+    table-layout: fixed;
+}
+article.article .contentWrraper {
+    display: table-row;
+}
+article.article .content {
+    display: table-cell;
+}
+article.article .content .desc {
+    margin: 2px 2px 5px 2px;
+}
+article.article .content .tech {
+    margin: 12px 2px 1px 2px;
+    font-size: .9em;
+}
+article.article .content .readMore {
+    margin: 1px 2px 5px 2px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: #237DAC;
+}
+
+h1 {
+    font-size: 120%;
+    color: #333333;
+}
+h2 {
+    font-size: 110%;
+}
+.slogan {
+    color: #954b4b;
+}
+.beanheading {
+    text-align: center;
+    line-height: 1.8em;
+}
+a:link {
+    color: #237DAC;
+    text-decoration: none;
+}
+a:hover {
+   color: #237DAC;
+    text-decoration: underline;
+}
+a:visited {
+   color: #237DAC;
+    text-decoration: none;
+}
+
+
+.demo-wrraper{
+
+  width: 800px;
+}
+
+.main ol{
+    margin: 10px 0 40px 10px;
+      background: #EEE;
+  padding: 1em;
+  border-left: 5px solid #69c773;
+  width: 600px;
+   
+}
+
+.main ol li{
+     line-height: 1.1em;
+     margin-left: 20px;
+
+
+}
+
+footer {
+    background-color: #1086C1;
+    color: #efe5d0;
+    text-align: center;
+    padding: 35px;
+    margin: 20px 10px 10px 10px;
+      font-size: 1.1em;
+}
+
+footer a {
+    color: #efe5d0 !important;
+}
+footer a:visited {
+    color: #efe5d0 !important;
+}
+
+iframe{
+  border: 0;
+
+}
+
