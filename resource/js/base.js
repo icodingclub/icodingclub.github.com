@@ -1,6 +1,5 @@
 function doGet(url, callback) {
     var xhr;
-
     if (typeof XMLHttpRequest !== 'undefined') xhr = new XMLHttpRequest();
     else {
         var versions = ["MSXML2.XmlHttp.5.0",
@@ -9,7 +8,6 @@ function doGet(url, callback) {
             "MSXML2.XmlHttp.2.0",
             "Microsoft.XmlHttp"
         ];
-
         for (var i = 0, len = versions.length; i < len; i++) {
             try {
                 xhr = new ActiveXObject(versions[i]);
@@ -17,57 +15,33 @@ function doGet(url, callback) {
             } catch (e) {}
         }
     }
-
     xhr.onreadystatechange = ensureReadiness;
-
     function ensureReadiness() {
         if (xhr.readyState < 4) {
             return;
         }
-
         if (xhr.status !== 200) {
             return;
         }
-
-        // all is well  
         if (xhr.readyState === 4) {
             callback(xhr);
         }
     }
-
     xhr.open('GET', url, true);
     xhr.send('');
 }
 
-
-
-// document.getElementById('codeFrame').onload = function() {
-//             var codeText = document.getElementById("codeFrame").contentDocument.body.innerHTML;
-//             document.getElementById('codeBox').innerHTML = this.htmlEscape(codeText);
-//             this.addCodePretifyer();
-
-//         }.bind(this);
-
-//         this.addGoogleAddBlock();
-
 var demoBuilder = {
 
     init: function(url) {
-       
         this.buildDemoBlock(url);
-       
     },
 
     buildDemoBlock: function(url) {
-
         doGet(url, function(xhr) {
-          
-
-                 
             document.getElementById('codeBox').innerHTML = this.htmlEscape(xhr.responseText);
             this.addCodePretifyer();
         }.bind(this));
-
     },
 
     htmlEscape: function(str) {
@@ -86,7 +60,5 @@ var demoBuilder = {
         script.type = 'text/javascript';
         script.src = 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst';
         body.appendChild(script);
-
     }
-
 };
