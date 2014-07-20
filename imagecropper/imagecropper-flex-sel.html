@@ -20,48 +20,54 @@
     <div id="tableContainer">
         <section class="main demo-wrraper">
             <article>
-                <article>
+                <section>
                     <h1 class="section-heading">Introduction
                         <span class="arrow"></span>
                     </h1>
                     <br>
                     <p>This is a client side only image cropper, built out of HTML5 or HTML5 Canvas. Code is object oriented and bulit purely in Javascript without use of any library. cropping can be done in flexible manner by selecting any region on UI, by mouse.</p>
-                </article>
+                </section>
+                <section>
+                    <h1 class="section-heading">DEMO
+                        <span class="arrow"></span>
+                    </h1>
+                    <br>
+                    <h2>How to run this demo?</h2>
+                    <ol>
+                        <li>Upload a file.</li>
+                        <li>Select a area using mouse.</li>
+                        <li>Click on crop.</li>
+                    </ol>
+                    <h2>Try it!</h2>
 
-                <h1 class="section-heading">DEMO
-                    <span class="arrow"></span>
-                </h1>
-                <br>
-                <h2>How to run this demo?</h2>
-                <ol>
-                    <li>Upload a file.</li>
-                    <li>Select a area using mouse.</li>
-                    <li>Click on crop.</li>
-                </ol>
-                <h2>Try it!</h2>
+                    <iframe id="codeFrame" height="500px" width="900px" src="/imagecropper/imagecropper-flex-sel-demo.html"></iframe>
+                </section>
+                <section>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
-                <iframe id="codeFrame" height="500px" width="900px" src="/imagecropper/imagecropper-flex-sel-demo.html"></iframe>
-                <br>
-                <br>
-                <br>
-                <br>
-                <h1 class="section-heading">step by step video tutorial
-                    <span class="arrow"></span>
-                </h1>
-                <br>
-                <img src="/resource/image/youTubePlaceholder.gif">
-                <ol>
-                    <li>You can drop your comments in comment section of this video</li>
-                </ol>
-
-                <h1 class="section-heading">code
-                    <span class="arrow"></span>
-                </h1>
-                <br>
-
+                    <h1 class="section-heading">step by step video tutorial
+                        <span class="arrow"></span>
+                    </h1>
+                    <br>
+                    <img src="/resource/image/youTubePlaceholder.gif">
+                </section>
+                <section>
+                    <h1 class="section-heading">code
+                        <span class="arrow"></span>
+                    </h1>
+                    <br>
+                </section>
                 <pre id="codeBox" class="prettyprint lang-html">Loading..</pre>
 
-
+                <section>
+                    <h1 class="section-heading">comments
+                        <span class="arrow"></span>
+                    </h1>
+                    <div id="disqus_thread"></div>
+                </section>
             </article>
         </section>
         <aside class="add">
@@ -101,23 +107,18 @@ Paid help</a> | <a href="about.html">About icodingclub</a>
     <script type="text/javascript" src="/resource/js/base.js"></script>
     <script type="text/javascript">
     demoBuilder.init(document.getElementById("codeFrame").src);
+
+    var disqus_shortname = 'icodingclub-github-imagecropper-flex-sel';
+    (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
     </script>
 
 
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'icodingclub'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
 </body>
 
 </html>
