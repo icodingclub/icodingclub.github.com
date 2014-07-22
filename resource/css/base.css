@@ -12,7 +12,7 @@ header {
     padding: 5px 0 0 25px;
 }
 header, #tableContainer {
-    padding-left: 100px;
+    padding-left: 80px;
 }
 div#tableContainer {
     display: table;
@@ -23,13 +23,12 @@ div#tableRow {
     display: table-row;
 }
 
-h1 {
-    font-size: 120%;
+h1,h2,h3{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     color: #333333;
+    font-size: 1em;
 }
-h2 {
-    font-size: 110%;
-}
+
 a:link {
     color: #237DAC;
     text-decoration: none;
@@ -156,7 +155,12 @@ article.article .content .readMore {
 
 .demo-wrraper{
 
-  width: 800px;
+  
+}
+
+.demo-wrraper article{
+    width: 70%;
+
 }
 
 .main ol{
@@ -198,5 +202,10 @@ iframe{
 
 .loadingBox{
    color: #89BDFF;
+}
+
+iframe{
+    width: 140%;
+    border: 2px solid rgba(238, 238, 238, 0.5);
 }
 
