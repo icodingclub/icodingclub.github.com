@@ -68,6 +68,7 @@
 
         canvasBackgroundColor: "#FFFFFF",
 
+       
         init: function() {
             this.ctx = document.getElementById("panel").getContext("2d");
             var imageUploader = document.getElementById('imageLoader');
@@ -86,11 +87,21 @@
             }.bind(this);
         },
 
+        /**
+         * Initlize mousedown and mouseup event, third brother of this type of event, onmousemove, will be set little letter.
+         * 
+         */
         initEventsOnCanvas: function() {
             this.ctx.canvas.onmousedown = this.onMouseDown.bind(this);
             this.ctx.canvas.onmouseup = this.onMouseUp.bind(this);
         },
 
+        /**
+         * This event is bit tricky!
+         * Normal task of this method is to pin point the starting point, from where we will  strat making the selectin box.
+         * However, it work diffrently if user is hover over the resize boxes
+         * 
+         */
         onMouseDown: function(e) {
             var loc = this.windowToCanvas(e.clientX, e.clientY);
             e.preventDefault();
@@ -104,6 +115,9 @@
             }
         },
 
+        /**
+         * register normal movement, with click but no re-size.
+         */
         onMouseMove: function(e) {
             e.preventDefault();
             if (this.click) {
@@ -120,12 +134,6 @@
             this.click = false;
         },
 
-        onMouseDownForResize: function(e) {
-            var loc = this.windowToCanvas(e.clientX, e.clientY);
-            e.preventDefault();
-            this.click = true;
-        },
-
         reDrawCanvas: function() {
             this.clearCanvas();
             this.drawImage();
@@ -135,21 +143,35 @@
 
         clearCanvas: function() {
             this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-            //Making default background color to white, gif images was giving problem.    
             this.ctx.fillStyle = this.canvasBackgroundColor;
             this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
         },
 
+        /**
+         * Draw image on canvas.
+         */
         drawImage: function() {
             this.ctx.drawImage(this.image, 0, 0);
         },
 
+        /**
+         * Draw selection box on canvas
+         */
         drawSelRect: function() {
             this.ctx.strokeStyle = '#000000';
             this.ctx.lineWidth = 1;
             this.ctx.strokeRect(this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
         },
 
+
+        /**
+         * This method take care of resizeing the selection box.
+         * It does so by looking on (click == true and hover on resize box == true)
+         * if both are true, it adjust the resize.
+         * 
+         * @param  {[type]} e [description]
+         * @return {[type]}   [description]
+         */
         onImageResize: function(e) {
             var centerPointX = (this.lastPointX + this.downPointX) / 2;
             var centerPointY = (this.lastPointY + this.downPointY) / 2;
@@ -182,6 +204,9 @@
             }
         },
 
+        /**
+         * Detect the mousehover on given axis
+         */
         isResizeBoxHover: function(loc, xPoint, yPoint) {
             var hoverMargin = 3;
             if (loc.x > (xPoint - this.hoverBoxSize - hoverMargin) && loc.x < (xPoint + this.hoverBoxSize + hoverMargin) && loc.y > (yPoint - this.hoverBoxSize - hoverMargin) && loc.y < (yPoint + 5 + hoverMargin)) {
@@ -192,6 +217,10 @@
             return false;
         },
 
+        /**
+         * Draw 4 resize box of 10 x 10
+         * @return {[type]} [description]
+         */
         drawResizerBox: function() {
             var centerPointX = (this.lastPointX + this.downPointX) / 2;
             var centerPointY = (this.lastPointY + this.downPointY) / 2;
@@ -203,6 +232,9 @@
             this.ctx.fillRect(this.downPointX - this.hoverBoxSize, centerPointY - this.hoverBoxSize, this.hoverBoxSize * 2, this.hoverBoxSize * 2);
         },
 
+        /**
+         * Translate to HTML coardinates to Canvas coardinates.
+         */
         windowToCanvas: function(x, y) {
             var canvas = this.ctx.canvas,
                 bbox = canvas.getBoundingClientRect();
@@ -212,13 +244,16 @@
             };
         },
 
+         /**
+         * Get the canavs, remove cutout, create image elemnet on UI.
+         * @return {[type]}
+         */
         cropImage: function() {
             var tempCtx = document.createElement('canvas').getContext('2d');
             tempCtx.canvas.width = this.image.width;
             tempCtx.canvas.height = this.image.height;
             console.log(this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
             tempCtx.drawImage(this.image, this.downPointX, this.downPointY, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY), 0, 0, (this.lastPointX - this.downPointX), (this.lastPointY - this.downPointY));
-            //e(this.ctx.canvas,this.cutoutWidth, this.cutoutWidth, this.windowWidth, this.windowWidth, 0, 0,this.windowWidth, this.windowWidth);
             var imageData = tempCtx.canvas.toDataURL();
             document.getElementById('croppedImage').src = imageData;
         }
