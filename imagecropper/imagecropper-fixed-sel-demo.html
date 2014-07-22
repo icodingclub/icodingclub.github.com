@@ -75,6 +75,9 @@
             document.getElementById("scaleSlider").oninput = this.updateScale.bind(this);
         },
 
+        /**
+         * Animation on the canvas depends on three events of mouse. down, up and move
+         */
         onImageLoad: function() {
             this.drawimage(0, 0);
             this.ctx.canvas.onmousedown = this.onMouseDown.bind(this);
@@ -82,6 +85,12 @@
             this.ctx.canvas.onmouseup = this.onMouseUp.bind(this);
         },
 
+        /**
+         * Draw image on canvas, after any changes
+         * @param  {[type]} x
+         * @param  {[type]} y
+         * @return {[type]}
+         */
         drawimage: function(x, y) {
             var w = this.ctx.canvas.width,
                 h = this.ctx.canvas.height;
@@ -94,6 +103,10 @@
             this.drawCutout();
         },
 
+        /**
+         * Responsible to draw the cutout over canvas, clockwise rectangle and anticlock wise rectangle, make sure a cutout.
+         * @return {[type]}
+         */
         drawCutout: function() {
             this.ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
             this.ctx.beginPath();
@@ -107,6 +120,12 @@
             this.ctx.fill();
         },
 
+        /**
+         * Get call on mouse press, make click variable to true, which will be used in mousemove events
+         * It also set the point were mouse click happened.
+         * @param  {[type]} e
+         * @return {[type]}
+         */
         onMouseDown: function(e) {
             e.preventDefault();
             var loc = this.windowToCanvas(e.clientX, e.clientY);
@@ -115,6 +134,11 @@
             this.lastPointY = loc.y;
         },
 
+        /**
+         * Track the mouse movment and draw the image accordingly, but only when clicked happened.
+         * @param  {[type]} e
+         * @return {[type]}
+         */
         onMouseMove: function(e) {
             e.preventDefault();
             if (this.click) {
@@ -123,11 +147,19 @@
             }
         },
 
+        /**
+         * make click = false, hence no canvas draw on mousemovment.
+         * @param  {[type]} e
+         * @return {[type]}
+         */
         onMouseUp: function(e) {
             e.preventDefault();
             this.click = false;
         },
 
+        /**
+         * Translate to HTML coardinates to Canvas coardinates.
+         */
         windowToCanvas: function(x, y) {
             var canvas = this.ctx.canvas;
             var bbox = canvas.getBoundingClientRect();
@@ -137,6 +169,10 @@
             };
         },
 
+        /**
+         * Get the canavs, remove cutout, create image elemnet on UI.
+         * @return {[type]}
+         */
         showCropedImage: function() {
             var temp_ctx, temp_canvas;
             temp_canvas = document.createElement('canvas');
@@ -147,13 +183,20 @@
             var vData = temp_canvas.toDataURL();
             document.getElementById('crop_result').src = vData;
         },
-
+        /**
+         * Update image zoom scale on slider movment.
+         * @param  {[type]} e
+         * @return {[type]}
+         */
         updateScale: function(e) {
             this.scale = e.target.value;
             this.drawimage(this.lastPointX, this.lastPointY);
         }
     };
 
+    /**
+     * Trigger the app.
+     */
     imageCropper.init();
     </script>
 </body>

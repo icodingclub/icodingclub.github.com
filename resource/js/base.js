@@ -32,14 +32,24 @@ function doGet(url, callback) {
 }
 
 var demoBuilder = {
-
-    init: function(url) {
-        this.buildDemoBlock(url);
+    
+    outputBlock:null,
+    
+    url:null,
+    
+    init: function(url,outputBlock) {
+        this.url = url;
+        this.outputBlock = outputBlock;
+        this.buildDemoBlock();
     },
 
-    buildDemoBlock: function(url) {
-        doGet(url, function(xhr) {
-            document.getElementById('codeBox').innerHTML = this.htmlEscape(xhr.responseText);
+    buildDemoBlock: function() {
+        var outputBlock = "codeBox";
+        if(this.outputBlock){
+            outputBlock = this.outputBlock;
+        }
+        doGet(this.url, function(xhr) {
+            document.getElementById(outputBlock).innerHTML = this.htmlEscape(xhr.responseText);
             this.addCodePretifyer();
         }.bind(this));
     },

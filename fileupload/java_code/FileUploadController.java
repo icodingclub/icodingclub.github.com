@@ -27,13 +27,13 @@ public class FileUploadController extends HttpServlet {
 		if (part != null) {
 			//writing blob
 			fileName = request.getParameter("blobName");
-			part.write(Path.UPLOAD_DIR + File.separator + fileName);
+			part.write("path/to/upload" + File.separator + fileName);
 
 		} else {
 			//Writing image or file
 			part = request.getPart("file");
 			fileName = getFileName(part);
-			part.write(Path.UPLOAD_DIR + File.separator + fileName);
+			part.write("path/to/upload" + File.separator + fileName);
 		}
 
 		// Extra logic to support multiple domain - you may want to remove this

@@ -51,9 +51,14 @@
         <br>
         <script type="text/javascript">
         var imageUploader = {
+
             imageFile: null,
+
             canvasCtx: document.getElementById("panel").getContext("2d"),
 
+            /**
+             * Trigger this object by setting up basic events.
+             */
             init: function() {
 
                 document.getElementById("uploadImage").onclick = this.uploadImage.bind(this);
@@ -76,6 +81,9 @@
                 }.bind(this);
             },
 
+            /**
+             * Draw uploaded image on Canvas
+             */
             drawImageOnCanvas: function(img) {
                 this.canvasCtx.canvas.width = img.width;
                 this.canvasCtx.canvas.height = img.height;
@@ -87,11 +95,19 @@
                 this.canvasCtx.fillText(this.imageFile.name, 5, img.height - 8);
             },
 
+            /**
+             * Basic image display as per the uploaded image.
+             */
             displayImage: function(img) {
                 document.getElementById("uploadedImage").src = img.src;
             },
 
-            canvastoBlob: function(canvas, type) {
+            /**
+             * canvas data uri return the Base64 encoded image, we need to conver into a binary file
+             * before sending it to server.
+             *
+             */
+            canvasToBlob: function(canvas, type) {
 
                 var byteString = atob(canvas.toDataURL().split(",")[1]),
                     ab = new ArrayBuffer(byteString.length),
@@ -107,6 +123,9 @@
                 });
             },
 
+            /**
+             * Upload basic image or file to server.
+             */
             uploadImage: function() {
 
                 var data = new FormData();
@@ -115,11 +134,14 @@
 
             },
 
+            /**
+             * Add extra parmeter, in case of Canvas upload.
+             */
             uploadCanvasAsImage: function() {
 
                 var data = new FormData();
 
-                var blob = this.canvastoBlob(this.canvasCtx.canvas, this.imageFile.type);
+                var blob = this.canvasToBlob(this.canvasCtx.canvas, this.imageFile.type);
                 data.append("blob", blob);
                 data.append("blobName", this.imageFile.name);
                 data.append("blobType", this.imageFile.type);
@@ -145,6 +167,9 @@
             }
         }
 
+        /**
+         * Trigger the app.
+         */
         imageUploader.init();
         </script>
     </body>

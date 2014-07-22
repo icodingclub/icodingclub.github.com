@@ -53,9 +53,15 @@
                     <h1 class="section-heading">code
                         <span class="arrow"></span>
                     </h1>
-                    <br>
 
-                    <pre id="codeBox" class="prettyprint lang-html">Loading..</pre>
+                     <br><br><h2>UI Code</h2>
+                     <p>Uncomment and adjust the "uploadToServer" method as per your server side code domain and location.</p>
+
+                    <pre id="uiCode" class="prettyprint lang-html">Loading..</pre>
+
+                    <br><br><h2>Server side Code in Java</h2>
+
+                    <pre id="javaCode" class="prettyprint lang-java">Loading..</pre>
                 </section>
 
 
@@ -154,7 +160,8 @@
 
         <script type="text/javascript" src="/resource/js/base.js"></script>
         <script type="text/javascript">
-        demoBuilder.init(document.getElementById("codeFrame").src);
+        demoBuilder.init(document.getElementById("codeFrame").src,"uiCode");
+         demoBuilder.init("/fileupload/java_code/FileUploadController.java","javaCode");
 
         var disqus_shortname = 'icodingclubfileupload';
         (function() {
