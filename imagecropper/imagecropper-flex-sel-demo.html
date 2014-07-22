@@ -5,22 +5,44 @@
     <meta charset="utf-8">
     <title>icodingclub - HTML5 Canvas image cropper using HTML and Javascript</title>
 
+     <style type="text/css">
+    .table {
+        display: table;
+        border-collapse: separate;
+        border-spacing: 10px 50px;
+    }
+    .tableRow {
+        display: table-row;
+    }
+    .tableCell {
+        display: table-cell;
+        vertical-align: top;
+    }
+    .box {
+        border: 10px solid rgba(238, 238, 238, 0.6);
+        background-color: rgba(238, 238, 238, 0.2);
+    }
+
+
+    </style>
+
 <body>
-    <table>
-        <tr>
-            <td>
-                <canvas id="panel" width="380" height="380"></canvas>
+
+      <div class="table">
+            <div class="tableRow">
+                <div class="tableCell box">
+                      <canvas id="panel" width="380" height="380"></canvas>
                 <p>
                     <input type="button" id="cropBttn" value="Crop">
                 </p>
-            </td>
-            <td>
-                <div id="results">
+                </div>
+                <div class="tableCell box">
                     <img src="" id="croppedImage">
                 </div>
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
+
+        <br><br>
     <script type="text/javascript">
     var imageCropper = {
 

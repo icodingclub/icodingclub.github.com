@@ -62,3 +62,11 @@ var demoBuilder = {
         body.appendChild(script);
     }
 };
+
+
+(function(){
+  doGet("/footer.html", function(xhr) {
+            document.getElementById('footer').innerHTML = xhr.responseText;
+           
+        });
+})();

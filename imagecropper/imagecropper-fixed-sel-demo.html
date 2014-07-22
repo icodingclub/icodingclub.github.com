@@ -4,22 +4,41 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>icodingclub - HTML5 Canvas image cropper using HTML and Javascript</title>
+
+    <style type="text/css">
+    .table {
+        display: table;
+        border-collapse: separate;
+        border-spacing: 10px 50px;
+    }
+    .tableRow {
+        display: table-row;
+    }
+    .tableCell {
+        display: table-cell;
+        vertical-align: top;
+    }
+    .box {
+        border: 10px solid rgba(238, 238, 238, 0.6);
+        background-color: rgba(238, 238, 238, 0.2);
+    }
+    </style>
 </head>
 
 <body>
 
-    <table>
-        <tr>
-            <td>
+
+    <div class="table">
+        <div class="tableRow">
+            <div class="tableCell box">
                 <canvas id="panel" width="380" height="380"></canvas>
-            </td>
-            <td>
-                <div id="results">
-                    <img id="crop_result" />
-                </div>
-            </td>
-        </tr>
-    </table>
+            </div>
+            <div class="tableCell box">
+                <img id="crop_result" />
+            </div>
+        </div>
+    </div>
+
 
     <button id="cropImgButtn">Crop</button>
     <input id='scaleSlider' type='range' min='1' max='3.0' step='0.01' value='1.0' />
@@ -40,29 +59,29 @@
         baseX: 0,
 
         baseY: 0,
-        
+
         lastPointX: 0,
-        
+
         lastPointY: 0,
-        
+
         cutoutWidth: 40,
-        
+
         windowWidth: 300,
-        
+
         init: function() {
             this.image.src = 'steve-jobs.jpg';
             this.image.onload = this.onImageLoad.bind(this);
             document.getElementById("cropImgButtn").onclick = this.showCropedImage.bind(this);
             document.getElementById("scaleSlider").oninput = this.updateScale.bind(this);
         },
-        
+
         onImageLoad: function() {
             this.drawimage(0, 0);
             this.ctx.canvas.onmousedown = this.onMouseDown.bind(this);
             this.ctx.canvas.onmousemove = this.onMouseMove.bind(this);
             this.ctx.canvas.onmouseup = this.onMouseUp.bind(this);
         },
-        
+
         drawimage: function(x, y) {
             var w = this.ctx.canvas.width,
                 h = this.ctx.canvas.height;
@@ -74,7 +93,7 @@
             this.ctx.drawImage(this.image, this.baseX, this.baseY, Math.floor(this.image.width * this.scale), Math.floor(this.image.height * this.scale));
             this.drawCutout();
         },
-       
+
         drawCutout: function() {
             this.ctx.fillStyle = 'rgba(128, 128, 128, 0.7)';
             this.ctx.beginPath();
@@ -87,7 +106,7 @@
             this.ctx.closePath();
             this.ctx.fill();
         },
-        
+
         onMouseDown: function(e) {
             e.preventDefault();
             var loc = this.windowToCanvas(e.clientX, e.clientY);
@@ -95,7 +114,7 @@
             this.lastPointX = loc.x;
             this.lastPointY = loc.y;
         },
-       
+
         onMouseMove: function(e) {
             e.preventDefault();
             if (this.click) {
@@ -103,12 +122,12 @@
                 this.drawimage(loc.x, loc.y);
             }
         },
-       
+
         onMouseUp: function(e) {
             e.preventDefault();
             this.click = false;
         },
-        
+
         windowToCanvas: function(x, y) {
             var canvas = this.ctx.canvas;
             var bbox = canvas.getBoundingClientRect();
@@ -117,7 +136,7 @@
                 y: y - bbox.top * (canvas.height / bbox.height)
             };
         },
-       
+
         showCropedImage: function() {
             var temp_ctx, temp_canvas;
             temp_canvas = document.createElement('canvas');
@@ -128,13 +147,12 @@
             var vData = temp_canvas.toDataURL();
             document.getElementById('crop_result').src = vData;
         },
-       
+
         updateScale: function(e) {
             this.scale = e.target.value;
             this.drawimage(this.lastPointX, this.lastPointY);
         }
     };
-   
 
     imageCropper.init();
     </script>
