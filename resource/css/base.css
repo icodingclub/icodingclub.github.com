@@ -104,7 +104,7 @@ article.article {
     width: 47%;
     min-width: 400px;
     display: inline-block;
-    background-color: #f4f4f4;
+    background-color: rgba(238, 238, 238, 0.4);
     margin: 10px 20px 50px 0;
     vertical-align: top;
      border-left: 5px solid #69c773;
@@ -205,7 +205,7 @@ iframe{
 }
 
 iframe{
-    width: 140%;
+    width: 100%;
     border: 2px solid rgba(238, 238, 238, 0.5);
 }
 
