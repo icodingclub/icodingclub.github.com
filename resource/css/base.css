@@ -35,13 +35,12 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 1em;
     margin: 0;
+    padding: 0;
     background-color: #EEF0F8;
 }
 header {
     background-color: #1086C1;
-    margin: 4px 10px 0px 10px;
-    height: 108px;
-    padding: 5px 0 0 25px;
+    margin: 2px;
     padding-left: 80px;
 }
 div#tableContainer {
@@ -140,9 +139,9 @@ section.main {
 }
 aside.add {
     display: table-cell;
-    padding: 2px;
+    padding: 2px 0 0 10px;
     vertical-align: top;
-    width: 310px;
+    width: 315px;
     background-color: #f4f4f4;
 }
 .articleTable {
@@ -220,6 +219,8 @@ footer {
 }
 footer a {
     color: #efe5d0 !important;
+    font-size: .9em;
+
 }
 footer a:visited {
     color: #efe5d0 !important;
