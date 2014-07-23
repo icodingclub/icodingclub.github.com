@@ -1,3 +1,35 @@
+/* reset browser styles */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1.2;
+}
+ol { 
+    padding-left: 1.4em;
+    list-style: decimal;
+}
+ul {
+    padding-left: 1.4em;
+    list-style: square;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+} 
+/* end reset browser styles */
+
+
 body {
     background-color: #EEF0F8;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -65,7 +97,7 @@ a:visited {
 .logo h1 {
     color: #FFFFFF;
     font-size: 4em;
-    line-height: 1em;
+    line-height: 2em;
     font-family: "Courier New", "Courier", monospace;
 }
 /* added section#blog for blog */
@@ -119,11 +151,10 @@ aside.add {
 article.article {
     width: 45%;
     min-width: 350px;
-    background-color: rgba(238, 238, 238, 0.4);
+    background-color: rgba(238, 238, 238, 0.3);
     margin: 10px 2%;
     vertical-align: top;
     border-left: 5px solid #69c773;
-    display: table-cell;
 }
 article.article .heading {
     padding: 10px;
@@ -138,7 +169,7 @@ article.article .image {
     display: table-cell;
     width: 120px;
     vertical-align: top;
-    margin: 0 12px;
+    border: 5px solid rgba(238, 238, 238, 0.9);
 }
 article.article .body {
     display: table;
@@ -202,4 +233,11 @@ iframe {
 iframe {
     width: 100%;
     border: 2px solid rgba(238, 238, 238, 0.5);
+}
+
+
+.demoPageArticle{
+    display: block;
+    margin: 10px;
+    width: 95% !important;
 }
