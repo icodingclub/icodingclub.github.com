@@ -1,8 +1,6 @@
 /* reset browser styles */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -15,7 +13,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
     line-height: 1.2;
 }
-ol { 
+ol {
     padding-left: 1.4em;
     list-style: decimal;
 }
@@ -26,13 +24,12 @@ ul {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-} 
+}
 /* end reset browser styles */
-
 
 body {
     background-color: #EEF0F8;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: Arial, "Lucida Grande", sans-serif;
     font-size: 1em;
     margin: 0;
     padding: 0;
@@ -55,7 +52,7 @@ div#tableRow {
     display: table-row;
 }
 h1, h2, h3 {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: Arial, "Lucida Grande", sans-serif;
     color: #333333;
 }
 h1 {
@@ -220,7 +217,6 @@ footer {
 footer a {
     color: #efe5d0 !important;
     font-size: .9em;
-
 }
 footer a:visited {
     color: #efe5d0 !important;
@@ -235,10 +231,38 @@ iframe {
     width: 100%;
     border: 2px solid rgba(238, 238, 238, 0.5);
 }
-
-
-.demoPageArticle{
+.demoPageArticle {
     display: block;
     margin: 10px;
     width: 50% !important;
+}
+.author {
+    margin:15px;
+    float: right;
+}
+.author .info {
+    display: inline-block;
+    vertical-align: top;
+    color: #FFFFFF;
+    margin: 30px 10px 0 0;
+}
+.author .info h1 {
+    font-size: 1.2em;
+    color: #FFFFFF;
+        text-align: right;
+}
+.author .info h2 {
+    font-size: .7em;
+    color: #FFFFFF;
+    text-align: right;
+}
+.author .pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: url(/resource/image/me_small.png) no-repeat right top;
+    margin: 5px;
+    margin-right: 10px;
+    display: inline-block;
+
 }
