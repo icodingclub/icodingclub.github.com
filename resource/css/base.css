@@ -227,7 +227,7 @@ iframe {
 .loadingBox {
     color: #89BDFF;
 }
-iframe {
+.codeFrame {
     width: 100%;
     border: 2px solid rgba(238, 238, 238, 0.5);
 }
