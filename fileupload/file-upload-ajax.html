@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-     <meta name="description" content="Step by step tutorial or example or demo of how you can upload or load or read  a image file from your local file system, display it as image and HTML5 Canvas and upload it to java backend. This article can also be used a tutorial for new HTML5 api for multipart upload or FormData upload and java7 api for MultipartConfig upload. this article also explained how a HTML5 canvas can be exported as javascript BLOB object and then uploaded to server.">
+    <meta name="description" content="Step by step tutorial or example or demo of how you can upload or load or read  a image file from your local file system, display it as image and HTML5 Canvas and upload it to java backend. This article can also be used a tutorial for new HTML5 api for multipart upload or FormData upload and java7 api for MultipartConfig upload. this article also explained how a HTML5 canvas can be exported as javascript BLOB object and then uploaded to server.">
     <title>Upload Image as IMG or Canvas and send to server as file or Blob</title>
     <link rel="stylesheet" type="text/css" href="/resource/css/base.css">
     <link rel="shortcut icon" href="/resource/image/favicon.png" />
@@ -11,12 +11,14 @@
 
 <body>
     <header>
-          <section class="author">
+        <section class="author">
             <div class="info">
                 <h1>Praveen Singh</h1>
                 <h2>-Author</h2>
             </div>
-            <a href="/about.html"><div class="pic"></div></a>
+            <a href="/about.html">
+                <div class="pic"></div>
+            </a>
         </section>
         <a class="logo" href="http://icodingclub.github.com/">
             <h1>&lt;icodingclub/&gt;
@@ -25,102 +27,106 @@
     </header>
     <div id="tableContainer">
         <section class="main demo-wrraper">
-              <h1 class="articleTitle">HTML5 AJAX File upload (Image or HTML5 Canvas data) to Java backend</h1>
-                <section>
-                    <h1 class="section-heading">Introduction
-                        <span class="arrow"></span>
-                    </h1>
-                    <br>
-                    <p>This article explain, how you can upload a image file from your local file system, as pure image or HTML5 Canvas and then, how you can upload same IMG or Canvas to server(server code is wrriten in Java)</p>
-                    <p>Client side code is purely wrriten on HTML and Javascript, without use of any lib</p>
+            <h1 class="articleTitle">HTML5 AJAX File upload (Image or HTML5 Canvas data) to Java backend</h1>
+            <section>
+                <h1 class="section-heading">Introduction
+                    <span class="arrow"></span>
+                </h1>
+                <br>
+                <p>This article explain, how you can upload a image file from your local file system, as pure image or HTML5 Canvas and then, how you can upload same IMG or Canvas to server(server code is wrriten in Java)</p>
+                <p>Client side code is purely wrriten on HTML and Javascript, without use of any lib</p>
 
-                </section>
+            </section>
 
-                <section>
-                    <h1 class="section-heading">DEMO
-                        <span class="arrow"></span>
-                    </h1>
+            <section>
+                <h1 class="section-heading">DEMO
+                    <span class="arrow"></span>
+                </h1>
 
-                    <h2>Try it!</h2>
-
-
-                    <iframe class="codeFrame" id="codeFrame" height="500px" src="/fileupload/file-upload-ajax-demo.html"></iframe>
-                </section>
-                <section>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <h1 class="section-heading">step by step video tutorial
-                        <span class="arrow"></span>
-                    </h1>
-                    <br>
-                   <iframe width="560" height="315" src="//www.youtube.com/embed/vP7TCj5nzGw" frameborder="0" allowfullscreen></iframe>
-                </section>
-                <section>
-                    <h1 class="section-heading">code
-                        <span class="arrow"></span>
-                    </h1>
-
-                     <br><br><h2>UI Code</h2>
-                     <p>Uncomment and adjust the "uploadToServer" method as per your server side code domain and location.</p>
-
-                    <pre id="uiCode" class="prettyprint lang-html">Loading..</pre>
-
-                    <br><br><h2>Server side Code in Java</h2>
-
-                    <pre id="javaCode" class="prettyprint lang-java">Loading..</pre>
-                </section>
+                <h2>Try it!</h2>
 
 
-                <section>
-                    <h1 class="section-heading">Related article on icodingclub
-                        <span class="arrow"></span>
-                    </h1>
-                    <br>
-                    <article class="article demoPageArticle">
-                        <div class="heading">
-                            <h1>HTML5 Canvas Image cropper: Flexible selection approch</h1>
-                        </div>
-                        <div class="body">
-                            <div class="contentWrraper">
-                                <div class="image">
-                                    <img src="/resource/image/image_flex_crop.png">
-                                </div>
-                                <div class="content">
-                                    <p class="desc">Let you crop image with flexibility to select any area.</p>
-                                    <a href="/imagecropper/imagecropper-flex-sel.html">
-                                        <span class="readMore">read more</span>
-                                    </a>
-                                </div>
-                    </article>
-                    <br>
-                    <article class="article demoPageArticle">
-                        <div class="heading">
-                            <h1>HTML5 Canvas Image cropper: Fixed selection approch</h1>
-                        </div>
-                        <div class="body">
+                <iframe class="codeFrame" id="codeFrame" height="500px" src="/fileupload/file-upload-ajax-demo.html"></iframe>
+            </section>
+            <section>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1 class="section-heading">step by step video tutorial
+                    <span class="arrow"></span>
+                </h1>
+                <br>
+                <iframe width="560" height="315" src="//www.youtube.com/embed/vP7TCj5nzGw" frameborder="0" allowfullscreen></iframe>
+            </section>
+            <section>
+                <h1 class="section-heading">code
+                    <span class="arrow"></span>
+                </h1>
+
+                <br>
+                <br>
+                <h2>UI Code</h2>
+                <p>Uncomment and adjust the "uploadToServer" method as per your server side code domain and location.</p>
+
+                <pre id="uiCode" class="prettyprint lang-html">Loading..</pre>
+
+                <br>
+                <br>
+                <h2>Server side Code in Java</h2>
+
+                <pre id="javaCode" class="prettyprint lang-java">Loading..</pre>
+            </section>
+
+
+            <section>
+                <h1 class="section-heading">Related article on icodingclub
+                    <span class="arrow"></span>
+                </h1>
+                <br>
+                <article class="article demoPageArticle">
+                    <div class="heading">
+                        <h1>HTML5 Canvas Image cropper: Flexible selection approch</h1>
+                    </div>
+                    <div class="body">
+                        <div class="contentWrraper">
                             <div class="image">
-                                <img src="/resource/image/image_crop_fixed.png">
+                                <img src="/resource/image/image_flex_crop.png">
                             </div>
                             <div class="content">
-                                <p class="desc truncate">Let you crop image, but with restriction of aspect ratio.</p>
-                                <a href="/imagecropper/imagecropper-fixed-sel.html">
+                                <p class="desc">Let you crop image with flexibility to select any area.</p>
+                                <a href="/imagecropper/imagecropper-flex-sel.html">
                                     <span class="readMore">read more</span>
                                 </a>
                             </div>
+                </article>
+                <br>
+                <article class="article demoPageArticle">
+                    <div class="heading">
+                        <h1>HTML5 Canvas Image cropper: Fixed selection approch</h1>
+                    </div>
+                    <div class="body">
+                        <div class="image">
+                            <img src="/resource/image/image_crop_fixed.png">
                         </div>
-                    </article>
+                        <div class="content">
+                            <p class="desc truncate">Let you crop image, but with restriction of aspect ratio.</p>
+                            <a href="/imagecropper/imagecropper-fixed-sel.html">
+                                <span class="readMore">read more</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-                </section>
+            </section>
 
 
-                <section>
-                    <h1 class="section-heading">comments
-                        <span class="arrow"></span>
-                    </h1>
-                    <div id="disqus_thread"></div>
-                </section>
+            <section>
+                <h1 class="section-heading">comments
+                    <span class="arrow"></span>
+                </h1>
+                <div id="disqus_thread"></div>
+            </section>
         </section>
         <aside class="add">
             <section>
@@ -156,6 +162,12 @@
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </section>
+            <section>
+                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="7322614664"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </section>
 
 
         </aside>
@@ -169,8 +181,8 @@
 
         <script type="text/javascript" src="/resource/js/base.js"></script>
         <script type="text/javascript">
-        demoBuilder.init(document.getElementById("codeFrame").src,"uiCode");
-         demoBuilder.init("/fileupload/java_code/FileUploadController.java","javaCode");
+        demoBuilder.init(document.getElementById("codeFrame").src, "uiCode");
+        demoBuilder.init("/fileupload/java_code/FileUploadController.java", "javaCode");
 
         var disqus_shortname = 'icodingclubfileupload';
         (function() {
