@@ -26,6 +26,11 @@
     #panel{
         cursor: move;
     }
+
+    button{
+        padding: 4px 10px;
+        font-size: 1em;
+    }
     </style>
 </head>
 
@@ -41,11 +46,21 @@
                 <img id="crop_result" />
             </div>
         </div>
+
+           <div class="tableRow">
+            <div class="tableCell">
+                Zoom it:  <input id='scaleSlider' type='range' min='1' max='3.0' step='0.01' value='1.0' />
+                 
+            </div>
+            <div class="tableCell">
+                <button id="cropImgButtn">Crop It</button>
+            </div>
+        </div>
     </div>
 
 
-    <button id="cropImgButtn">Crop</button>
-    <input id='scaleSlider' type='range' min='1' max='3.0' step='0.01' value='1.0' />
+   
+   
 
     </div>
 

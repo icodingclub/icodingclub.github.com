@@ -154,6 +154,7 @@ article.article {
 }
 article.article .heading {
     padding: 10px;
+     padding-bottom: 0;
 }
 article.article .heading h1 {
     margin: 0;
@@ -187,7 +188,7 @@ article.article .content .tech {
 }
 article.article .content .readMore {
     margin: 1px 2px 5px 2px;
-    font-size: .9em;
+    font-size: .8em;
     text-transform: uppercase;
     color: #237DAC;
     vertical-align: bottom;
@@ -269,11 +270,6 @@ iframe {
 
 .articleTitle{
 
-    color: #1671B4;
-    background-color: rgb(248,248,248);
-    padding: 15px;
-    margin: 10px 0 40px 0;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1.5em;
+    margin: 10px 0 20px 0;
+    font-size: 1.3em;
 }
