@@ -1,25 +1,6 @@
+<center><h3>This is content hosting place</h3></center>
+<center><h3>go to below website to access content in better way</h3></center>
+<center><h3>go to below website to access content in better way</h3></center>
+<center><a href="http://icodingclub.github.io/"><h2>icodingclub.github.io</h2></a></center>
 
-
-
-
-<!DOCTYPE html>
-<html lang="en" class="   ">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Language" content="en">
-    
-    
-    <title>icodingclub.github.com/README.md</title>
- 
-
-  </head>
-
-
-  <body>
-      <h1>Chk this</h1>
-      
-      
-  </body>
-</html>
 
