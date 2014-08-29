@@ -3,7 +3,7 @@ var articleCatagorys = [{
     displayName: "UI + JAVA Article",
     articles: [{
         heading: "Pass by Value vs Pass by reference: Javascript and Java....and C",
-        desc: "This article explanation, what happen when you create an Object and reference in Javascript or Java.<br>How pass by value vs pass by reference in Javascript and Java work.<br>Its take you back in History in C language world and explain how's this concept started and evolved.",
+        desc: "This article explanation, what happen when you create an Object and reference in Javascript or Java.How pass by value vs pass by reference in Javascript and Java work.Its take you back in History in C language world and explain how's this concept started and evolved.",
         link: "/passByValVsRef/Pass-By-Value-Vs-pass-by-reference.html",
         image: "passByValRef.png"
 
