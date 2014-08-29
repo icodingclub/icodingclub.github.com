@@ -124,6 +124,7 @@ a:visited {
 }
 section.main {
     display: table-cell;
+
     font-size: 105%;
     padding: 15px;
     vertical-align: top;
@@ -270,7 +271,7 @@ iframe {
     font-size: 1.3em;
 }
 .articleSection {
-    min-width: 350px;
+    min-width: 550px;
     margin: 8px;
     vertical-align: top;
     display: table;
