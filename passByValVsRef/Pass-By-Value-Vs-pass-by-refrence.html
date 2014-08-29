@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Step by step tutorial or example or demo of to explain how pass by value and pass by rerence work in java and javascript. It go back in history to explain origi of it with example of C language.">
-    <title>Pass by value or refrence: javascript and java</title>
+    <title>Pass by value or reference: javascript and java</title>
     <link rel="stylesheet" type="text/css" href="/resource/css/base.css">
     <link rel="shortcut icon" href="/resource/image/favicon.png" />
 </head>
@@ -33,59 +33,57 @@
                     <span class="arrow"></span>
                 </h1>
                 <br>
-                <h1 class="articleTitle">Pass-by-Value vs Pass-by-refrence: Javascript and Java</h1>
-                <p>Later or sooner, you will be asked, "Hey, Is this langauge is pass-by-value or pass-by-refrence".</p>
-                <p>Even after years, people reply something like, "It's pass by value......or wait a minute...it's pass by refrence....Hey you know what, i read it some xyz blog, it's always be pass by value".</p>
+                <h1 class="articleTitle">Pass-by-Value vs Pass-by-reference: Javascript and Java</h1>
+                <p>Later or sooner, you will be asked, "Hey, Is this language is pass-by-value or pass-by-reference".</p>
+                <p>Even after years, people reply something like, "It's pass by value......or wait a minute...it's pass by reference....Hey you know what, i read it some xyz blog, it's always be pass by value".</p>
                 <p>This article will help you to understand that./p>
 
             </section>
-
             <section>
                 <h1 class="section-heading">How it work
                     <span class="arrow"></span>
                 </h1>
                 <br/>
-                <h3>So what is it?....pass by value or pass by refrence?</h3>
+                <h3>So what is it?....pass by value or pass by reference?</h3>
 
-                <p>In Javascript and java, we have two types, premitive type and refrence/Object type</p>
-                <p>premitive type is easy, it allways be pass by value, simple and clear. Hemce we are not going to discuss that</p>
-                <p>What about refrence?</p>
-                <p>For all theoritcal reason(interview and test), just say <b>pass by value</b>
+                <p>In Javascript and Java, we have two types, primitive type and reference/Object type</p>
+                <p>primitive type is easy, it always be pass by value, simple and clear. Hence we are not going to discuss that</p>
+                <p>What about reference?</p>
+                <p>For all theoretical reason(interview and test), just say <b>pass by value</b>
                 </p>
-                <p>However, for all practical resaon, you have to go bit deeper, this article is all about that</p>
+                <p>However, for all practical reason, you have to go bit deeper, this article is all about that</p>
                 <br/>
-                <p>Belive me, above statement is not important, what important is to understand How this all work!</p>
+                <p>Believe me, above statement is not important, what important is to understand How this all work!</p>
 
-                <p>Let's understand first, What actually happen when we create Object and refrence.</p>
+                <p>Let's understand first, What actually happen when we create Object and reference.</p>
                 <p>Let's go with example where you have a TV in your home, its far and not many button on it. To access it, you need a remote.</p>
-                <p>A refrence of objcet is nothing but high-tech, re-configurable remote, which can point to your TV, but when re-configured, it can point to another TV, but at a time only one TV and TV is nothing but the Object, sitting deep down in Heap.</p>
+                <p>A reference of Objcet is nothing but high-tech, re-configurable remote, which can point to your TV, but when re-configured, it can point to another TV, but at a time only one TV and TV is nothing but the Object, sitting deep down in Heap.</p>
                 <br>
                 <br>
                 <br>
 
-                <p><b>Step 1:</b> You create a TV(by calling new Object()), you configured this TV with remote1(by assigning Object to refrence)
-                    <p>At this stage, you can change the volume of TV by using remote (You can change the value of Object by refrence)</p>
+                <p><b>Step 1:</b> You create a TV(by calling new Object()), you configured this TV with remote1(by assigning Object to reference)
+                    <p>At this stage, you can change the volume of TV by using remote (You can change the value of Object by reference)</p>
                     <img src="img1.png" />
 
                     <br>
-                    <p>Step 2: Now You want a separete remote, you create a copy of it, at this time both remote has power to change the volume of TV, mind it none of the remote is a TV, breaking a remote will not affect TV(as assigning refrence to null, will not change the object or assigned it to null)</p>
+                    <p>Step 2: Now You want a separate remote, you create a copy of it, at this time both remote has power to change the volume of TV, mind it none of the remote is a TV, breaking a remote will not affect TV(as assigning reference to null, will not change the object or assigned it to null)</p>
                     <img src="img2.png" />
 
-                    <p>Step 3: because of some reason, you configured second remote to second TV (assigning remote2 refrence to new TV Object)</p>
+                    <p>Step 3: because of some reason, you configured second remote to second TV (assigning remote2 reference to new TV Object)</p>
                     <p>At this stage relation of both remote are gone, Each can control there own TV but not of each others. if remote2 get destroyed(remote2 = null) and then TV2 get destroyed(2nd TV object get destroyed), remote1 and TV1 will stil work fine.</p>
                     <img src="img3.png" />
 
             </section>
             <section>
-                <h1 class="section-heading">Code walkthrough
+                <h1 class="section-heading">Code walk through
                     <span class="arrow"></span>
                 </h1>
                 <br/>
 
                 <p>Everything we discussed above, can be connected in code</p>
                 <p>For simplicity, i have taken similar use case of TV, with a vol property.</p>
-                <p>Both in Javascript and Java code, we are passing refrence to other function/method and try to change the vol property.</p>
-
+                <p>Both in Javascript and Java code, we are passing reference to other function/method and try to change the vol property.</p>
                 <br>
                 <br>
                 <br>
@@ -98,7 +96,7 @@
                 <pre class="prettyprint lang-js">
 
 /**
- * A simple Object/function, we call it TV, with propert vol
+ * A simple Object/function, we call it TV, with property vol
  */
 function TV(vol) {
     this.vol = vol;
@@ -110,7 +108,7 @@ duplicate(remote1);
 console.log("After Duplicate: ", remote1.vol);              //Print 20
 
 /**
- * This is pass by value, but work like pass-by-refrence i.e. whatever changes you will do here to remote2 will affet the main TV
+ * This is pass by value, but work like pass-by-reference i.e. whatever changes you will do here to remote2 will affet the main TV
  * i.e. remote1 will also reflect same.
  */
 function duplicate(remote2) {
@@ -120,13 +118,13 @@ function duplicate(remote2) {
 
 </pre>
 
-                <p>See what happen when we assign another object to refrence, it's lost all connection with initial Object</p>
-                <p>Point to note, first refrence(remote1) is stil pointing to first Object and it's unchanged value</p>
+                <p>See what happen when we assign another object to reference, it's lost all connection with initial Object</p>
+                <p>Point to note, first reference(remote1) is still pointing to first Object and it's unchanged value</p>
 
                 <pre class="prettyprint lang-js">
 
     /**
- * A simple Object/function, we call it TV, with propert vol
+ * A simple Object/function, we call it TV, with property vol
  */
 function TV(vol) {
     this.vol = vol;
@@ -187,10 +185,7 @@ public class TestPassByValVsRef {
 
 }
 
-
-    </pre>
-
-
+</pre>
                 <pre class="prettyprint lang-java">
 
 package com.passbyvalvsref;
@@ -226,12 +221,24 @@ public class TestPassByValVsRef {
     }
 
 }
-
-     </pre>
+</pre>
 
 
                 <br/>
                 <br/>
+            </section>
+            <section>
+                <h1 class="section-heading">Conclusion
+                    <span class="arrow"></span>
+                </h1>
+
+                <p>For all technical reason(Interview and test), Javascript and java are <b>pass by value</b> language</p>
+                <p>When we pass reference, for all practical reason, things behave like pass by reference because we pass the value of memory location ob Object in heap.</p>
+                <p>Actually, calling reference pass "pass by value", sound wrong and give wrong signal, because traditionally pass by value does give you power to update Object which intern reflect in all reference.</p>
+                <p>Calling reference pass "pass by reference", sounds more correct as it let you update the Object which intern reflect in all reference.</p>
+                <p>With all these confusion best is, just know whats going on...and let technical jargon for Interview and test.</p>
+
+
             </section>
             <section>
                 <h1 class="section-heading">History of this debate, Let us 'C'
@@ -239,9 +246,9 @@ public class TestPassByValVsRef {
                 </h1>
                 <br/>
                 <p>Any one from C background, will ask you this one day</p>
-                <p>Why??...bacuse C started pass-by-val and pass-by-ref concept and It does it well</p>
-                <p>It is clear in code when you are doing what and why you doing so..</p>
-                <p>i tried to have similar code what we have seen so far, struct is closet o Object in C</p>
+                <p>Why??...because C started pass-by-value and pass-by-reference concept and It does it well</p>
+                <p>It is clear in code when you are doing what and why you doing so.</p>
+                <p>I tried to have similar code what we have seen so far in C (struct is closet o Object in C) and things are so clear here, we just spread confusion in all other modern languages.</p>
 
                 <br/>
                 <pre class="prettyprint lang-c">
@@ -294,6 +301,7 @@ int main()
 }
       </pre>
             </section>
+
             <section>
                 <h1 class="section-heading">comments
                     <span class="arrow"></span>
