@@ -34,8 +34,8 @@
                 </h1>
                 <br>
                 <h1 class="articleTitle">HTML5 AJAX File upload (Image or HTML5 Canvas data) to Java backend</h1>
-                <p>Step by step tutorial and demo of how you can upload or read  an image file from your local file system, display it as image and HTML5 Canvas and upload it to java backend.</p>
-                <p> This article can also be used a tutorial for new HTML5 api for multipart upload or FormData upload and java7 api for MultipartConfig upload. this article also explained how a HTML5 canvas can be exported as javascript BLOB object and then uploaded to server.</p>
+                <p>Step by step tutorial and demo of how you can upload or read an image file from your local file system, display it as image and HTML5 Canvas and upload it to java backend.</p>
+                <p>This article can also be used a tutorial for new HTML5 api for multipart upload or FormData upload and java7 api for MultipartConfig upload. this article also explained how a HTML5 canvas can be exported as javascript BLOB object and then uploaded to server.</p>
 
             </section>
 
@@ -129,48 +129,7 @@
                 <div id="disqus_thread"></div>
             </section>
         </section>
-        <aside class="add">
-            <section>
-                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="3275485060"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </section>
-            <section>
-                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="3275485060"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </section>
-
-            <section>
-                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="4945204669"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-
-            </section>
-
-            <section>
-                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="3275485060"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </section>
-            <section>
-                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="3275485060"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </section>
-            <section>
-                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-4486466384668437" data-ad-slot="7322614664"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </section>
-
-
+        <aside class="add" id="addContainer">
         </aside>
         </div>
         <!-- tableRow -->
@@ -184,17 +143,9 @@
         <script type="text/javascript">
         demoBuilder.init(document.getElementById("codeFrame").src, "uiCode");
         demoBuilder.init("/fileupload/java_code/FileUploadController.java", "javaCode");
-
-        var disqus_shortname = 'icodingclubfileupload';
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
+        addMgr.init();
+        disqMgr.init('icodingclubfileupload');
         </script>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </body>
 

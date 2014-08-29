@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Step by step tutorial or example or demo of to explain how pass by value and pass by rerence work in java and javascript. It go back in history to explain origi of it with example of C language.">
+    <title>Pass by value or refrence: javascript and java</title>
+    <link rel="stylesheet" type="text/css" href="/resource/css/base.css">
+    <link rel="shortcut icon" href="/resource/image/favicon.png" />
+</head>
+
+<body>
+    <header>
+        <section class="author">
+            <div class="info">
+                <h1>Praveen Singh</h1>
+                <h2>-Author</h2>
+            </div>
+            <a href="/about.html">
+                <div class="pic"></div>
+            </a>
+        </section>
+        <a class="logo" href="http://icodingclub.github.com/">
+            <h1>&lt;icodingclub/&gt;
+                <h1>
+        </a>
+    </header>
+    <div id="tableContainer">
+        <section class="main demo-wrraper">
+
+            <section>
+                <h1 class="section-heading">Introduction
+                    <span class="arrow"></span>
+                </h1>
+                <br>
+                <h1 class="articleTitle">Pass-by-Value vs Pass-by-refrence: Javascript and Java</h1>
+                <p>Later or sooner, you will be asked, "Hey, Is this langauge is pass-by-value or pass-by-refrence".</p>
+                <p>Even after years, people reply something like, "It's pass by value......or wait a minute...it's pass by refrence....Hey you know what, i read it some xyz blog, it's always be pass by value".</p>
+                <p>This article will help you to understand that./p>
+
+            </section>
+
+            <section>
+                <h1 class="section-heading">How it work
+                    <span class="arrow"></span>
+                </h1>
+                <br/>
+                <h3>So what is it?....pass by value or pass by refrence?</h3>
+
+                <p>In Javascript and java, we have two types, premitive type and refrence/Object type</p>
+                <p>premitive type is easy, it allways be pass by value, simple and clear. Hemce we are not going to discuss that</p>
+                <p>What about refrence?</p>
+                <p>For all theoritcal reason(interview and test), just say <b>pass by value</b>
+                </p>
+                <p>However, for all practical resaon, you have to go bit deeper, this article is all about that</p>
+                <br/>
+                <p>Belive me, above statement is not important, what important is to understand How this all work!</p>
+
+                <p>Let's understand first, What actually happen when we create Object and refrence.</p>
+                <p>Let's go with example where you have a TV in your home, its far and not many button on it. To access it, you need a remote.</p>
+                <p>A refrence of objcet is nothing but high-tech, re-configurable remote, which can point to your TV, but when re-configured, it can point to another TV, but at a time only one TV and TV is nothing but the Object, sitting deep down in Heap.</p>
+                <br>
+                <br>
+                <br>
+
+                <p><b>Step 1:</b> You create a TV(by calling new Object()), you configured this TV with remote1(by assigning Object to refrence)
+                    <p>At this stage, you can change the volume of TV by using remote (You can change the value of Object by refrence)</p>
+                    <img src="img1.png" />
+
+                    <br>
+                    <p>Step 2: Now You want a separete remote, you create a copy of it, at this time both remote has power to change the volume of TV, mind it none of the remote is a TV, breaking a remote will not affect TV(as assigning refrence to null, will not change the object or assigned it to null)</p>
+                    <img src="img2.png" />
+
+                    <p>Step 3: because of some reason, you configured second remote to second TV (assigning remote2 refrence to new TV Object)</p>
+                    <p>At this stage relation of both remote are gone, Each can control there own TV but not of each others. if remote2 get destroyed(remote2 = null) and then TV2 get destroyed(2nd TV object get destroyed), remote1 and TV1 will stil work fine.</p>
+                    <img src="img3.png" />
+
+            </section>
+            <section>
+                <h1 class="section-heading">Code walkthrough
+                    <span class="arrow"></span>
+                </h1>
+                <br/>
+
+                <p>Everything we discussed above, can be connected in code</p>
+                <p>For simplicity, i have taken similar use case of TV, with a vol property.</p>
+                <p>Both in Javascript and Java code, we are passing refrence to other function/method and try to change the vol property.</p>
+
+                <br>
+                <br>
+                <br>
+                <h1>Javascript</h1>
+                <br>
+
+
+
+
+                <pre class="prettyprint lang-js">
+
+/**
+ * A simple Object/function, we call it TV, with propert vol
+ */
+function TV(vol) {
+    this.vol = vol;
+}
+
+var remote1 = new TV(10);
+console.log("Initial test: ", remote1.vol);                 // Print 10
+duplicate(remote1);
+console.log("After Duplicate: ", remote1.vol);              //Print 20
+
+/**
+ * This is pass by value, but work like pass-by-refrence i.e. whatever changes you will do here to remote2 will affet the main TV
+ * i.e. remote1 will also reflect same.
+ */
+function duplicate(remote2) {
+    remote2.vol = 20;
+    console.log("In Duplicate: ", remote2.vol);             //Print 20
+}
+
+</pre>
+
+                <p>See what happen when we assign another object to refrence, it's lost all connection with initial Object</p>
+                <p>Point to note, first refrence(remote1) is stil pointing to first Object and it's unchanged value</p>
+
+                <pre class="prettyprint lang-js">
+
+    /**
+ * A simple Object/function, we call it TV, with propert vol
+ */
+function TV(vol) {
+    this.vol = vol;
+}
+
+var remote1 = new TV(10);
+console.log("Initial test: ", remote1.vol);                 // Print 10
+duplicate(remote1);
+console.log("After Duplicate: ", remote1.vol);              //Print 10
+
+
+function duplicate(remote2) {
+    remote2 = new TV(10); //You just have created a new TV, broke the link
+    remote2.vol = 20;
+    console.log("In Duplicate: ", remote2.vol);             //Print 20
+}
+
+    </pre>
+                <br/>
+                <br/>
+                <br/>
+                <h1>Java</h1>
+                <br>
+
+                <p>Below code is in Java, but concept is as similar to Javascript as it could be</p>
+
+                <pre class="prettyprint lang-java">
+
+package com.passbyvalvsref;
+
+class TV {
+
+    public String vol;
+
+    public TV(String vol) {
+        this.vol = vol;
+
+    }
+}
+
+public class TestPassByValVsRef {
+
+    private static void duplicate(TV remote2) {
+        remote2.vol = "20";
+        System.out.println("In Duplicate: " + remote2.vol);     // Print 20
+
+    }
+
+    public static void main(String[] args) {
+
+        TV remote1 = new TV("10");
+        System.out.println("Initial test: " + remote1.vol);     // Print 10
+        
+        duplicate(remote1);
+        System.out.println("After Duplicate: "+ remote1.vol);   //Print 20
+
+    }
+
+}
+
+
+    </pre>
+
+
+                <pre class="prettyprint lang-java">
+
+package com.passbyvalvsref;
+
+class TV {
+
+    public String vol;
+
+    public TV(String vol) {
+        this.vol = vol;
+
+    }
+}
+
+public class TestPassByValVsRef {
+
+    private static void duplicate(TV remote2) {
+        remote2 = new TV("10"); //You just have created a new TV, broke the
+        // link
+        remote2.vol = "20";
+        System.out.println("In Duplicate: " + remote2.vol);      // Print 10
+
+    }
+
+    public static void main(String[] args) {
+
+        TV remote1 = new TV("10");
+        System.out.println("Initial test: " + remote1.vol);     // Print 10
+        
+        duplicate(remote1);
+        System.out.println("After Duplicate: "+ remote1.vol);   //Print 20
+
+    }
+
+}
+
+     </pre>
+
+
+                <br/>
+                <br/>
+            </section>
+            <section>
+                <h1 class="section-heading">History of this debate, Let us 'C'
+                    <span class="arrow"></span>
+                </h1>
+                <br/>
+                <p>Any one from C background, will ask you this one day</p>
+                <p>Why??...bacuse C started pass-by-val and pass-by-ref concept and It does it well</p>
+                <p>It is clear in code when you are doing what and why you doing so..</p>
+                <p>i tried to have similar code what we have seen so far, struct is closet o Object in C</p>
+
+                <br/>
+                <pre class="prettyprint lang-c">
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct TV {
+  int vol;
+};
+ 
+void duplicate(struct TV remote2) {                 //Pass by value, crystall clear
+    remote2.vol = 20;
+    printf("In Duplicate: %d\n", remote2.vol);      //Print 20
+}
+ 
+int main()
+{
+    struct TV remote1;
+    remote1.vol = 10;  
+    printf("Initial test: %d\n", remote1.vol);      //Print 10
+    duplicate(remote1);
+    printf("After Duplicate: %d\n", remote1.vol);   //Print 10
+}
+
+     </pre>
+
+
+                <pre class="prettyprint lang-c">
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+struct TV {
+  int vol;
+};
+ 
+void duplicate(struct TV *remote2) {                //Pass by ref, crystall clear
+    remote2->vol = 20;
+    printf("In Duplicate: %d\n", remote2->vol);     //Print 20
+}
+ 
+int main()
+{
+    struct TV remote1;
+    remote1.vol = 10;  
+    printf("Initial test: %d\n", remote1.vol);      //Print 10
+    duplicate(&remote1);                            // passing address
+    printf("After Duplicate: %d\n", remote1.vol);   //Print 20
+}
+      </pre>
+            </section>
+            <section>
+                <h1 class="section-heading">comments
+                    <span class="arrow"></span>
+                </h1>
+                <div id="disqus_thread"></div>
+            </section>
+        </section>
+        <aside class="add" id="addContainer">
+        </aside>
+    </div>
+    </div>
+    <footer id="footer">
+    </footer>
+
+
+    <script type="text/javascript" src="/resource/js/base.js"></script>
+    <script type="text/javascript">
+    addMgr.init();
+    disqMgr.init('icodingclubfileupload');
+    </script>
+
+    <script async src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+
+</body>
+
+</html>

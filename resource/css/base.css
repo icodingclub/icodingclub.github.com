@@ -1,14 +1,8 @@
 /* reset browser styles */
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+h1,h2,h3,h4,h5{
     margin: 0;
     padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block;
 }
 body {
     line-height: 1.2;
@@ -43,6 +37,7 @@ header {
 div#tableContainer {
     display: table;
     border-spacing: 8px;
+    width: 90%;
     max-width: 2000px;
     border-collapse: collapse;
     margin: 4px;
@@ -52,7 +47,7 @@ div#tableRow {
     display: table-row;
 }
 h1, h2, h3 {
-    font-family: Arial, "Lucida Grande", sans-serif;
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
     color: #333333;
 }
 h1 {
@@ -134,6 +129,10 @@ section.main {
     vertical-align: top;
     background-color: #FFFFFF;
 }
+section p, ul li {
+    font-size: 15px;
+    margin: 5px 0;
+}
 aside.add {
     display: table-cell;
     padding: 2px 0 0 10px;
@@ -154,7 +153,7 @@ article.article {
 }
 article.article .heading {
     padding: 10px;
-     padding-bottom: 0;
+    padding-bottom: 0;
 }
 article.article .heading h1 {
     margin: 0;
@@ -238,7 +237,7 @@ iframe {
     width: 50% !important;
 }
 .author {
-    margin:15px;
+    margin: 15px;
     float: right;
 }
 .author .info {
@@ -250,7 +249,7 @@ iframe {
 .author .info h1 {
     font-size: 1.2em;
     color: #FFFFFF;
-        text-align: right;
+    text-align: right;
 }
 .author .info h2 {
     font-size: .7em;
@@ -265,11 +264,47 @@ iframe {
     margin: 5px;
     margin-right: 10px;
     display: inline-block;
-
 }
-
-.articleTitle{
-
+.articleTitle {
     margin: 10px 0 20px 0;
     font-size: 1.3em;
+}
+.articleSection {
+    min-width: 350px;
+    background-color: rgba(238, 238, 238, 0.3);
+    margin: 8px;
+    vertical-align: top;
+    border-left: 5px solid #69c773;
+    display: table;
+    border-spacing: 20px;
+    width: 98%;
+}
+.articleSection article {
+    display: table-row;
+    border-bottom: 15px solid white;
+}
+.articleSection article div {
+    display: table-cell;
+    vertical-align: top;
+    padding: 8px;
+}
+.articleSection article .articleImg{
+    width: 140px;
+}
+.articleSection article .articleImg img {
+    border: 5px solid rgba(238, 238, 238, 0.9);
+}
+.articleSection article .articleBody {
+    border: 15px;
+}
+.articleSection article .articleBody h1 {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+.articleSection article .articleBody p {
+    font-size: .8em;
+}
+.articleSection article .articleBody .readMore {
+    font-size: .8em;
+    text-transform: uppercase;
 }
