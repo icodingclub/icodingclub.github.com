@@ -9,13 +9,13 @@ var articleCatagorys = [{
 
     }, {
         heading: "HTML5 AJAX File upload (Image or HTML5 Canvas data) to Java backend",
-        desc: "Let you crop image with flexibility to select any area.",
+        desc: "This article explains how you can upload or read an image file from your local file system, display it as image and HTML5 Canvas and upload it to java backend.I am using new HTML5 api for multipart upload or FormData upload and java7 api for MultipartConfig upload.",
         link: "/fileupload/file-upload-ajax.html",
         image: "image-upload.png"
 
     }, {
         heading: "Tiles 3 with Spring 3 with JSP or FTL view",
-        desc: "Step by step tutorial of tiles3 using Spring3, with option of both JSP and FTL view.",
+        desc: "Step by step tutorial of tiles3 web application using Spring3. I have build it with JSP and FTL view.",
         link: "http://icodingclub.blogspot.in/2013/12/tutorial-tiles-3-with-spring-3-with-jsp.html",
         image: "tiles3.png"
 
@@ -25,13 +25,13 @@ var articleCatagorys = [{
     displayName: "UI Article",
     articles: [{
         heading: "HTML5 Canvas Image cropper: Flexible selection approch",
-        desc: "Let you crop image with flexibility to select any area.",
+        desc: "Let you crop image with flexibility to select any area on image by dragging the mouse on image. I have built it with pure Javascript and HTML5 apis. To upload file on server Java has been used.",
         link: "/imagecropper/imagecropper-flex-sel.html",
         image: "image_flex_crop.png"
 
     }, {
         heading: "HTML5 Canvas Image cropper: Fixed selection approch",
-        desc: "Let you crop image, but with restriction of aspect ratio.",
+        desc: "Let you crop image, but with restriction of aspect ratio. You can pan and zoom the image as you need before cropping.I have built it with pure Javascript and HTML5 apis. To upload file on server Java has been used.",
         link: "/imagecropper/imagecropper-fixed-sel.html",
         image: "image_crop_fixed.png"
 
