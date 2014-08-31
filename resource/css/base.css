@@ -87,7 +87,7 @@ a:visited {
 }
 .logo h1 {
     color: #FFFFFF;
-    font-size: 4em;
+    font-size: 3.5em;
     line-height: 2em;
     font-family: "Courier New", "Courier", monospace;
 }
@@ -139,7 +139,6 @@ aside.add {
     padding: 2px 0 0 10px;
     vertical-align: top;
     width: 315px;
-    background-color: #f4f4f4;
 }
 .articleTable {
     border-spacing: 20px;
@@ -262,7 +261,7 @@ iframe {
     height: 80px;
     border-radius: 40px;
     background: url(/resource/image/me_small.png) no-repeat right top;
-    margin: 5px;
+    margin: 0;
     margin-right: 10px;
     display: inline-block;
 }
@@ -278,16 +277,21 @@ iframe {
     border-spacing: 20px;
     width: 98%;
 }
+.indexPageBody{
+   background-color: white !important; 
+}
+.indexPageContainer{
+   background-color: rgba(238, 238, 238, 0.5) !important; 
+}
 .articleSection article {
     display: table-row;
-    background-color: rgba(238, 238, 238, 0.3);
-    border-left: 5px solid #69c773;
-    border-bottom: 15px solid white;
-    box-shadow: 0px 1px 4px 0px rgba(238, 238, 238, 0.1);
+   background-color: white;
+  /*  background-color: rgba(238, 238, 238, 0.3);*/
+    border-bottom: 10px solid rgba(238, 238, 238, 0.3);
 }
-.articleSection article:hover {
+/*.articleSection article:hover {
     background-color: rgba(238, 238, 238, 0.8);
-}
+}*/
 .articleSection article div {
     display: table-cell;
     vertical-align: top;
@@ -297,7 +301,7 @@ iframe {
     width: 140px;
 }
 .articleSection article .articleImg img {
-    border: 5px solid rgba(238, 238, 238, 0.9);
+    border: 5px solid rgba(238, 238, 238, 0.7);
 }
 .articleSection article .articleBody {
     border: 15px;
@@ -306,6 +310,11 @@ iframe {
     font-size: 1em;
     text-transform: uppercase;
 }
+.articleSection article .articleBody h1:hover {
+   color: #237DAC;
+    text-decoration: underline;
+}
+
 .articleSection article .articleBody p {
     font-size: .8em;
 }
