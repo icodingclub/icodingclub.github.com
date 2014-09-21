@@ -82,7 +82,7 @@
                     </ul>
                 </blockquote>
                 <div class="path">
-                    <span>Path:</span>DOJO_TEST/app/simple/hellow-world.html</div>
+                    <span>Path:</span>DOJO_TEST/app/simple/hello-world.html</div>
                 <pre class="prettyprint lang-html">
  &lt;!DOCTYPE html&gt;
  &lt;html&gt;
@@ -127,7 +127,7 @@
                 </blockquote>
 
                 <div class="path">
-                    <span>Path:</span>DOJO_TEST/app/simple/hellow-world.html</div>
+                    <span>Path:</span>DOJO_TEST/app/simple/hello-world.html</div>
                 <pre class="prettyprint lang-html">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -160,7 +160,7 @@
 
  on(button, "click", function() {
  console.log("Button press");
- target.innerHTML = "Hellow...thanks for pressing button!"
+ target.innerHTML = "Hello...thanks for pressing button!"
  })
 
  });
@@ -186,7 +186,7 @@
                 </blockquote>
 
                 <div class="path">
-                    <span>Path:</span>DOJO_TEST/app/simple/hellow-world.html</div>
+                    <span>Path:</span>DOJO_TEST/app/simple/hello-world.html</div>
                 <pre class="prettyprint lang-html">
 
 &lt;!DOCTYPE html&gt;
@@ -222,7 +222,7 @@
  * it call the callback function, which go as second argument.
  */
  require([
- "app/simple/HellowWorld"
+ "app/simple/HelloWorld"
  ],
  function(HelloWorld) {
 
@@ -237,7 +237,7 @@
                 </pre>
 
                 <div class="path">
-                    <span>Path:</span>DOJO_TEST/app/simple/HellowWorld.js</div>
+                    <span>Path:</span>DOJO_TEST/app/simple/HelloWorld.js</div>
                 <pre class="prettyprint lang-js">
 /**
  * define() is a foundational AMD API.
@@ -258,7 +258,7 @@ define([
      */
     return declare(null, {
 
-        hellowText: "Hello...thanks for pressing button!",
+        helloText: "Hello...thanks for pressing button!",
 
         init: function() {
             var button = query("#testBttn")[0],
@@ -266,7 +266,7 @@ define([
 
             on(button, "click", function() {
                 console.log("Button pressed");
-                target.innerHTML = this.hellowText;
+                target.innerHTML = this.helloText;
             }.bind(this))
         }
     });
