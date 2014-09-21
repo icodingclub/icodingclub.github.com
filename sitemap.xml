@@ -3,19 +3,19 @@
     <url>
         <loc>http://icodingclub.github.io/dojo/hello-world-by-dojo-amd.html</loc>
         <lastmod>2014-09-22</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://icodingclub.github.io/dojo/dojo-amd-declare-inheritance.html</loc>
         <lastmod>2014-09-22</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://icodingclub.github.io/dojo/dojo-amd-template-based-widget.html</loc>
         <lastmod>2014-09-22</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
 
@@ -23,43 +23,43 @@
     <url>
         <loc>http://icodingclub.github.io/passByValVsRef/Pass-By-Value-Vs-pass-by-reference.html</loc>
         <lastmod>2014-08-29</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://icodingclub.github.io/imagecropper/imagecropper-flex-sel.html</loc>
         <lastmod>2014-07-31</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://icodingclub.github.io/imagecropper/imagecropper-fixed-sel.html</loc>
         <lastmod>2014-07-31</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://icodingclub.github.io/fileupload/file-upload-ajax.html</loc>
         <lastmod>2014-07-31</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://icodingclub.github.io/treewidget/treewidget.html</loc>
         <lastmod>2014-07-31</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://icodingclub.github.io/accordionwidget/accordion-single-pane.html</loc>
         <lastmod>2014-07-31</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>http://icodingclub.github.io/accordionwidget/accordion-multi-pane.html</loc>
         <lastmod>2014-07-31</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
 </urlset>
