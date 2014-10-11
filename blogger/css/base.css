@@ -272,7 +272,8 @@ iframe {
 }
 .articleSection article {
     display: table-row;
-    border-bottom: 10px solid rgba(238, 238, 238, .3);
+     background-color: rgba(238, 238, 238, 0.2) !important;
+    border-bottom: 10px solid white !important;
     background-color: white
 }
 .articleSection article div {
