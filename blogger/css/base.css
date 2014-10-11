@@ -217,7 +217,7 @@ iframe {
 .articleSection article {
     display: table-row;
     border-left:7px solid #69c773;
-    border-left:7px solid white;
+    border-bottom:7px solid white;
 }
 
 .articleSection article div {
