@@ -9,7 +9,7 @@ var articleCatagorys = [ {
         }, {
             heading: "HTML5 AJAX File upload (Image or HTML5 Canvas data) to Java backend",
             desc: "This article explains how you can upload or read an image file from your local file system, display it as image and HTML5 Canvas and upload it to java backend.I am using new HTML5 api for multipart upload or FormData upload and java7 api for MultipartConfig upload.",
-            link: "http://icodingclub.github.io/fileupload/file-upload-ajax.html",
+            link: "http://icodingclub.blogspot.in/2014/10/html5-ajax-file-upload-image-or-html5.html",
             image: "image-upload.png"
         }, {
             heading: "Tiles 3 with Spring 3 with JSP or FTL view",
