@@ -216,9 +216,10 @@ iframe {
 }
 .articleSection article {
     display: table-row;
-    border-left:7px solid #69c773;
-    border-bottom:7px solid white;
+    border-left:6px solid #69c773;
+    border-bottom:15px solid white;
 }
+
 
 .articleSection article div {
     display: table-cell;
