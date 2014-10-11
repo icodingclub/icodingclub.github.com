@@ -1,0 +1,337 @@
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0
+}
+body {
+    line-height: 1.2
+}
+ol {
+    margin-left: 50px;
+    padding-left: 1.4em;
+    list-style: decimal
+}
+ol li {
+    font-size: .9em
+}
+ul {
+    padding-left: 1.4em;
+    list-style: square
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse
+}
+body {
+    font-family: Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    background-color: #eef0f8;
+    background-color: #eef0f8
+}
+header {
+    margin: 2px;
+    padding-left: 80px;
+    background-color: #1086c1
+}
+div#tableContainer {
+    display: table;
+    width: 90%;
+    max-width: 2000px;
+    margin: 4px;
+    margin-left: 80px;
+    border-spacing: 8px;
+    border-collapse: collapse
+}
+div#tableRow {
+    display: table-row
+}
+h1, h2, h3 {
+    font-family: Helvetica, Arial, 'Lucida Grande', sans-serif;
+    color: #333
+}
+h1 {
+    font-size: 1.4em
+}
+h2 {
+    font-size: 1.2em
+}
+h3 {
+    font-size: 1em;
+    color: #800000
+}
+a:link {
+    text-decoration: none;
+    color: #237dac
+}
+a:hover {
+    text-decoration: underline;
+    color: #237dac
+}
+a:visited {
+    text-decoration: none;
+    color: #237dac
+}
+.table {
+    display: table;
+    border-collapse: separate
+}
+.tableRow {
+    display: table-row
+}
+.tableCell {
+    display: table-cell;
+    vertical-align: top
+}
+.logo:hover {
+    text-decoration: none
+}
+.logo h1 {
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: 3.5em;
+    line-height: 2em;
+    color: #fff
+}
+.section-heading {
+    font-size: 1em;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -35px;
+    padding: 6px 40px 6px 30px;
+    text-align: left;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 2px;
+    background: #e54c10;
+    background: -webkit-linear-gradient(#e54c10, #ad3608);
+    background: -moz-linear-gradient(#e54c10, #ad3608);
+    background: -o-linear-gradient(#e54c10, #ad3608);
+    background: linear-gradient(#e54c10, #ad3608)
+}
+.arrow {
+    line-height: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 1px;
+    height: 0;
+    border-top: 10px solid #ad3608;
+    border-left: 20px solid transparent
+}
+section.main {
+    font-size: 105%;
+    display: table-cell;
+    padding: 15px;
+    vertical-align: top;
+    background-color: #fff
+}
+section p, ul li {
+    font-size: 15px;
+    margin: 5px 0
+}
+aside.add {
+    display: table-cell;
+    width: 315px;
+    padding: 2px 0 0 10px;
+    vertical-align: top
+}
+.articleTable {
+    border-spacing: 20px
+}
+article.article {
+    width: 45%;
+    min-width: 350px;
+    margin: 10px 2%;
+    vertical-align: top;
+    border-left: 5px solid #69c773;
+    background-color: rgba(238, 238, 238, .3)
+}
+article.article .heading {
+    padding: 10px;
+    padding-bottom: 0
+}
+article.article .heading h1 {
+    font-size: .9em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase
+}
+article.article .image {
+    display: table-cell;
+    width: 120px;
+    vertical-align: top;
+    border: 5px solid rgba(238, 238, 238, .9)
+}
+article.article .body {
+    display: table;
+    table-layout: fixed
+}
+article.article .contentWrraper {
+    display: table-row
+}
+article.article .content {
+    display: table-cell
+}
+article.article .content .desc {
+    font-size: .9em;
+    margin: 2px 2px 5px 2px
+}
+article.article .content .tech {
+    font-size: .9em;
+    margin: 12px 2px 1px 2px
+}
+article.article .content .readMore {
+    font-size: .8em;
+    margin: 1px 2px 5px 2px;
+    vertical-align: bottom;
+    text-transform: uppercase;
+    color: #237dac
+}
+.demo-wrraper article {
+    width: 70%
+}
+footer {
+    font-size: 1.1em;
+    margin: 20px 10px 10px 10px;
+    padding: 35px;
+    text-align: center;
+    color: #efe5d0;
+    background-color: #1086c1
+}
+footer a {
+    font-size: .9em;
+    color: #efe5d0!important
+}
+footer a:visited {
+    color: #efe5d0!important
+}
+iframe {
+    border: 0
+}
+.loadingBox {
+    color: #89bdff
+}
+.codeFrame {
+    width: 100%;
+    border: 2px solid rgba(238, 238, 238, .5)
+}
+.demoPageArticle {
+    display: block;
+    width: 50%!important;
+    margin: 10px
+}
+.author {
+    float: right;
+    margin: 15px
+}
+.author .info {
+    display: inline-block;
+    margin: 30px 10px 0 0;
+    vertical-align: top;
+    color: #fff
+}
+.author .info h1 {
+    font-size: 1.2em;
+    text-align: right;
+    color: #fff
+}
+.author .info h2 {
+    font-size: .7em;
+    text-align: right;
+    color: #fff
+}
+.author .pic {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    margin-right: 10px;
+    border-radius: 40px;
+    background: url(/resource/image/me_small.png) no-repeat right top
+}
+.articleTitle {
+    font-size: 1.3em;
+    margin: 10px 0 20px 0
+}
+.articleSection {
+    display: table;
+    width: 98%;
+    min-width: 600px;
+    margin: 8px;
+    border-spacing: 20px;
+    vertical-align: top
+}
+.indexPageBody {
+    background-color: white!important
+}
+.indexPageContainer {
+    background-color: rgba(238, 238, 238, .5)!important
+}
+.articleSection article {
+    display: table-row;
+    border-bottom: 10px solid rgba(238, 238, 238, .3);
+    background-color: white
+}
+.articleSection article div {
+    display: table-cell;
+    padding: 8px;
+    vertical-align: top
+}
+.articleSection article .articleImg {
+    width: 140px
+}
+.articleSection article .articleImg img {
+    border: 5px solid rgba(238, 238, 238, .7)
+}
+.articleSection article .articleBody {
+    border: 15px
+}
+.articleSection article .articleBody h1 {
+    font-size: 1em;
+    text-transform: uppercase
+}
+.articleSection article .articleBody h1:hover {
+    text-decoration: underline;
+    color: #237dac
+}
+.articleSection article .articleBody p {
+    font-size: .8em;
+    color: #282828 margin: 3px 10px
+}
+.articleSection article .articleBody .readMore {
+    font-size: .8em;
+    text-transform: uppercase
+}
+blockquote.info {
+    border-left: 6px solid #65ddab;
+    background-color: #eee;
+    padding: 4px
+}
+blockquote.codeoutput {
+    font-family: 'Courier New', 'Courier', monospace;
+    border-left: 6px solid #ccc;
+    background-color: #f8f8f8;
+    padding: 4px
+}
+blockquote.morearticle {
+    border-left: 6px solid #ff7321;
+    background-color: #eee;
+    padding: 25px 10px;
+    font-size: 1.2em
+}
+.path {
+    font-size: .8em;
+    margin: 8px;
+    padding: 4px;
+    background-color: #eee;
+    font-style: italic;
+    font-weight: bold
+}
+.path span {
+    font-style: normal;
+    font-weight: bold;
+    color: #800000
+}

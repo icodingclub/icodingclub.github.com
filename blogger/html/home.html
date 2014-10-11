@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css"></style>
+     <link rel="stylesheet" type="text/css" href="/blogger/css/base.css">
+</head>
+
+<body>
+
+    <pre>
+		<script type="text/html-template" id="articleCatagoryTemplate">
+		    <h1 class='section-heading'>{{articleSectionHeading}}
+		        <span class='arrow'></span>
+		    </h1>
+		    <br>
+		    <section class='articleSection'>{{articles}}</section>
+
+		</script>
+
+		<script type="text/html-template" id="articleTemplate">
+			
+			 <article>
+        <div class='articleImg'>
+            <a href='{{link}}'>
+                <img src='{{iamge}}'>
+            </a>
+        </div>
+        <div class='articleBody'>
+            <a href='{{link}}'>
+                <h1>{{heading}}</h1>
+            </a>
+            <p class='desc'>{{desc}}</p>
+            <a href='{{link}}'>
+                <span class='readMore'>tutorial</span>
+            </a>
+        </div>
+    </article>
+			
+		</script>
+
+</pre>
+
+
+    <section id="articlesContainer">
+    </section>
+
+
+
+    <script type="text/javascript" src="/blogger/js/topics.js">
+    </script>
+    <script type="text/javascript" src="/blogger/js/base.js">
+    </script>
+    <script type="text/javascript">
+    articleBuilder.buildAllArticle();
+    </script>
+
+
+
+
+
+</body>
+
+</html>
