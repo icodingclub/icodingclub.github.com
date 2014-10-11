@@ -262,8 +262,8 @@ iframe {
     min-width: 600px;
     margin: 8px;
     border-spacing: 20px;
-    vertical-align: top
-    background-color: rgba(238, 238, 238, 0.2) !important;
+    vertical-align: top;
+    background-color: rgba(238, 238, 238, 0.5) !important;
 }
 .indexPageBody {
     background-color: white!important
