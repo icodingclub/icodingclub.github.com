@@ -28,3 +28,14 @@ var articleBuilder = {
         document.getElementById("articlesContainer").innerHTML = articleCatagoryHtml;
     }
 };
+
+
+var codePrettify = {
+    init: function() {
+        var body = document.getElementsByTagName('body')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst';
+        body.appendChild(script);
+    }
+};
