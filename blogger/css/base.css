@@ -163,6 +163,8 @@ article.article .image {
     vertical-align: top;
     border: 5px solid rgba(238, 238, 238, .9)
 }
+
+
 article.article .body {
     display: table;
     table-layout: fixed
@@ -276,6 +278,13 @@ iframe {
 }
 .articleSection article .articleImg img {
     border: 5px solid rgba(238, 238, 238, .7)
+}
+
+.articleSection article .articleImg img:hover {
+    display: table-cell;
+    width: 120px;
+    vertical-align: top;
+    border: 5px solid #FFE4B5;
 }
 .articleSection article .articleBody {
     border: 15px 
