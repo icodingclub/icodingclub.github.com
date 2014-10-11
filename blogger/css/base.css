@@ -263,6 +263,7 @@ iframe {
     margin: 8px;
     border-spacing: 20px;
     vertical-align: top
+    background-color: rgba(238, 238, 238, 0.2) !important;
 }
 .indexPageBody {
     background-color: white!important
@@ -272,9 +273,7 @@ iframe {
 }
 .articleSection article {
     display: table-row;
-     background-color: rgba(238, 238, 238, 0.2) !important;
     border-bottom: 10px solid white !important;
-    background-color: white
 }
 .articleSection article div {
     display: table-cell;
@@ -288,7 +287,7 @@ iframe {
     border: 5px solid rgba(238, 238, 238, .7)
 }
 .articleSection article .articleBody {
-    border: 15px
+    border: 15px 
 }
 .articleSection article .articleBody h1 {
     font-size: 1em;
