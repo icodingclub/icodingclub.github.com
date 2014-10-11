@@ -216,8 +216,12 @@ iframe {
 }
 .articleSection article {
     display: table-row;
-    border-left:6px solid #69c773;
+    border-left:6px solid white;
     border-bottom:15px solid white;
+}
+
+.articleSection article:hover {
+    border-left:6px solid #69c773;
 }
 
 
