@@ -26,8 +26,6 @@ body {
     font-size: 1em;
     margin: 0;
     padding: 0;
-    background-color: #eef0f8;
-    background-color: #eef0f8
 }
 header {
     margin: 2px;
@@ -263,23 +261,15 @@ iframe {
     margin: 8px;
     border-spacing: 20px;
     vertical-align: top;
-    background-color: rgba(238, 238, 238, 0.5) !important;
-}
-.indexPageBody {
-    background-color: white!important
-}
-.indexPageContainer {
-    background-color: rgba(238, 238, 238, .5)!important
 }
 .articleSection article {
     display: table-row;
-    
+    outline: 2px solid rgba(238, 238, 238, .9);
 }
 .articleSection article div {
     display: table-cell;
     padding: 8px;
-    vertical-align: top;
-    border-bottom: 10px solid white;
+    vertical-align: top
 }
 .articleSection article .articleImg {
     width: 140px
@@ -288,8 +278,7 @@ iframe {
     border: 5px solid rgba(238, 238, 238, .7)
 }
 .articleSection article .articleBody {
-    border: 10px;
-     border-bottom: 10px solid white;
+    border: 15px 
 }
 .articleSection article .articleBody h1 {
     font-size: 1em;
