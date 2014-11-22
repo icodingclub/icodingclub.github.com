@@ -360,11 +360,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.5em;
 }
 h1 {
-	font-size: 2.111em; /*38px*/
+	font-size: 1.4em; /*38px*/
 	color: #404040;
 }
 h2 {
-	font-size: 1.444em; /*26px*/
+	font-size: 1.1em; /*26px*/
 	color: #545d65;
 }
 p ~ h2 {margin-top: 2em;}
