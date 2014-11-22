@@ -30,7 +30,6 @@ body {
 header {
     padding-left: 80px;
     background-color: #1086c1;
-    text-transform: lowercase;
 }
 div#tableContainer {
     display: table;
@@ -361,6 +360,10 @@ h6 {
 	font-size: 0.667em; /*12px*/
 	color: #9ca8b2;
 	text-transform: uppercase;
+}
+
+header h1{
+    text-transform: lowercase;
 }
 
 p {margin: 0 0 1.25em;}
