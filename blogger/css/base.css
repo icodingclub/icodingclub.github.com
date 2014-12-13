@@ -6,16 +6,16 @@ body {
     line-height: 1.2
 }
 ol {
-    margin-left: 50px;
-    padding-left: 1.4em;
-    list-style: decimal
+    margin-left: 50px !important;
+    padding-left: 1.4em !important;
+    list-style: decimal !important;
 }
 ol li {
-    font-size: .9em
+    font-size: .9em !important;
 }
 ul {
-    padding-left: 1.4em;
-    list-style: square
+    padding-left: 1.4em !important;
+    list-style: square !important;
 }
 table {
     border-spacing: 0;
