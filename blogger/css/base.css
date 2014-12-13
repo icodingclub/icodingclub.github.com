@@ -17,7 +17,7 @@ ol li {
 }
 ul {
     padding-left: 1.4em !important;
-    list-style: square !important;
+    list-style: square;
 }
 table {
     border-spacing: 0;
