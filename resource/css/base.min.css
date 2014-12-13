@@ -32,7 +32,7 @@ body {
 header {
     margin: 2px;
     padding-left: 80px;
-    background-color: #1671B4;
+    background-color: #666;
 }
 div#tableContainer {
     display: table;
