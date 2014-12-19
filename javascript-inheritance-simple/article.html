@@ -1,0 +1,120 @@
+<section>
+    <h1 class="section-heading">Introduction`
+                    <span class="arrow"></span>
+                </h1>
+    <br>
+    <h1 class="articleTitle">Simple Inheritance in Javascript</h1>
+    <p>JavaScript is an object-based language based on prototypes, rather than being class-based. Because of this different basis, it can be less apparent how JavaScript allows you to create hierarchies of objects and to have inheritance of properties and their values</p>
+    <p>I will try to explain Inheritance by a simple code example in this article</p>
+    <h3></h3>
+
+    <img src="http://icodingclub.github.io/blogger/images/javascript_inheritance_class_diagram.jpg">
+</section>
+<section>
+    <h1 class="section-heading">step by step video tutorial
+                    <span class="arrow"></span>
+                </h1>
+    <br>
+
+    <br>
+    <img src="/resource/image/youTubePlaceholder.gif">
+    <!--  <iframe width="640" height="480" src="//www.youtube.com/embed/V95nai3oa4A" frameborder="0" allowfullscreen></iframe> -->
+</section>
+
+<section>
+    <h1 class="section-heading">Code
+                    <span class="arrow"></span>
+                </h1>
+    <br/>
+
+
+    <pre class="prettyprint lang-js">
+ function Developer(name) {
+    this.name = name;
+    this.skill = "no skill";
+
+    this.printSkill = function() {
+
+        console.log("Skill: ", this.skill);
+
+    };
+
+    this.printName = function() {
+
+        console.log("I am : ", this.name);
+
+    };
+
+    this.workOn = function() {
+
+        console.log("Not sure!");
+
+    };
+
+}
+
+
+function JavaDeveloper(name) {
+    this.skill = "Java";
+    this.name = name;
+
+    this.workOn = function() {
+
+        console.log("I work on Server side");
+
+    };
+
+}
+
+
+
+function JavaScriptDeveloper(name) {
+    this.skill = "Javascript";
+    this.name = name;
+
+    this.workOn = function() {
+
+        console.log("I work on client side");
+
+    };
+
+}
+
+
+function NodeJSDeveloper(name) {
+    this.name = name;
+
+    this.workOn = function() {
+        console.log("I work on server side");
+
+    };
+}
+
+
+//var developer = new Developer("praveen");
+//
+
+// JavaDeveloper.prototype = new Developer();
+// var developer = new JavaDeveloper("praveen");
+// 
+
+
+JavaDeveloper.prototype = new Developer();
+JavaScriptDeveloper.prototype = new Developer();
+NodeJSDeveloper.prototype = new JavaScriptDeveloper();
+
+
+
+var developer = new NodeJSDeveloper("praveen");
+
+developer.printSkill();
+developer.printName();
+developer.workOn();
+console.log(developer instanceof Developer);
+console.log(developer instanceof NodeJSDeveloper);
+console.log(developer instanceof JavaDeveloper);
+</pre>
+
+</section>
+
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
