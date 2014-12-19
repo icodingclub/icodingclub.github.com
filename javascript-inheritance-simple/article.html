@@ -1,12 +1,14 @@
 <section>
-    <h1 class="section-heading">Introduction`
+    <h1 class="section-heading">Introduction
                     <span class="arrow"></span>
                 </h1>
     <br>
-    <h1 class="articleTitle">Simple Inheritance in Javascript</h1>
-    <p>JavaScript is an object-based language based on prototypes, rather than being class-based. Because of this different basis, it can be less apparent how JavaScript allows you to create hierarchies of objects and to have inheritance of properties and their values</p>
+    <h1 class="articleTitle">Simple prototypes based Inheritance in Javascript</h1>
+    <p>JavaScript is an object-oriented language based on prototypes, rather than being class-based. Because of this different basis, it can be less apparent how JavaScript allows you to create hierarchies of objects and to have inheritance of properties and their values</p>
     <p>I will try to explain Inheritance by a simple code example in this article</p>
-    <h3></h3>
+     <p>But before i can start, we have to take a usecase, an example of inheritance to begin with</p>
+
+    <h3>Class Digram for the example</h3>
 
     <img src="http://icodingclub.github.io/blogger/images/javascript_inheritance_class_diagram.jpg">
 </section>
@@ -17,7 +19,7 @@
     <br>
 
     <br>
-    <img src="/resource/image/youTubePlaceholder.gif">
+    <img src="http://icodingclub.github.io/resource/image/youTubePlaceholder.gif">
     <!--  <iframe width="640" height="480" src="//www.youtube.com/embed/V95nai3oa4A" frameborder="0" allowfullscreen></iframe> -->
 </section>
 
@@ -29,6 +31,10 @@
 
 
     <pre class="prettyprint lang-js">
+
+/*
+ * Lets define all the Objects(Classes for Java and C++ guys, mind it, there is nothing call Class in Java)
+ */
  function Developer(name) {
     this.name = name;
     this.skill = "no skill";
@@ -90,15 +96,9 @@ function NodeJSDeveloper(name) {
     };
 }
 
-
-//var developer = new Developer("praveen");
-//
-
-// JavaDeveloper.prototype = new Developer();
-// var developer = new JavaDeveloper("praveen");
-// 
-
-
+/*
+ * Inheritance Linking go below
+ */
 JavaDeveloper.prototype = new Developer();
 JavaScriptDeveloper.prototype = new Developer();
 NodeJSDeveloper.prototype = new JavaScriptDeveloper();
@@ -116,5 +116,19 @@ console.log(developer instanceof JavaDeveloper);
 </pre>
 
 </section>
+
+
+<section>
+    <h1 class="section-heading">Summary
+                    <span class="arrow"></span>
+                </h1>
+    <br>
+    <p>Javascript prototypes based Inheritance make it powerful and dynamic, but it is not simple to understand and implement like
+    Java or C++</p>
+
+    <p>Here language like DOJO jump in and provide inheritance in Java in plain Javascript</p>
+
+</section>
+
 
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>

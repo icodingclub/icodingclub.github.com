@@ -1,0 +1,396 @@
+<section>
+    <h1 class="section-heading">Introduction`
+                    <span class="arrow"></span>
+                </h1>
+    <br>
+    <h1 class="articleTitle">Dojo Toolkit Tutorial (AMD): Java like Inheritance in Javascript using Dojo</h1>
+
+    <p>JavaScript is an object-oriented language based on prototypes, rather than being class-based. Because of this different basis, it can be less apparent how JavaScript allows you to create hierarchies of objects and to have inheritance of properties and their values</p>
+    <p>Dojo provides the ability to simulate class-based inheritance using <code>dojo.declare</code>.
+    </p>
+    <p>It is awesome, it is powerful and feel more natural!</p>
+    <br><br>
+     <blockquote class="info">
+        <ul>
+            <li>If you don't know how the prototypes based inheritance work in Javascript, and want to understand that first<br>
+
+            You can check my article: <a href="http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html">Simple prototypes based Inheritance in Javascript</a><br>
+            This article is kind of extension of above article</li>
+        </ul>
+    </blockquote>
+    <br><br>
+    <p>I will try to explain Inheritance by a simple code example in this article</p>
+    <p>But before i can start, we have to take a usecase, an example of inheritance to begin with</p>
+
+    <h3>Class Digram for the example</h3>
+
+    <img src="http://icodingclub.github.io/blogger/images/dojo_inheritance_class_diagram.jpg">
+
+</section>
+<section>
+    <h1 class="section-heading">step by step video tutorial
+                    <span class="arrow"></span>
+                </h1>
+    <br>
+
+    <img src="http://icodingclub.github.io/resource/image/youTubePlaceholder.gif">
+    <!--  <iframe width="640" height="480" src="//www.youtube.com/embed/V95nai3oa4A" frameborder="0" allowfullscreen></iframe> -->
+
+</section>
+
+<section>
+    <h1 class="section-heading">Setup
+                    <span class="arrow"></span>
+                </h1>
+    <br/>
+
+    <ol>
+        <li>Build package structure like below.
+            <br>
+            <br>
+            <img src="http://icodingclub.github.io/blogger/images/dojo-inheritance-artice-pkg-struct.png">
+
+
+        </li>
+        <li>Run everything in a server. If you are on mac, Simplest way is, run: python -m SimpleHTTPServer 8888 at DOJO_TEST level. On window....find similar way.</li>
+    </ol>
+    <br>
+    <h3>Heads Up!</h3>
+    <blockquote class="info">
+        <ul>
+            <li>I will keep using term module or class for same thing.</li>
+            <li>I will keep using term Inheritance or Mixin for same thing.</li>
+        </ul>
+    </blockquote>
+
+</section>
+<section>
+    <h1 class="section-heading">Code
+                    <span class="arrow"></span>
+                </h1>
+    <br/>
+
+    <h3>A simple hook up index file</h3>
+    <br>
+
+    <div class="path">
+        <span>Path:</span>DOJO_TEST/app/module/index.html</div>
+    <pre class="prettyprint lang-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+ &lt;title&gt;Counter&lt;/title&gt;
+ &lt;script&gt;
+ var dojoConfig = {
+ async: true,
+ packages: [{
+ name: "app",
+ location: "/DOJO_TEST/app"
+ }]
+ };
+ &lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+ &lt;script src="/DOJO_TEST/lib/dojo/dojo/dojo.js" data-dojo-config="async: true"&gt;&lt;/script&gt;
+ &lt;script type="text/javascript"&gt;
+ require(["app/module/Modules"],
+ function(Modules) {
+ var widget = new Modules();
+ });
+ &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+                </pre>
+
+
+    <br>
+    <h3>Creating a multiple Inheritance scenario in DOJO.</h3>
+    <br>
+    <h3>Checking constructor call and instanceof.</h3>
+
+    <div class="path">
+        <span>Path:</span>DOJO_TEST/app/module/Modules.js</div>
+    <pre class="prettyprint lang-js">
+/**
+ * define() is a foundational AMD API.
+ * It allows us to define a module and its dependencies.
+ * Once dojo/query and dojo/on are loaded (which doesn't happen until their dependencies are loaded, and so on),
+ * the callback function is called and module instance passed to it.
+ */
+
+define([
+    "dojo/_base/declare"
+], function(declare) {
+
+    var A = declare(null, {
+
+        constructor: function() {
+
+            console.log("In constructor A");
+        }
+    });
+
+    var B = declare(null, {
+
+        constructor: function() {
+
+            console.log("In constructor B");
+        }
+
+    });
+
+    var C = declare(null, {
+
+        constructor: function() {
+
+            console.log("In constructor C");
+        }
+
+    });
+
+    return declare([A, B, C], {
+
+        constructor: function() {
+            console.log("Check who am i!!")
+            console.log("Type A: ", this instanceof A); //true
+            console.log("Type B: ", this instanceof B); //false
+            console.log("Type C: ", this instanceof C); //false
+
+        }
+    });
+});
+
+
+                </pre>
+    <br>
+    <br>
+    <blockquote class="codeoutput">
+        <p>
+            In constructor A
+            <br>In constructor B
+            <br>In constructor C
+            <br>Check who am i!!
+            <br>Type A: true
+            <br>Type B: false
+            <br>Type C: false
+            <br>
+        </p>
+    </blockquote>
+
+
+    <br>
+    <h3>Let's update it and change the Mixin sequence.</h3>
+    <pre class="prettyprint lang-js">
+
+ return declare([C, B, A], {
+
+        constructor: function() {
+            console.log("Check who am i!!")
+            console.log("Type A: ", this instanceof A); //true
+            console.log("Type B: ", this instanceof B); //false
+            console.log("Type C: ", this instanceof C); //false
+
+        }
+    });
+
+                </pre>
+
+
+    <blockquote class="codeoutput">
+        <p>
+            In constructor C
+            <br>In constructor B
+            <br>In constructor A
+            <br>Check who am i!!
+            <br>Type A: false
+            <br>Type B: false
+            <br>Type C: true
+            <br>
+        </p>
+    </blockquote>
+
+    <br>
+    <br>
+    <h3>Checking method override.</h3>
+    <br>
+    <pre class="prettyprint lang-js">
+
+/**
+ * define() is a foundational AMD API.
+ * It allows us to define a module and its dependencies.
+ * Once dojo/query and dojo/on are loaded (which doesn't happen until their dependencies are loaded, and so on),
+ * the callback function is called and module instance passed to it.
+ */
+
+define([
+    "dojo/_base/declare"
+], function(declare) {
+
+    var A = declare(null, {
+
+        m1: function() {
+            console.log("In A -> m1");
+        },
+
+        m2: function() {
+            console.log("In A -> m2");
+        }
+
+    });
+
+    var B = declare(null, {
+
+        m1: function() {
+            console.log("In B -> m1");
+        },
+
+        m2: function() {
+            console.log("In B -> m2");
+        }
+
+    });
+
+    var C = declare(null, {
+
+        m1: function() {
+            console.log("In C -> m1");
+        }
+
+    });
+
+    return declare([A, B, C], {
+
+        constructor: function() {
+            this.m1();
+            this.m2();
+        }
+    });
+});
+
+
+                </pre>
+    <br>
+    <h3>We get the output like...</h3>
+
+
+    <blockquote class="codeoutput">
+        <p>
+            In C -> m1
+            <br>In B -> m2
+            <br>
+        </p>
+    </blockquote>
+
+    <br>
+
+    <br>
+    <h3>Updating MixIn sequence.</h3>
+    <pre class="prettyprint lang-js">
+
+ return declare([C, B, A], {
+
+        constructor: function() {
+            this.m1();
+            this.m2();
+        }
+    });
+
+                </pre>
+    <br>
+    <h3>We get the output like...</h3>
+    <blockquote class="codeoutput">
+        <p>
+            In A -> m1
+            <br>In A -> m2
+            <br>
+        </p>
+    </blockquote>
+
+    <br>
+    <h3>Changing method call flow.</h3>
+    <br>
+    <pre class="prettyprint lang-js">
+
+/**
+ * define() is a foundational AMD API.
+ * It allows us to define a module and its dependencies.
+ * Once dojo/query and dojo/on are loaded (which doesn't happen until their dependencies are loaded, and so on),
+ * the callback function is called and module instance passed to it.
+ */
+
+define([
+    "dojo/_base/declare"
+], function(declare) {
+
+    var A = declare(null, {
+
+        m1: function() {
+            
+            console.log("In A -> m1");
+        }
+
+    });
+
+    var B = declare(null, {
+
+        m1: function() {
+            this.inherited(arguments);
+            console.log("In B -> m1");
+        }
+
+    });
+
+
+    return declare([A, B], {
+
+        constructor: function() {
+            this.m1();
+        }
+    });
+});
+
+
+                </pre>
+
+    <blockquote class="codeoutput">
+        <p>
+            In A -> m1
+            <br>In B -> m1
+            <br>
+        </p>
+    </blockquote>
+
+
+    <br>
+    <h3>Updating this.inherited(arguments) call sequence.</h3>
+    <pre class="prettyprint lang-js">
+
+ var B = declare(null, {
+
+        m1: function() {
+           
+            console.log("In B -> m1");
+            this.inherited(arguments);
+        }
+
+    });
+
+                </pre>
+    <br>
+    <h3>We get the output like...</h3>
+    <blockquote class="codeoutput">
+        <p>
+            In B -> m1
+            <br>In A -> m1
+            <br>
+        </p>
+    </blockquote>
+
+</section>
+
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
