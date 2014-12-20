@@ -70,8 +70,7 @@ var articleCatagorys = [{
         tag: "dojo"
     }, {
         heading: "Simple template based widget using AMD concepts",
-        desc: "A step-by-step tutorial for, How to create a template based DOJO widget, using AMD(Asynchronous Module 
-            Definition) concepts",
+        desc: "A step-by-step tutorial for, How to create a template based DOJO widget, using AMD(Asynchronous Module Definition) concepts",
         link: "http://icodingclub.blogspot.in/2014/10/dojo-toolkit-tutorial-amd-simple.html",
         image: "dojo.png",
         tag: "dojo"
