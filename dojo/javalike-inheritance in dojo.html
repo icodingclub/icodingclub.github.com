@@ -1,5 +1,5 @@
 <section>
-    <h1 class="section-heading">Introduction`
+    <h1 class="section-heading">Introduction
                     <span class="arrow"></span>
                 </h1>
     <br>
@@ -8,38 +8,47 @@
     <p>JavaScript is an object-oriented language based on prototypes, rather than being class-based. Because of this different basis, it can be less apparent how JavaScript allows you to create hierarchies of objects and to have inheritance of properties and their values</p>
     <p>Dojo provides the ability to simulate class-based inheritance using <code>dojo.declare</code>.
     </p>
-    <p>It is awesome, it is powerful and feel more natural!</p>
+    <p><strong>It is awesome, it is powerful and feel more natural!</strong>
+    </p>
     <br>
     <br>
     <blockquote class="info">
         <ul>
             <li><strong>If you don't know how the prototypes based inheritance work in Javascript, and want to understand that first<br>
 
-            You can check my article: <a href="http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html">Simple prototypes based Inheritance in Javascript</a><br>
-            This article is kind of extension of above article</strong>
+            You can check my article: <br>
+
+            <strong><a href="http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html">Simple prototypes based Inheritance in Javascript</a></strong>
+                <br> This article is kind of extension of above article</strong>
             </li>
         </ul>
     </blockquote>
+</section>
+
+
+<section>
+    <h1 class="section-heading">step by step video tutorial
+                    <span class="arrow"></span>
+                </h1>
     <br>
+    <p>I use Video for talking and explanation. This is the reason that article has very less text and comments</p>
+    <br>
+    <img src="http://icodingclub.github.io/resource/image/youTubePlaceholder.gif">
+    <!--  <iframe width="640" height="480" src="//www.youtube.com/embed/V95nai3oa4A" frameborder="0" allowfullscreen></iframe> -->
+
+</section>
+
+<section>
     <br>
     <p>I will try to explain Inheritance by a simple code example in this article</p>
-    <p>But before i can start, we have to take a usecase, an example of inheritance to begin with</p>
+    <p>But before i can start, we have to take a usecase, an example of inheritance to begin with. Throughout this article we will take this as an usecase to create and understand Inheritance.</p>
 
     <h3>Class Digram for the example</h3>
 
     <img src="http://icodingclub.github.io/blogger/images/dojo_inheritance_class_diagram.jpg">
 
 </section>
-<section>
-    <h1 class="section-heading">step by step video tutorial
-                    <span class="arrow"></span>
-                </h1>
-    <br>
 
-    <img src="http://icodingclub.github.io/resource/image/youTubePlaceholder.gif">
-    <!--  <iframe width="640" height="480" src="//www.youtube.com/embed/V95nai3oa4A" frameborder="0" allowfullscreen></iframe> -->
-
-</section>
 
 <section>
     <h1 class="section-heading">Setup
@@ -55,21 +64,13 @@
 
 
         </li>
-        <li><strong>Run everything in a server. If you are on mac, Simplest way is, run: python -m SimpleHTTPServer 8888 at DOJO_TEST level. On window....find similar way.</strong>
+        <li><strong>Run everything in a server. DOJO work best when it is in server. If you are on mac, Simplest way is, run: python -m SimpleHTTPServer 8888 at DOJO_TEST level. On window....find similar way.</strong>
         </li>
     </ol>
-    <br>
-    <h3>Heads Up!</h3>
-    <blockquote class="info">
-        <ul>
-            <li>I will keep using term module or class for same thing.</li>
-            <li>I will keep using term Inheritance or Mixin for same thing.</li>
-        </ul>
-    </blockquote>
 
 </section>
 <section>
-    <h1 class="section-heading">Code
+    <h1 class="section-heading">Inheritance: Classical Approach
                     <span class="arrow"></span>
                 </h1>
     <br/>
@@ -99,17 +100,50 @@
 
     &lt;script src=&quot;/DOJO_TEST/lib/dojo/dojo/dojo.js&quot; data-dojo-config=&quot;async: true&quot;&gt;&lt;/script&gt;
     &lt;script type=&quot;text/javascript&quot;&gt;
-    require([&quot;app/module/Developer&quot;,&quot;app/module/JavaScriptDeveloper&quot;], function(Developer, JavaScriptDeveloper) {
+    require([
+        "app/module/Developer",
+        "app/module/JavaDeveloper",
+        "app/module/JavaScriptDeveloper", 
+        "app/module/NodeJSDeveloper"
+    ], function(Developer, JavaDeveloper, JavaScriptDeveloper, NodeJSDeveloper) {
 
-        var developer = new JavaScriptDeveloper(&quot;praveen&quot;);
-
-        developer.printSkill();
+        var developer = new Developer("icodingclub");
+        developer.printSkill(); 
         developer.printName();
         developer.workOn();
-
         console.log(developer instanceof Developer);
-        console.log(developer instanceof JavaScriptDeveloper);
+
+        var javaDeveloper = new JavaDeveloper("icodingclub");
+        javaDeveloper.printSkill();
+        javaDeveloper.printName();
+        javaDeveloper.workOn();
+        console.log(javaDeveloper instanceof Developer);
+        console.log(javaDeveloper instanceof JavaDeveloper);
+        console.log(javaDeveloper instanceof JavaScriptDeveloper);
+
+
+        var javaScriptDeveloper = new JavaScriptDeveloper("icodingclub");
+        javaScriptDeveloper.printSkill();
+        javaScriptDeveloper.printName();
+        javaScriptDeveloper.workOn();
+        console.log(javaScriptDeveloper instanceof Developer);
+        console.log(javaScriptDeveloper instanceof JavaScriptDeveloper);
+        console.log(javaScriptDeveloper instanceof JavaDeveloper);
+
+        
+
+        var nodeJSDeveloper = new NodeJSDeveloper("icodingclub");
+        nodeJSDeveloper.printSkill();
+        nodeJSDeveloper.printName();
+        nodeJSDeveloper.workOn();
+        console.log(nodeJSDeveloper instanceof Developer);
+        console.log(nodeJSDeveloper instanceof JavaScriptDeveloper);
+        console.log(nodeJSDeveloper instanceof NodeJSDeveloper);
+        console.log(nodeJSDeveloper instanceof JavaDeveloper);
+
+
     });
+
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
@@ -117,9 +151,10 @@
 </pre>
 
 
+    <h3>Adding all class(or Object in pure Javascript terms)</h3>
+    <br>
 
-
- <div class="path">
+    <div class="path">
         <span>Path:</span>DOJO_TEST/app/module/Developer.js</div>
     <pre class="prettyprint lang-js">
 define([
@@ -157,15 +192,12 @@ define([
         }
     });
 });
-
-
-
-
     </pre>
 
 
-     <div class="path">
-        <span>Path:</span>DOJO_TEST/app/module/JavaDeveloper.js</div>
+    <div class="path">
+        <span>Path:</span>DOJO_TEST/app/module/JavaDeveloper.js
+    </div>
     <pre class="prettyprint lang-js">
 
 define([
@@ -188,15 +220,12 @@ define([
         }
     });
 });
-
     </pre>
 
 
-      <div class="path">
+    <div class="path">
         <span>Path:</span>DOJO_TEST/app/module/JavaScriptDeveloper.js</div>
     <pre class="prettyprint lang-js">
-
-
 define([
     "dojo/_base/declare",
     "./Developer"
@@ -221,11 +250,10 @@ define([
         }
     });
 });
-
     </pre>
 
 
-      <div class="path">
+    <div class="path">
         <span>Path:</span>DOJO_TEST/app/module/NodeJSDeveloper.js</div>
     <pre class="prettyprint lang-js">
 
@@ -255,7 +283,19 @@ define([
     </pre>
 
 
-<ol>
+    <h1 class="section-heading">Inheritance: Mixin Approach
+                    <span class="arrow"></span>
+                </h1>
+    <br/>
+
+    <p>above example explain the classical Inheritance, where child class is much more specific version of parent, much more narrow version of parent class</p>
+    <p>Another way in which Inheritance can be used is Mixin way, in which is mixin add the feature to parent class</p>
+    <p>In below class diagram, you can understand, Developer is main class and JavaSkillMixin and the skill of Java to main developer, similarly JavaScriptSkillMixin</p>
+    <h3>Class Digram for Mixin approach</h3>
+
+    <img src="http://icodingclub.github.io/blogger/images/dojo_inheritance_mixin_class_diagram.jpg">
+
+    <ol>
         <li>Update package structure like below.
             <br>
             <img src="http://icodingclub.github.io/blogger/images/dojo-inheritance-mixin-artice-pkg-struct.png">
@@ -263,7 +303,7 @@ define([
     </ol>
 
 
-      <div class="path">
+    <div class="path">
         <span>Path:</span>DOJO_TEST/app/module/test.html</div>
     <pre class="prettyprint lang-html">
 &lt;!DOCTYPE html&gt;
@@ -292,6 +332,7 @@ define([
         developer.printSkill();
         developer.printName();
         developer.doYouKnowJava();
+        developer.doYouKnowJavaScript();
         developer.workOn();
     });
     &lt;/script&gt;
@@ -299,13 +340,14 @@ define([
 &lt;/html&gt;
 
     </pre>
+    <h3>Adding all class(or Object in pure Javascript terms)</h3>
+    <br>
 
-
-      <div class="path">
+    <div class="path">
         <span>Path:</span>DOJO_TEST/app/module/Developer.js</div>
     <pre class="prettyprint lang-js">
 
-    define([
+define([
     "dojo/_base/declare",
     "./JavaSkillMixin",
     "./JavaScriptSkillMixin"
@@ -339,7 +381,7 @@ define([
 
     </pre>
 
-      <div class="path">
+    <div class="path">
         <span>Path:</span>DOJO_TEST/app/module/JavaSkillMixin.js</div>
     <pre class="prettyprint lang-js">
 
@@ -402,22 +444,19 @@ define([
 
     </pre>
 
+</section>
 
+<section>
+    <h1 class="section-heading">Contact Me
+                    <span class="arrow"></span>
+                </h1>
+    <br>
 
-
-    <blockquote class="codeoutput">
-        <p>
-            In constructor A
-            <br>In constructor B
-            <br>In constructor C
-            <br>Check who am i!!
-            <br>Type A: true
-            <br>Type B: false
-            <br>Type C: false
-            <br>
-        </p>
-    </blockquote>
-
+    <p>If you want to contact me for feedback or suggestion or doubt. You can do so by commenting on Blogger article or in Youtube contact section.</p>
+    <p>
+        You can also approach me dropping me mail directly at <a href="mailto:mails.icodingclub@gmail.com" target="_top">mails.icodingclub@gmail.com
+    </a>
+    </p>
 </section>
 
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
