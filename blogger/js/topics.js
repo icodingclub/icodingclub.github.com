@@ -40,7 +40,7 @@ var articleCatagorys = [{
         }, {
             heading: "AJAX Framework using JQuery: An Object Oriented approach",
             desc: "A very simple AJAX Framework using JQuery for light weight application, with an object oriented approach.",
-            link: "http://icodingclub.blogspot.in/2013/10/simplest-approach-tree-widget.html",
+            link: "http://icodingclub.blogspot.in/2013/07/object-oriented-ajax-framework-using.html",
             image: "jquery.png",
             tag: "webui"
         }, {
