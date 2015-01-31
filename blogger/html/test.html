@@ -4,120 +4,66 @@
     <title></title>
     <style type="text/css"></style>
     <link rel="stylesheet" type="text/css" href="../css/base.css">
+
+    <style type="text/css" media="screen">
+    
+    body{
+        background-color: rgba(238, 238, 238, 1);
+    }
+    .container{
+        width: 90%;
+        margin: 5px auto;
+        background-color: white;
+        min-height: 800px;
+        padding: 50px;
+
+    }    
+    section{
+        background-color: rgba(238, 238, 238, .6);
+         padding: 10px 20px;
+
+    }  
+
+    .heading{
+        border: 1px solid #e54c10;
+        border-left: 4px solid #e54c10;
+        padding: 1px 3px;
+        color: #e54c10;
+        display: inline-block;
+        page-break-before: always;
+    }  
+    </style>
 </head>
 
 
 
 <body>
-    yohsfhghegfe fewhgehwgfhg
-    <br> afjcewfw ewfhejw
+<article class="container">
+
+   <section>
+        <h1 class="section-heading">Introduction
+                    <span class="arrow"></span>
+                </h1>
+                   <br> 
+                <span class="heading">Introduction
+                </span>
+        <br>
+        <h1 class="articleTitle">Dojo Toolkit Tutorial (AMD): Simple template based widget using AMD concepts</h1>
+        <p>A step-by-step tutorial for creating a modular template based widget in DOJO.
+            <br>We will create a simple counter widget first and put the event on it.</p>
+
+    </section>
+    
+</article>
+ 
 
 
-    <pre class="codeBlock prettyprint lang-html" data-code-id="codeBlock1">
-        Loading..
-    </pre>
 
 
     <script type="text/javascript" src="../js/topics.js">
     </script>
     <script type="text/javascript" src="../js/base.js">
     </script>
-
-
-
-    <pre class="codeScriptBlock"> 
-    <script id="codeBlock1" type="code/text">
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <script_ type="text/javascript">
-    function Developer(name) {
-        this.name = name;
-        this.skill = "no skill";
-
-        this.printSkill = function() {
-            console.log("Skill: ", this.skill);
-        };
-
-        this.printName = function() {
-            console.log("I am : ", this.name);
-        };
-
-    }
-
-
-    function JavaDeveloper(name) {
-            this.skill = "Java";
-            this.name = name;
-
-            this.workOn = function() {
-                console.log("I work on Server side");
-
-            }
-
-
-
-            function JavaScriptDeveloper(name) {
-                this.skill = "Javascript";
-                this.name = name;
-
-                this.workOn = function() {
-                    console.log("I work on client side");
-                };
-
-            }
-
-
-            function NodeJSDeveloper(name) {
-                this.name = name;
-
-                this.workOn = function() {
-                    console.log("I work on server side");
-
-                };
-            }
-
-
-            //var developer = new Developer("praveen");
-            //
-
-            // JavaDeveloper.prototype = new Developer();
-            // var developer = new JavaDeveloper("praveen");
-            // 
-
-
-            JavaDeveloper.prototype = new Developer();
-            JavaScriptDeveloper.prototype = new Developer();
-            NodeJSDeveloper.prototype = new JavaScriptDeveloper();
-
-
-
-            var developer = new NodeJSDeveloper("praveen");
-
-            developer.printSkill();
-            developer.printName();
-            developer.workOn();
-            console.log(developer instanceof Developer);
-            console.log(developer instanceof NodeJSDeveloper);
-            console.log(developer instanceof JavaDeveloper);
-    </script_>
-    <br>
-</body>
-
-</html>
-</script>
-   
-</pre>
-
-    <script type="text/javascript">
-    codeBuilder.init();
-    </script>
-
-    <script async src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-
 
 </body>
 
