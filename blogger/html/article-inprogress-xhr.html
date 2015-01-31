@@ -1,0 +1,415 @@
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css"></style>
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <style type="text/css" media="screen">
+    body {
+        background-color: rgba(238, 238, 238, 1);
+    }
+    .container {
+        width: 90%;
+        margin: 5px auto;
+        background-color: white;
+        min-height: 800px;
+        padding: 50px;
+    }
+    section {
+        padding: 10px 20px;
+    }
+    </style>
+</head>
+
+
+
+
+<body>
+    <article class="container">
+
+        <section>
+            <h1 class="section-heading">Introduction
+                    <span class="arrow"></span>
+                </h1>
+            <br>
+            <h1 class="articleTitle">Handling Asynchronous callbacks in Dojo using Deferred and Promise.</h1>
+            <p><code>dojo/Deferred</code> is a class that is used as the foundation for managing asynchronous threads in Dojo. Packages like <code>dojo/request</code> use this class to return a promise that gets resolved when the asynchronous thread is complete. In order trigger a callback to occur when the thread is complete, the .then() method is used. As well as the thread can be informed to cancel itself by using the .cancel() method. If the thread has completed, then the .then() callback will be executed immediately.
+
+
+            </p>
+        </section>
+
+        <section>
+            <h1 class="section-heading">Absolute pre-reads
+                    <span class="arrow"></span>
+                </h1>
+            <br>
+
+            <p><strong>If you are not comfortable with Promise and Defered concepts or How Asynchronous Javascript work, with help of event queue. Yo should stop here and read the below article first.</strong>
+            </p>
+
+            <br>
+            <section class="similarArticle articleSection" data-articles="asyncJsDefPromise"></section>
+
+            <p><strong>If you are not comfortable with Dojo in general, you should hit the tab which says Dojo at top and pick the article with your level.</strong>
+            </p>
+
+            <br>
+        </section>
+
+        <section>
+            <h1 class="section-heading">Step by step video explanation
+                    <span class="arrow"></span>
+                </h1>
+            <br>
+            <img src="http://icodingclub.github.io/resource/image/youTubePlaceholder.gif">
+
+            <h3>Changes to article post video recording</h3>
+
+            <ol>
+                <li>none so far</li>
+            </ol>
+        </section>
+        <section>
+            <h1 class="section-heading">Re-look on Deferred and Promise lifecycle
+                    <span class="arrow"></span>
+                </h1>
+            <br>
+
+            <p>Lets give some time and re-look and re-understand the Deferred and Promise lifecycle, which is core of everything we will cover now</p>
+            <img src="http://icodingclub.github.io/blogger/images/promise-flow-diagram.png">
+
+        </section>
+
+
+
+        <div class="path">
+            <span>Path: /app/dojo-deferred/server/server.js</span>
+        </div>
+        <pre class="prettyprint lang-js">
+var http = require("http"),
+    SUCCESS_CODE = 200,
+    FILE_NOT_FOUND_CODE = 404,
+    PORT = 9999,
+    HEADERS = {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+    };
+var server = http.createServer(handleRequest);
+server.listen(PORT);
+console.log("Listening at http://localhost:" + PORT);
+
+function handleRequest(req, res) {
+
+    var data = {};
+
+    console.log("req.url: ", req.url);
+    if (req.url === "/login.json") {
+        data = handleAuthentication();
+    } else if (req.url === "/topproducts.json") {
+        data = returnTopProducts();
+    } else if (req.url === "/dealOfTheDay.json") {
+        data = dealOfTheDay();
+    } else if (req.url === "/feedback.json") {
+        data = feedback();
+    } else {
+        res.writeHead(FILE_NOT_FOUND_CODE, HEADERS);
+        res.end(JSON.stringify({
+            error: null
+        }) + "\n");
+    }
+
+    console.log("Putting delay of 1 sec");
+    setTimeout(function() {
+        res.writeHead(SUCCESS_CODE, HEADERS);
+        res.end(JSON.stringify(data) + "\n");
+    }, 1000);
+}
+
+function handleAuthentication() {
+    console.log("In handleAuthentication");
+    var user = {
+        custId: 12345,
+        name: "Praveen from icodingclub"
+    };
+    return user;
+}
+
+function returnTopProducts() {
+    console.log("In returnTopProducts");
+    var products = [{
+        id: 111,
+        name: "iphone 5"
+    }, {
+        id: 222,
+        name: "Moto X"
+    }];
+
+    return products;
+}
+
+function dealOfTheDay() {
+    console.log("In dealOfTheDay");
+    var products = [{
+        id: 333,
+        name: "iPad Air"
+    }];
+
+    return products;
+}
+
+function feedback() {
+    console.log("In feedback");
+    var products = [{
+        id: 444,
+        name: "Macbook Air"
+    }];
+
+    return products;
+}
+</pre>
+
+
+        <div class="path">
+            <span>(On terminal) $ </span> node server.js
+        </div>
+
+        <div class="path">
+            <span>Path: </span> /app/dojo-deferred/deferred-xhr/testXhr.html
+        </div>
+        <pre class="encodeCodeblock prettyprint lang-html">
+<!--$he
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOJO</title>
+    <script>
+    var dojoConfig = {
+        async: true,
+        packages: [{
+            name: "app",
+            location: "/app/dojo-deferred"
+        }]
+    };
+    </script>
+
+</head>
+
+<body>
+    <h1>DOJO Deferred and Promise</h1>
+    <script src="/lib/dojo/dojo.js" data-dojo-config="async: true"></script>
+    <script type="text/javascript">
+    require([
+            "app/deferred-xhr/TestDefXhrWidget"
+        ],
+        function(TestDefXhrWidget) {
+            var widget = new TestDefXhrWidget();
+        });
+    </script>
+</body>
+
+</html>
+
+$he-->
+</pre>
+
+
+        <div class="path">
+            <span>Path:/app/dojo-deferred/deferred-xhr/TestDefXhrWidget.js</span>
+        </div>
+        <pre class="prettyprint lang-js">
+define([
+    "dojo/_base/declare",
+    "dojo/Deferred",
+    "dojo/request"
+], function(declare, Deferred, request) {
+
+    return declare(null, {
+
+        constructor: function() {
+            // I have used self and not .bind(this) for clarity.
+            var self = this;
+
+            request("http://localhost:9999/login.json").then(function(user) {
+                self.showGreatings(user);
+            })
+        },
+
+        showGreatings: function(user) {
+            console.log("Greetings: ", user);
+        }
+    });
+});
+
+        </pre>
+
+
+  <pre class="prettyprint lang-js">
+  Greetings:  {"custId":12345,"name":"Praveen from icodingclub"}  
+  </pre>    
+
+
+
+
+        </section>
+
+
+<pre class="prettyprint lang-js">
+define([
+    "dojo/_base/declare",
+    "dojo/Deferred",
+    "dojo/request"
+], function(declare, Deferred, request) {
+
+    return declare(null, {
+
+        constructor: function() {
+            // I have used self and not .bind(this) for clarity.
+            var self = this;
+
+            request("http://localhost:9999/login.json").then(function(user) {
+                self.showGreatings(user);
+            }).then(function() {
+                return request("http://localhost:9999/topproducts.json");
+            }).then(function(products) {
+                self.showProducts(products);
+            }).then(function(data) {
+                return request("http://localhost:9999/dealOfTheDay.json");
+            }).then(function(dealOfTheDay) {
+                self.showDealOfTheDay(dealOfTheDay);
+            }).then(function(data) {
+                return request("http://localhost:9999/feedback.json");
+            }).then(function(purchasedProduct) {
+                self.showFeedback(purchasedProduct);
+            });
+        },
+
+        showGreatings: function(user) {
+            console.log("Greetings: ", user);
+        },
+        showProducts: function(products) {
+            console.log("showing products: ", products);
+        },
+
+        showDealOfTheDay: function(dealOfTheDay) {
+            console.log("showing deal of the days: ", dealOfTheDay);
+        },
+
+        showFeedback: function(purchasedProduct) {
+            console.log("Ask feedback for: ", purchasedProduct);
+        }
+    });
+});
+
+</pre>
+
+
+<pre class="prettyprint lang-js">
+Greetings:  {"custId":12345,"name":"Praveen from icodingclub"}
+showing products:  [{"id":111,"name":"iphone 5"},{"id":222,"name":"Moto X"}]
+showing deal of the days:  [{"id":333,"name":"iPad Air"}]
+Ask feedback for:  [{"id":444,"name":"Macbook Air"}]
+</pre>
+
+
+<pre class="prettyprint lang-js">
+
+constructor: function() {
+    // I have used self and not .bind(this) for clarity.
+    var self = this;
+
+    //changing path for 404 error code
+    request("http://localhost:9999/login.json.404").then(function(user) {
+        self.showGreatings(user);
+    }, function(err) {
+        console.log("Handling error gracefully!!");
+    }).then(function() {
+        return request("http://localhost:9999/topproducts.json");
+    }).then(function(products) {
+        self.showProducts(products);
+    }).then(function(data) {
+        return request("http://localhost:9999/dealOfTheDay.json");
+    }).then(function(dealOfTheDay) {
+        self.showDealOfTheDay(dealOfTheDay);
+    }).then(function(data) {
+        return request("http://localhost:9999/feedback.json");
+    }).then(function(purchasedProduct) {
+        self.showFeedback(purchasedProduct);
+    });
+}
+
+</pre>
+
+<pre class="prettyprint lang-js">
+Handling error gracefully!!
+showing products:  [{"id":111,"name":"iphone 5"},{"id":222,"name":"Moto X"}]
+showing deal of the days:  [{"id":333,"name":"iPad Air"}]
+Ask feedback for:  [{"id":444,"name":"Macbook Air"}]
+</pre>
+
+
+<pre class="prettyprint lang-js">
+
+constructor: function() {
+    // I have used self and not .bind(this) for clarity.
+    var self = this;
+
+    //changing path for 404 error code
+    request("http://localhost:9999/login.json.404").then(function(user) {
+        self.showGreatings(user);
+    }).then(function() {
+        return request("http://localhost:9999/topproducts.json");
+    }).then(function(products) {
+        self.showProducts(products);
+    }).then(function(data) {
+        return request("http://localhost:9999/dealOfTheDay.json");
+    }).then(function(dealOfTheDay) {
+        self.showDealOfTheDay(dealOfTheDay);
+    }).then(function(data) {
+        return request("http://localhost:9999/feedback.json");
+    }).then(function(purchasedProduct) {
+        self.showFeedback(purchasedProduct);
+    },function(err) {
+        console.log("Handling error gracefully!!");
+    });
+}
+
+</pre>
+
+<pre class="prettyprint lang-js">
+Handling error gracefully!!
+</pre>
+
+
+        <section>
+            <h1 class="section-heading">Contact Me
+                    <span class="arrow"></span>
+                </h1>
+            <br>
+
+            <p>If you want to contact me for feedback or suggestion or doubt. You can do so by commenting on Blogger article or in Youtube comments section.</p>
+            <p>
+                You can also approach me dropping me mail directly at <a href="mailto:mails.icodingclub@gmail.com" target="_top">mails.icodingclub@gmail.com
+    </a> (
+                <strong>Prefer:</strong> comments approach)</p>
+        </section>
+
+
+
+
+
+        <script src="../js/base.js" type="text/javascript"></script>
+        <!--<script src="http://icodingclub.github.io/blogger/js/base.js" type="text/javascript"></script>-->
+        <script type="text/javascript">
+        blogPageBuilder.init();
+        </script>
+
+
+    </article>
+
+</body>
+
+</html>
