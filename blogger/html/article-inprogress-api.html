@@ -40,7 +40,7 @@
         </section>
 
         <section>
-            <h1 class="section-heading">Absolute pre-reads
+            <h1 class="section-heading">must pre-reads
                     <span class="arrow"></span>
                 </h1>
             <br>
@@ -64,11 +64,6 @@
             <br>
             <img src="http://icodingclub.github.io/resource/image/youTubePlaceholder.gif">
 
-            <h3>Changes to article post video recording</h3>
-
-            <ol>
-                <li>none so far</li>
-            </ol>
         </section>
         <section>
             <h1 class="section-heading">Re-look on Deferred and Promise lifecycle
@@ -82,17 +77,27 @@
         </section>
         <section>
 
-<h1 class="section-heading">code hands-on
+            <h1 class="section-heading">code hands-on
                     <span class="arrow"></span>
                 </h1>
             <br>
 
-<h1>Package Structure</h1>
-<p>Lets build the package structure as in below image</p>
-<p><strong>If you are facing problem in running the application with this package structure, you might want to check the "Dojo hello world" application in DOJO section of this blog.</strong></p>
-<img src="http://icodingclub.github.io/blogger/images/dojo-def-pg-struct.png">
+            <h1>Package Structure</h1>
+            <p>Lets build the package structure as in below image</p>
+            <p><strong>If you are facing problem in running the application with this package structure, you might want to check the "Dojo hello world" application in DOJO section of this blog.</strong>
+            </p>
+            <img src="http://icodingclub.github.io/blogger/images/dojo-def-pg-struct.png">
 
-
+            <br>
+            <h1>Always run DOJO in server</h1>
+            <p>As per Dojo guideline, dojo work best when it is server. So we need a static server to hold everything</p>
+            <p>If you are on mac, come to application directory and simply run <strong>python -m SimpleHTTPServer 8888</strong> to run application on port 8888</p>
+            <p>You should see the whole package structure by hitting <strong>http://localhost:8888/</strong>
+            </p>
+            <p>You can choose your favorite server. Things will not change much.</p>
+            <br>
+            <h1>code</h1>
+            <p>Lets kick start by creating the test html</p>
 
             <div class="path">
                 <span>Path:</span>/app/dojo-deferred/deferred-api/testApi.html
@@ -130,7 +135,8 @@
 </pre>
 
 
-
+            <br>
+            <p>Next we have to build the main widget class or module.</p>
             <div class="path">
                 <span>Path:</span>/app/dojo-deferred/deferred-api/TestApiWidget.js
             </div>
@@ -172,16 +178,19 @@ define([
 
             </pre>
 
+            <p>if you run the application now, with URL similar to http://localhost:8888/app/dojo-deferred/deferred-api/testApi.html</p>
+            <p>You should see the below output in dev console of browser.</p>
             <div class="path">
                 <span>Log output:</span>
             </div>
-            <pre class="prettyprint lang-js">
+            <pre class="prettyprint lang-html console">
 In constructor
 Out of constructor
 I am resolved :)
 </pre>
 
-
+            <h2>Task chaining</h2>
+            <p>Next step is to do chaining, Great thing about Promise is, it let you chain the task in sequential manner.</p>
             <pre class="prettyprint lang-js">
 constructor: function() {
     var deferred;
@@ -207,7 +216,7 @@ constructor: function() {
             <div class="path">
                 <span>Log output:</span>
             </div>
-            <pre class="prettyprint lang-js">
+            <pre class="prettyprint lang-html console">
 In constructor
 Out of constructor
 Then 1:  I am resolved :)
@@ -215,7 +224,8 @@ Then 2:  I am resolved :)
 Then 3:  I am resolved :)
 </pre>
 
-
+            <h2>Early resolve</h2>
+            <p>Lets try early resolve now.</p>
             <pre class="prettyprint lang-js">
 constructor: function() {
     var deferred;
@@ -245,7 +255,7 @@ constructor: function() {
             <div class="path">
                 <span>Log output:</span>
             </div>
-            <pre class="prettyprint lang-js">
+            <pre class="prettyprint lang-html console">
 In constructor
 Out of constructor
 Then 1:  Early resolve
@@ -253,6 +263,7 @@ Then 1:  Early resolve
 Then 1:  Early resolve
 </pre>
 
+            <h2>Early Reject(without short-circuit)</h2>
 
             <pre class="prettyprint lang-js">
 constructor: function() {
@@ -282,20 +293,13 @@ constructor: function() {
             <div class="path">
                 <span>Log output:</span>
             </div>
-            <pre class="prettyprint lang-js">
+            <pre class="prettyprint lang-html console">
 Error:  You are rejected :(
 Then 2:  undefined
 Then 3:  undefined
 </pre>
 
-
-            <pre class="prettyprint lang-js">
-In constructor
-Out of constructor
-Then 1:  Early resolve
-Then 1:  Early resolve
-Then 1:  Early resolve
-</pre>
+            <h2>Early Reject(short-circuit)</h2>
 
 
             <pre class="prettyprint lang-js">
@@ -324,10 +328,14 @@ constructor: function() {
 
 </pre>
 
-
-            <pre class="prettyprint lang-js">
+            <div class="path">
+                <span>Log output:</span>
+            </div>
+            <pre class="prettyprint lang-html console">
 Error:  You are rejected :(
 </pre>
+
+            <h2>Checking Progress</h2>
 
             <pre class="prettyprint lang-js">
   constructor: function() {
@@ -337,7 +345,7 @@ Error:  You are rejected :(
       deferred = asyncProcess();
       var count = 0;
       setInterval(function() {
-          deferred.progress(count++ +": Still working")
+          deferred.progress((count++) +": Still working")
       }, 500)
 
       //chaining the task
@@ -356,7 +364,7 @@ Error:  You are rejected :(
             <div class="path">
                 <span>Log output:</span>
             </div>
-            <pre class="prettyprint lang-js">
+            <pre class="prettyprint lang-html console">
 In constructor
 Out of constructor
 progress:  0: Still working
@@ -365,6 +373,7 @@ progress:  2: Still working
 Then 1:  I am resolved :)
 </pre>
 
+            <h2>Other helper methods</h2>
 
             <pre class="prettyprint lang-js">
 deferred.isResolved();      //Returns true if the Deferred is resolved
@@ -380,22 +389,18 @@ deferred.isCanceled();      //Returns true if the Deferred is cancelled
         </section>
 
 
-<section>
+        <section>
             <h1 class="section-heading">DOJO XHR with Promise concept
                     <span class="arrow"></span>
                 </h1>
             <br>
 
-            <p>DOJO Xhr or rquest based out of Promise concept. This also the place 
+            <p>DOJO XHR or rquest api based out of Promise concept. You might need Promise knowledge more with XHR call in your day to day work. Below article is must read to complete the course of Promise in Dojo
             </p>
 
             <br>
             <section class="similarArticle articleSection" data-articles="dojoXhrPromiseDef"></section>
 
-            <p><strong>If you are not comfortable with Dojo in general, you should hit the tab which says Dojo at top and pick the article with your level.</strong>
-            </p>
-
-            <br>
         </section>
 
 
@@ -411,8 +416,8 @@ deferred.isCanceled();      //Returns true if the Deferred is cancelled
             <p>If you want to contact me for feedback or suggestion or doubt. You can do so by commenting on Blogger article or in Youtube comments section.</p>
             <p>
                 You can also approach me dropping me mail directly at <a href="mailto:mails.icodingclub@gmail.com" target="_top">mails.icodingclub@gmail.com
-    </a> (
-                <strong>Prefer:</strong> comments approach)</p>
+    </a> </p>
+               <p> <strong>Please prefer:</strong> comment approach</p>
         </section>
 
 

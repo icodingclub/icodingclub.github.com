@@ -41,18 +41,21 @@
         </section>
 
         <section>
-            <h1 class="section-heading">Absolute pre-reads
+            <h1 class="section-heading">Must pre-reads
                     <span class="arrow"></span>
                 </h1>
             <br>
 
-            <p><strong>If you are not comfortable with Promise and Defered concepts or How Asynchronous Javascript work, with help of event queue. Yo should stop here and read the below article first.</strong>
+            <p>If you are not comfortable with Promise and Deferred concepts or How Asynchronous Javascript work, with help of event queue. Yo should stop here and read the below article first.
             </p>
 
-            <br>
             <section class="similarArticle articleSection" data-articles="asyncJsDefPromise"></section>
+            <p>
+                If you are not comfortable with basic DOJO api of Promise and Deferred, you should checkout below article first.
+            </p>
+            <section class="similarArticle articleSection" data-articles="dojoPromiseDef"></section>
 
-            <p><strong>If you are not comfortable with Dojo in general, you should hit the tab which says Dojo at top and pick the article with your level.</strong>
+            <p>If you are not comfortable with Dojo in general, you should hit the tab which says Dojo at top and pick the article with your level.
             </p>
 
             <br>
@@ -65,22 +68,30 @@
             <br>
             <img src="http://icodingclub.github.io/resource/image/youTubePlaceholder.gif">
 
-            <h3>Changes to article post video recording</h3>
-
-            <ol>
-                <li>none so far</li>
-            </ol>
         </section>
         <section>
-            <h1 class="section-heading">Re-look on Deferred and Promise lifecycle
+           
+            <h1 class="section-heading">code hands-on
                     <span class="arrow"></span>
                 </h1>
             <br>
 
-            <p>Lets give some time and re-look and re-understand the Deferred and Promise lifecycle, which is core of everything we will cover now</p>
-            <img src="http://icodingclub.github.io/blogger/images/promise-flow-diagram.png">
+            <h1>Package Structure</h1>
+            <p>Lets build the package structure as in below image</p>
+            <p><strong>If you are facing problem in running the application with this package structure, you might want to check the "Dojo hello world" application in DOJO section of this blog.</strong>
+            </p>
+            <img src="http://icodingclub.github.io/blogger/images/dojo-def-pg-struct.png">
 
-        </section>
+            <br>
+            <h1>Always run DOJO in server</h1>
+            <p>As per Dojo guideline, dojo work best when it is server. So we need a static server to hold everything</p>
+            <p>If you are on mac, come to application directory and simply run <strong>python -m SimpleHTTPServer 8888</strong> to run application on port 8888</p>
+            <p>You should see the whole package structure by hitting <strong>http://localhost:8888/</strong>
+            </p>
+            <p>You can choose your favorite server. Things will not change much.</p>
+            <br>
+            <h1>code</h1>
+            <p>Lets kick start by creating the test html</p>
 
 
 
@@ -247,9 +258,9 @@ define([
         </pre>
 
 
-  <pre class="prettyprint lang-js">
+        <pre class="prettyprint lang-js">
   Greetings:  {"custId":12345,"name":"Praveen from icodingclub"}  
-  </pre>    
+  </pre>
 
 
 
@@ -257,7 +268,7 @@ define([
         </section>
 
 
-<pre class="prettyprint lang-js">
+        <pre class="prettyprint lang-js">
 define([
     "dojo/_base/declare",
     "dojo/Deferred",
@@ -307,7 +318,7 @@ define([
 </pre>
 
 
-<pre class="prettyprint lang-js">
+        <pre class="prettyprint lang-js">
 Greetings:  {"custId":12345,"name":"Praveen from icodingclub"}
 showing products:  [{"id":111,"name":"iphone 5"},{"id":222,"name":"Moto X"}]
 showing deal of the days:  [{"id":333,"name":"iPad Air"}]
@@ -315,7 +326,7 @@ Ask feedback for:  [{"id":444,"name":"Macbook Air"}]
 </pre>
 
 
-<pre class="prettyprint lang-js">
+        <pre class="prettyprint lang-js">
 
 constructor: function() {
     // I have used self and not .bind(this) for clarity.
@@ -343,7 +354,7 @@ constructor: function() {
 
 </pre>
 
-<pre class="prettyprint lang-js">
+        <pre class="prettyprint lang-js">
 Handling error gracefully!!
 showing products:  [{"id":111,"name":"iphone 5"},{"id":222,"name":"Moto X"}]
 showing deal of the days:  [{"id":333,"name":"iPad Air"}]
@@ -351,7 +362,7 @@ Ask feedback for:  [{"id":444,"name":"Macbook Air"}]
 </pre>
 
 
-<pre class="prettyprint lang-js">
+        <pre class="prettyprint lang-js">
 
 constructor: function() {
     // I have used self and not .bind(this) for clarity.
@@ -379,7 +390,7 @@ constructor: function() {
 
 </pre>
 
-<pre class="prettyprint lang-js">
+        <pre class="prettyprint lang-js">
 Handling error gracefully!!
 </pre>
 

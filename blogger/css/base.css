@@ -402,3 +402,7 @@ pre.prettyprint{
 }
 
 
+pre.prettyprint.console{
+    background-color: rgba(0, 0, 0, .6);
+}
+
