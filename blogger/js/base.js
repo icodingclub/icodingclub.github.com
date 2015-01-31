@@ -105,7 +105,7 @@ var articleCatagorys = [{
         link: "http://icodingclub.blogspot.in/2014/11/deferred-and-promise-in-dojo-toolkit.html",
         image: "dojo.png",
         tag: "all dojo"
-    },{
+    }, {
         id: "dojoXhrPromiseDef",
         heading: "DOJO XHR using DEFERRED AND PROMISE IN DOJO TOOLKIT",
         desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax. Let's see how it work in Dojo",
@@ -188,19 +188,18 @@ var articleBuilder = {
         return articleTemplate;
 
     },
-    filterArticleByIds: function(ids) {
+    getArticleByIds: function(id) {
         var articles = [],
             i, j, k, articleHtml = "",
-            article, articleCatagory;
+            article = null,
+            articleCatagory;
 
         for (i = 0; i < articleCatagorys.length; i++) {
             articleCatagory = articleCatagorys[i];
             for (j = 0; j < articleCatagory.articles.length; j++) {
                 article = articleCatagory.articles[j];
-                for (k = 0; k < ids.length; k++) {
-                    if (article.id && article.id === ids[k]) {
-                        articles.push(article);
-                    }
+                if (article.id && article.id === id) {
+                    return article;
                 }
             }
         }
@@ -208,13 +207,11 @@ var articleBuilder = {
         return articles;
     },
 
-    buildArticlesById: function(ids) {
-        var articles = this.filterArticleByIds(ids),
+    buildArticlesById: function(id) {
+        var article = this.getArticleByIds(id),
             articleHtml = "";
 
-        for (var i = 0; i < articles.length; i++) {
-            articleHtml += this.buildArticleTemplate(articles[i]);
-        }
+        articleHtml += this.buildArticleTemplate(article);
         return articleHtml;
     }
 };
@@ -249,12 +246,10 @@ var blogPageBuilder = {
 
     },
     buildSimilarArticle: function() {
-        var $similraArticlePane = $("section.similarArticle");
-        if ($similraArticlePane) {
-            var articles = $similraArticlePane.attr("data-articles");
-            var articleIds = articles.split(",");
-            var articleHtml = articleBuilder.buildArticlesById(articleIds);
-            $("section.similarArticle").html(articleHtml);
-        }
+        $("section.similarArticle").each(function(value){
+            var articleHtml = articleBuilder.buildArticlesById($(this).attr("data-articles"));
+            $(this).html(articleHtml);
+        });
+        
     }
 };
