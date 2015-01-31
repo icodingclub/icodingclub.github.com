@@ -44,39 +44,97 @@
                 </h1>
             <br>
             <img src="http://icodingclub.github.io/resource/image/youTubePlaceholder.gif">
+
+            <h3>Changes to article post video recording</h3>
+
+            <ol>
+                <li>none so far</li>
+            </ol>
         </section>
         <section>
-            <h1 class="section-heading">How it work?
+            <h1 class="section-heading">What we are solving?
                     <span class="arrow"></span>
                 </h1>
             <br>
 
-            <h1>Promise state</h1>
+            <p>Lets first see few example of asynchronous process in javascript</p>
+            <h3>a Ajax based Asynchronous operation.</h3>
+            <pre class="prettyprint lang-js">
+            
+// a Ajax based Asynchronous operation
+xhr('/api/login', function(user) {
 
-            <ul>
-                <li><strong>pending:</strong> initial state, not fulfilled or rejected.</li>
-                <li><strong>fulfilled:</strong> successful operation</li>
-                <li><strong>rejected:</strong> failed operation.</li>
-            </ul>
+    //Callback handler
+    
+});
+            </pre>
+
+
+            <h3>a Timeout based Asynchronous operation.</h3>
+            <pre class="prettyprint lang-js">
+            
+// a Timeout based Asynchronous operation
+setTimeout(function(user) {
+
+    //Callback handler
+    
+}, 1000);
+            </pre>
+
+            <p>Both the above example are asynchronous, because we don't know when the callback handler will get called.Yes, setTimeout says that 1 sec....but believe me, it actually just say that callback will be called after minimum 1 sec. It may get called after 1 sec, but if the main thread of javascript engine is occupied with something(could be a infinite for loop), it will never get called.</p>
+
+
+            <p>So at this stage, it is very important to understand, How javascript engine handles an asynchronous process.</p>
 
             <h2>How Asynchronous Javascript process works?</h2>
             <p>Follow black arrow and callouts for details</p>
             <img src="http://icodingclub.github.io/blogger/images/async-js-evenr-queue.png">
-            <h2>How Asynchronous Javascript process works with Deferred and Promise?</h2>
-            <p>Follow black arrow and callouts for details</p>
-            <img src="http://icodingclub.github.io/blogger/images/async-js-promise.png">
-            <h2>Life cycle of Deferred and Promise?</h2>
-            <p>Follow black arrow and callouts for details</p>
-            <img src="http://icodingclub.github.io/blogger/images/promise-flow-diagram.png">
-        </section>
+            <h3>What's going on here?</h3>
 
+            <ol>
+                <li>Javascript execution start in single thread.</li>
+                <li>When it finds a block task like setTimeout or Ajax, it pass it to asynchronous flow which handled by Browser or Javascript engine</li>
+                <li>Asynchronous task wait for blockage to resolve, in setTimeout, when delay get over or in case of Ajax, when server return the response.</li>
+                <li>Post that, it find out any callback handler link with it. It it is present, it passed to Javscript engine Event queue.</li>
+                <li>Reaching to queue is no guarantee of execution, Event queue wait of Main thread to get free, once it get the slot it push the callback handlers one by one</li>
+            </ol>
+
+        </section>
         <section>
-            <h1 class="section-heading">Solving a real world problem
+            <h1 class="section-heading">Let's touch Promise and Deferred now
                     <span class="arrow"></span>
                 </h1>
             <br>
-            <h2> Take the below use case?</h2>
+            <h1>Difference (and similarities) between Promise and Deferred</h1>
+            <p>Before we go further, it is important to clear out the difference in these buzz words</p>
+            <h3>Promise</h3>
+            <p>Promise represents public apis, which let you handle asynchronous process by uniform format. It also let you nest the task, in sequential order, to perform </p>
+            <p>In general, Promise can be in below states</p>
 
+                <ol>
+                <li><strong>pending:</strong> initial state, not fulfilled or rejected.</li>
+                <li><strong>fulfilled:</strong> successful operation</li>
+                <li><strong>rejected:</strong> failed operation.</li>
+            </ol>
+  <h3>Deferred</h3>
+            <p>Deferred can be seen as wrapper over Promise or utility for Promise, which let play with state of Promise</p>
+            <p>In another words, A Deferred is just a Promise with methods that allow its owner to resolve or reject the Promise</p>
+
+            <p>Now, since we know how Javascript engine handle Asynchronous process, lets look on the Promise api</p>
+            <p>The ajax example we discussed at starting, can easily be solved by below code using Promise and Deferred</p>
+
+            <h2>A sample solution using Promise.</h2>
+            <pre class="prettyprint lang-js">
+defXhr("/login").then(function(user) {
+    ////Callback handler
+})
+
+        </pre>
+            <br>
+            <h2>Let's complicate things...
+</h2>
+            <p>At this stage Promise may not look very promising, let's complicate the situation further.</p>
+            <p>Take below real world problem</p>
             <ol>
                 <li>You need to develop a home page of e-shopping site.</li>
                 <li>first you have to take login credential from user, make a server call for authentication.</li>
@@ -88,7 +146,7 @@
             </ol>
 
 
-            <h2>A sample solution using callback.</h2>
+            <h2>Solution using callback.</h2>
             <pre class="prettyprint lang-js">
             
 xhr('/api/login', function(user) {
@@ -107,14 +165,14 @@ xhr('/api/login', function(user) {
 
         </pre>
 
-            <p>In above case, more the level of nesting, the harder the code is to read, debug, maintain, upgrade, and basically work with. This is generally known as "callback hell" or "Pyramid of Doom". Also, if we needed to handle errors, we need to possibly pass in another function to each xhrGET call to tell it what it needs to do in case of an error.</p>
+            <p>In above case, more the level of nesting, the harder the code is to read, debug, maintain, upgrade, and basically work with. This is generally known as "callback hell" or "Pyramid of Doom". Also, if we needed to handle errors, we need to possibly pass in another function to each xhr call to tell it what it needs to do in case of an error.</p>
             <p> <strong>If we wanted to have just one common error handler, that is not possible.</strong>
             </p>
 
 
-            <h2>A sample solution using Promise.</h2>
+            <h2>Solution using Promise.</h2>
             <pre class="prettyprint lang-js">
-request("/login").then(function(user) {
+defXhr("/login").then(function(user) {
     showGreatings(user);
 }).then(function() {
     return request("/topproducts");
@@ -136,19 +194,39 @@ request("/login").then(function(user) {
             <p>
                 Every time a success handler return a promise, it force execution to wait before another server call. Also, the server response value for that promise will be passed as an argument to the next success handler in the chain. </p>
 
-            <!--   <pre class="encodeCodeblock prettyprint lang-js">
-         </pre> -->
+
+
+
+            <h2>How Asynchronous Javascript process works with Deferred and Promise?</h2>
+            <p>Follow black arrow and callouts for details, it is similar to the diagram we discussed before, with the twist of Deferred.</p>
+            <img src="http://icodingclub.github.io/blogger/images/async-js-promise.png">
+
+
+
+            <h2>Life cycle of Deferred and Promise?</h2>
+            <p>Follow black arrow and callouts for details</p>
+            <img src="http://icodingclub.github.io/blogger/images/promise-flow-diagram.png">
         </section>
 
 
+
+        <!--   <pre class="encodeCodeblock prettyprint lang-js">
+         </pre> -->
+
+
         <section>
-            <h1 class="section-heading">What next...
+            <h1 class="section-heading">Let's touch the real code now...
                     <span class="arrow"></span>
                 </h1>
             <br>
 
+            <p>Core javascript doesn't provide Promise api. However it is so cool, It's implementation provided by many Javascript framework and Engine </p>
+            <p>Famous are jQuery, Dojo, Angular, etc</p>
+            <p>Javascript engine like Nodejs's V8 engine also provide implementation of these apis.</p>
+            <p>I am providing the real code from different framework(which looks and behave same, as they are implementation of public api of Promise), you can opt from below articles, which one you are looking for.(Note: i will add more and more article in below section as i get the time)</p>
 
-            <section class="similarArticle articleSection" data-articles="dojoPromiseDef,jqueryPromiseDef"></section>
+
+            <section class="similarArticle articleSection" data-articles="dojoPromiseDef"></section>
         </section>
 
 

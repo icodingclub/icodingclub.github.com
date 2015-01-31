@@ -14,13 +14,13 @@ var articleCatagorys = [{
         image: "image-upload.png",
         tag: "all webui java html5"
     }, {
-        id: "jqueryPromiseDef",
-        heading: "Deferred and Promise in JQuery",
-        desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax. Let's see how it work in JQuery",
-        link: "http://icodingclub.blogspot.in/2015/01/deferred-and-promise-in-jquery.html",
-        image: "jquery.png",
-        tag: "all jquery"
-    }, {
+    //     id: "jqueryPromiseDef",
+    //     heading: "Deferred and Promise in JQuery",
+    //     desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax. Let's see how it work in JQuery",
+    //     link: "http://icodingclub.blogspot.in/2015/01/deferred-and-promise-in-jquery.html",
+    //     image: "jquery.png",
+    //     tag: "all jquery"
+    // }, {
         heading: "Simple Inheritance in Javascript",
         desc: "A step by step guide for Javascript prototypes based Inheritance.",
         link: "http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html",
