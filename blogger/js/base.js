@@ -3,7 +3,7 @@ var articleCatagorys = [{
     displayName: "Articles",
     articles: [{
         id: "asyncJsDefPromise",
-        heading: "HANDLING ASYNCHRONOUS JAVASCRIPT USING DEFERRED AND PROMISE",
+        heading: "HANDLING ASYNCHRONOUS JAVASCRIPT and foundation of DEFERRED AND PROMISE",
         desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax.",
         link: "http://icodingclub.blogspot.in/2014/11/handling-asynchronous-javascript-using.html",
         image: "promise-js-logo.png",
