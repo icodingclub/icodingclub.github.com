@@ -225,7 +225,7 @@ var blogPageBuilder = {
         var $codeBlock = $("pre.encodeCodeblock")
 
         if ($codeBlock) {
-            var htmlCode = $("pre.encodeCodeblock").html();
+            var htmlCode = $codeBlock.html();
             htmlCode = htmlCode.replace(/<!--\$he/g, '');
             htmlCode = htmlCode.replace(/\$he-->/g, '');
             $("pre.encodeCodeblock").text(htmlCode);
