@@ -2,12 +2,14 @@ var articleCatagorys = [{
     type: "uiJavaArticle",
     displayName: "Articles",
     articles: [{
+    	id: "asyncJsDefPromise",
         heading: "HANDLING ASYNCHRONOUS JAVASCRIPT USING DEFERRED AND PROMISE",
         desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax.",
         link: "http://icodingclub.blogspot.in/2014/11/handling-asynchronous-javascript-using.html",
         image: "promise-js-logo.png",
         tag: "all webui java html5"
     }, {
+
         heading: "HTML5 AJAX File upload (Image or HTML5 Canvas data) to Java backend",
         desc: "This article explains how you can upload or read an image file from your local file system, display it as image and HTML5 Canvas and upload it to java backend.I am using new HTML5 api for multipart upload or FormData upload and java7 api for MultipartConfig upload.",
         link: "http://icodingclub.blogspot.in/2014/10/html5-ajax-file-upload-image-or-html5.html",
@@ -220,7 +222,11 @@ var blogPageBuilder = {
     },
 
     encodeCode: function() {
-        $("pre.encodeCodeblock").text($("pre.encodeCodeblock").html());
+
+        var htmlCode = $("pre.encodeCodeblock").html();
+        htmlCode = htmlCode.replace(/<!--\$he/g, '');
+        htmlCode = htmlCode.replace(/\$he-->/g, '');
+        $("pre.encodeCodeblock").text(htmlCode);
     },
     buildGoogleCodePrettifyScript: function() {
         $('<script/>', {
