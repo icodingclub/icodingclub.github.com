@@ -209,7 +209,8 @@ iframe {
     vertical-align: top
 }
 .articleSection article .articleImg {
-    width: 110px
+    width: 110px;
+    background-color: white;
 }
 .articleSection article .articleImg img {
     border: 4px solid rgba(238, 238, 238, .7)
