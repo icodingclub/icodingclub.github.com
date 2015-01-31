@@ -2,7 +2,7 @@ var articleCatagorys = [{
     type: "uiJavaArticle",
     displayName: "Articles",
     articles: [{
-    	id: "asyncJsDefPromise",
+        id: "asyncJsDefPromise",
         heading: "HANDLING ASYNCHRONOUS JAVASCRIPT USING DEFERRED AND PROMISE",
         desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax.",
         link: "http://icodingclub.blogspot.in/2014/11/handling-asynchronous-javascript-using.html",
@@ -16,13 +16,13 @@ var articleCatagorys = [{
         image: "image-upload.png",
         tag: "all webui java html5"
     }, {
-    //     id: "jqueryPromiseDef",
-    //     heading: "Deferred and Promise in JQuery",
-    //     desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax. Let's see how it work in JQuery",
-    //     link: "http://icodingclub.blogspot.in/2015/01/deferred-and-promise-in-jquery.html",
-    //     image: "jquery.png",
-    //     tag: "all jquery"
-    // }, {
+        //     id: "jqueryPromiseDef",
+        //     heading: "Deferred and Promise in JQuery",
+        //     desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax. Let's see how it work in JQuery",
+        //     link: "http://icodingclub.blogspot.in/2015/01/deferred-and-promise-in-jquery.html",
+        //     image: "jquery.png",
+        //     tag: "all jquery"
+        // }, {
         heading: "Simple Inheritance in Javascript",
         desc: "A step by step guide for Javascript prototypes based Inheritance.",
         link: "http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html",
@@ -222,11 +222,15 @@ var blogPageBuilder = {
     },
 
     encodeCode: function() {
+        var $codeBlock = $("pre.encodeCodeblock")
 
-        var htmlCode = $("pre.encodeCodeblock").html();
-        htmlCode = htmlCode.replace(/<!--\$he/g, '');
-        htmlCode = htmlCode.replace(/\$he-->/g, '');
-        $("pre.encodeCodeblock").text(htmlCode);
+        if ($codeBlock) {
+            var htmlCode = $("pre.encodeCodeblock").html();
+            htmlCode = htmlCode.replace(/<!--\$he/g, '');
+            htmlCode = htmlCode.replace(/\$he-->/g, '');
+            $("pre.encodeCodeblock").text(htmlCode);
+        }
+
     },
     buildGoogleCodePrettifyScript: function() {
         $('<script/>', {
