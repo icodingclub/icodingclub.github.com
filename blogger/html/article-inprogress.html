@@ -4,7 +4,7 @@
     <title></title>
     <style type="text/css"></style>
     <link rel="stylesheet" type="text/css" href="../css/base.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <style type="text/css" media="screen">
     body {
         background-color: rgba(238, 238, 238, 1);
@@ -19,6 +19,8 @@
     section {
         padding: 10px 20px;
     }
+
+
     </style>
 </head>
 
@@ -54,39 +56,122 @@
             <h1>Promise state</h1>
 
             <ul>
-
                 <li><strong>pending:</strong> initial state, not fulfilled or rejected.</li>
                 <li><strong>fulfilled:</strong> successful operation</li>
                 <li><strong>rejected:</strong> failed operation.</li>
             </ul>
 
-
+            <h2>How Asynchronous Javascript process works?</h2>
+            <p>Follow black arrow and callouts for details</p>
             <img src="http://icodingclub.github.io/blogger/images/async-js-evenr-queue.png">
+            <h2>How Asynchronous Javascript process works with Deferred and Promise?</h2>
+            <p>Follow black arrow and callouts for details</p>
             <img src="http://icodingclub.github.io/blogger/images/async-js-promise.png">
+            <h2>Life cycle of Deferred and Promise?</h2>
+            <p>Follow black arrow and callouts for details</p>
             <img src="http://icodingclub.github.io/blogger/images/promise-flow-diagram.png">
         </section>
 
-        <pre class="encodeCodeblock prettyprint lang-html">
+        <section>
+            <h1 class="section-heading">Solving a real world problem
+                    <span class="arrow"></span>
+                </h1>
+            <br>
+            <h2> Take the below use case?</h2>
+
+            <ol>
+                <li>You need to develop a home page of e-shopping site.</li>
+                <li>first you have to take login credential from user, make a server call for authentication.</li>
+                <li>On successful authentication, show greeting message for user.</li>
+                <li>Show loading icon in main section.</li>
+                <li>Make a server call to show home page with “Top Products”</li>
+                <li>Once it is done, take a server call to get “Deals of the day”, and show on the right side of home page.</li>
+                <li>Once it is done, get the information of last product user had purchased from site and show the pop up, “do you want to review this product?”</li>
+            </ol>
+
+
+            <h2>A sample solution using callback.</h2>
+            <pre class="prettyprint lang-js">
             
+xhr('/api/login', function(user) {
+    showGrretings();
+    showLoadingIcon();
+    xhr('/topproducts', function(products) {
+        showProducts();
+        xhr('/dealOfTheDay', function(products) {
+            showDealOfTheDay();
+            xhr('/reviewLastPurchaseProduct', function(products) {
+                showRevieDialog();
+            });
+        });
+    });
+});
+
+        </pre>
+
+            <p>In above case, more the level of nesting, the harder the code is to read, debug, maintain, upgrade, and basically work with. This is generally known as "callback hell" or "Pyramid of Doom". Also, if we needed to handle errors, we need to possibly pass in another function to each xhrGET call to tell it what it needs to do in case of an error.</p>
+            <p> <strong>If we wanted to have just one common error handler, that is not possible.</strong>
+            </p>
+
+
+            <h2>A sample solution using Promise.</h2>
+            <pre class="prettyprint lang-js">
+request("/login").then(function(user) {
+    showGreatings(user);
+}).then(function() {
+    return request("/topproducts");
+}).then(function(products) {
+    showProducts(products);
+}).then(function(data) {
+    return request("/dealOfTheDay");
+}).then(function(dealOfTheDay) {
+    showDealOfTheDay(dealOfTheDay);
+}).then(function(data) {
+    return request("/feedback");
+}).then(function(purchasedProduct) {
+    showFeedback(purchasedProduct);
+});
+
+        </pre>
+
+            <p>In above example, each request will make server calls. Each server will return returns a promise, and we use the then function to add a success handler.</p>
+            <p>
+                Every time a success handler return a promise, it force execution to wait before another server call. Also, the server response value for that promise will be passed as an argument to the next success handler in the chain. </p>
+
+            <!--   <pre class="encodeCodeblock prettyprint lang-js">
+         </pre> -->
+        </section>
+
+
+        <section>
+            <h1 class="section-heading">What next...
+                    <span class="arrow"></span>
+                </h1>
+            <br>
+
+
+            <section class="similarArticle articleSection" data-articles="dojoPromiseDef,dojoPromiseDef1"></section>
+        </section>
+    </article>
+
 <section>
-    <h1 class="section-heading">Introduction
+    <h1 class="section-heading">Contact Me
                     <span class="arrow"></span>
                 </h1>
     <br>
-    <h1 class="articleTitle">Dojo Toolkit Tutorial (AMD): Simple template based widget using AMD concepts</h1>
-    <p>A step-by-step tutorial for creating a modular template based widget in DOJO.
-        <br>We will create a simple counter widget first and put the event on it.</p>
+
+    <p>If you want to contact me for feedback or suggestion or doubt. You can do so by commenting on Blogger article or in Youtube comments section.</p>
+    <p>
+        You can also approach me dropping me mail directly at <a href="mailto:mails.icodingclub@gmail.com" target="_top">mails.icodingclub@gmail.com
+    </a>
+    </p>
 </section>
-            
-        </pre>
-
-    </article>
 
 
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../js/blogPage.js" type="text/javascript">
+    <script src="../js/topics.js" type="text/javascript"></script>
+    <script src="../js/base.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    blogPageBuilder.init();
     </script>
 
 </body>
