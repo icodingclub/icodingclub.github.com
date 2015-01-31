@@ -222,7 +222,7 @@ var blogPageBuilder = {
     },
 
     encodeCode: function() {
-        var $codeBlock = $("pre.encodeCodeblock")
+        var $codeBlock = $("pre.encodeCodeblock");
 
         if ($codeBlock) {
             var htmlCode = $codeBlock.html();
