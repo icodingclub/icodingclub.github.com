@@ -109,7 +109,7 @@ var articleCatagorys = [{
         id: "dojoXhrPromiseDef",
         heading: "DOJO XHR using DEFERRED AND PROMISE IN DOJO TOOLKIT",
         desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax. Let's see how it work in Dojo",
-        link: "http://icodingclub.blogspot.in/2014/11/deferred-and-promise-in-dojo-toolkit.html",
+        link: "http://icodingclub.blogspot.in/2015/01/dojo-xhr-using-deferred-and-promise.html",
         image: "dojo.png",
         tag: "all dojo"
     }]

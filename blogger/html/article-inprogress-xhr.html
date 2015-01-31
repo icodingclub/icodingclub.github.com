@@ -81,7 +81,8 @@
             <p><strong>If you are facing problem in running the application with this package structure, you might want to check the "Dojo hello world" application in DOJO section of this blog.</strong>
             </p>
             <img src="http://icodingclub.github.io/blogger/images/dojo-def-pg-struct.png">
-
+                <br>
+                  <div class="path">We will concentrate on <i>building deferred-xhr</i> and <i>server</i> folder in this article.</div>
             <br>
             <h1>Always run DOJO in server</h1>
             <p>As per Dojo guideline, dojo work best when it is server. So we need a static server to hold everything</p>
@@ -91,7 +92,11 @@
             <p>You can choose your favorite server. Things will not change much.</p>
             <br>
             <h1>code</h1>
-            <p>Lets kick start by creating the test html</p>
+            
+
+              <h2>Build the server</h2>
+              <p>We will be using a simple nodejs server for all server response in this application</p>
+              <p>There is no dependency on what technology you use on Server, you can use Java, PHP, etc...till they follow the URL pattern</p>
 
 
 
@@ -184,9 +189,10 @@ function feedback() {
 
 
         <div class="path">
-            <span>(On terminal) $ </span> node server.js
+            <span>(To run on terminal) $ </span> node server.js
         </div>
 
+<h2>Building main test HTML</h2>
         <div class="path">
             <span>Path: </span> /app/dojo-deferred/deferred-xhr/testXhr.html
         </div>
@@ -227,7 +233,7 @@ function feedback() {
 $he-->
 </pre>
 
-
+<h2>Build the main widget</h2>
         <div class="path">
             <span>Path:/app/dojo-deferred/deferred-xhr/TestDefXhrWidget.js</span>
         </div>
@@ -257,8 +263,10 @@ define([
 
         </pre>
 
-
-        <pre class="prettyprint lang-js">
+ <div class="path">
+                <span>Log output:</span>
+            </div>
+        <pre class="prettyprint lang-html console">
   Greetings:  {"custId":12345,"name":"Praveen from icodingclub"}  
   </pre>
 
@@ -266,7 +274,7 @@ define([
 
 
         </section>
-
+<h2>Try chaining</h2>
 
         <pre class="prettyprint lang-js">
 define([
@@ -316,16 +324,19 @@ define([
 });
 
 </pre>
+ <div class="path">
+                <span>Log output:</span>
+            </div>
 
-
-        <pre class="prettyprint lang-js">
+        <pre class="prettyprint lang-html console">
 Greetings:  {"custId":12345,"name":"Praveen from icodingclub"}
 showing products:  [{"id":111,"name":"iphone 5"},{"id":222,"name":"Moto X"}]
 showing deal of the days:  [{"id":333,"name":"iPad Air"}]
 Ask feedback for:  [{"id":444,"name":"Macbook Air"}]
 </pre>
 
-
+<h2>Try error post 404 (without short-circuit)</h2>
+<p>changing url to login.json.404 from login.json, to trigger 404</p>
         <pre class="prettyprint lang-js">
 
 constructor: function() {
@@ -353,15 +364,17 @@ constructor: function() {
 }
 
 </pre>
-
-        <pre class="prettyprint lang-js">
+ <div class="path">
+                <span>Log output:</span>
+            </div>
+        <pre class="prettyprint lang-html console">
 Handling error gracefully!!
 showing products:  [{"id":111,"name":"iphone 5"},{"id":222,"name":"Moto X"}]
 showing deal of the days:  [{"id":333,"name":"iPad Air"}]
 Ask feedback for:  [{"id":444,"name":"Macbook Air"}]
 </pre>
 
-
+<h2>Try error post 404 (short-circuit)</h2>
         <pre class="prettyprint lang-js">
 
 constructor: function() {
@@ -389,8 +402,10 @@ constructor: function() {
 }
 
 </pre>
-
-        <pre class="prettyprint lang-js">
+ <div class="path">
+                <span>Log output:</span>
+            </div>
+        <pre class="prettyprint lang-html console">
 Handling error gracefully!!
 </pre>
 
