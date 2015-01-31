@@ -21,12 +21,6 @@ var articleCatagorys = [{
         image: "jquery.png",
         tag: "all jquery"
     }, {
-        heading: "AJAX Framework using JQuery: An Object Oriented approach",
-        desc: "A very simple AJAX Framework using JQuery for light weight application, with an object oriented approach.",
-        link: "http://icodingclub.blogspot.in/2013/07/object-oriented-ajax-framework-using.html",
-        image: "jquery.png",
-        tag: "all webui jquery"
-    }, {
         heading: "Simple Inheritance in Javascript",
         desc: "A step by step guide for Javascript prototypes based Inheritance.",
         link: "http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html",
@@ -67,13 +61,13 @@ var articleCatagorys = [{
         desc: "A very simple tree widget, made out of JQuery.",
         link: "http://icodingclub.blogspot.in/2013/10/simplest-approach-tree-widget.html",
         image: "tree-widget.png",
-        tag: "all webui"
+        tag: "all webui jquery"
     }, {
         heading: "Accordion widget using JQuery",
         desc: "A very simple Accordion widget built out of Javascript and JQuery",
         link: "http://icodingclub.blogspot.in/2013/10/simplest-approach-accordion-widget.html",
         image: "accodion-pane.png",
-        tag: "all webui"
+        tag: "all webui jquery"
     }]
 }, {
     type: "dojoArticle",
