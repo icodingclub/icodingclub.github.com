@@ -232,10 +232,10 @@ $(document).ready(function() {
     setTimeout(function() {
 
     	if(document.getElementById("tester") == null){
-    		$(".container").hide("fast", function() {
-            $(".container").html('<center><h1>Detected Ad-Blockers</h1>'+ 
+    		$(".content").hide("fast", function() {
+            $(".content").html('<center><h1>Detected Ad-Blockers</h1>'+ 
             	'<p style="color:maroon"><strong>To support free reading content on iCodingClub,' + ' Uninstall or pause the add-blocker plugin</strong> </p></center>');
-            $(".container").show("fast");
+            $(".content").show("fast");
         });
     	}
         
