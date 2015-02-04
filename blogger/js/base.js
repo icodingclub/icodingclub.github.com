@@ -229,6 +229,7 @@ var blogPageBuilder = {
 }
 
 $(document).ready(function() {
+	 blogPageBuilder.init();
     setTimeout(function() {
 
     	if(document.getElementById("tester") == null){
