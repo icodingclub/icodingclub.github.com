@@ -400,8 +400,9 @@ z-index: 100 !important;
     font-weight: bolder
 }
 .banner-msg .banner-content p {
-    margin: 1px auto
+    margin: 1px auto;
+    font-size: 1.2em
 }
 .banner-msg .banner-content p.small {
-    font-size: .9em
+    font-size: 1em
 }
