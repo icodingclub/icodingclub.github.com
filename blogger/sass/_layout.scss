@@ -1,3 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,300italic,400italic);
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+body, html {
+    overflow-x: hidden
+}
+a, abbr, acronym, address, applet, b, big, blockquote, body, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: 0 0
+}
+
+h1 {
+    font-size: 1.4em;
+    color: #404040
+}
+h2 {
+    font-size: 1.1em;
+    color: #545d65
+}
+p~h2 {
+    margin-top: 2em
+}
+h3 {
+    font-size: 1.111em;
+    color: #778088
+}
+h4 {
+    font-size: .889em;
+    color: #9ca8b2
+}
+h5 {
+    font-size: .875em;
+    color: #9ca8b2
+}
+h6 {
+    font-size: .667em;
+    color: #9ca8b2;
+    text-transform: uppercase
+}
+header h1 {
+    text-transform: lowercase
+}
+p {
+    margin: 0 0 1.25em
+}
+
 ol {
     margin-left: 25px!important;
     margin-top: 2px!important;
@@ -245,23 +298,7 @@ blockquote.morearticle {
     font-weight: 700;
     color: maroon
 }
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,300italic,400italic);
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box
-}
-body, html {
-    overflow-x: hidden
-}
-a, abbr, acronym, address, applet, b, big, blockquote, body, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    vertical-align: baseline;
-    background: 0 0
-}
+
 :focus {
     outline: 0
 }
@@ -313,40 +350,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 .5em;
     text-transform: uppercase
 }
-h1 {
-    font-size: 1.4em;
-    color: #404040
-}
-h2 {
-    font-size: 1.1em;
-    color: #545d65
-}
-p~h2 {
-    margin-top: 2em
-}
-h3 {
-    font-size: 1.111em;
-    color: #778088
-}
-h4 {
-    font-size: .889em;
-    color: #9ca8b2
-}
-h5 {
-    font-size: .875em;
-    color: #9ca8b2
-}
-h6 {
-    font-size: .667em;
-    color: #9ca8b2;
-    text-transform: uppercase
-}
-header h1 {
-    text-transform: lowercase
-}
-p {
-    margin: 0 0 1.25em
-}
+
 small {
     font-size: .667em
 }
