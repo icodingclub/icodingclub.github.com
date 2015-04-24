@@ -125,12 +125,15 @@ footer a:visited {
             color: #282828;
             margin: 3px 0;
             img {
+                display: block;
                 float: left;
-                margin: 3px;
+                padding: 2px;
+                width: 13%;  
+
             }
         }
         h1 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             &:hover {
                 text-decoration: underline;
