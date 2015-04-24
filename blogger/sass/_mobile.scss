@@ -1,3 +1,9 @@
+@media (min-width: 769px) {
+    .showOnMobile {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .content-outer, .content-fauxcolumn-outer, .region-inner {
         width: 100%;
@@ -17,5 +23,6 @@
         position: static;
         float: none;
     }
-    
 }
+
+
