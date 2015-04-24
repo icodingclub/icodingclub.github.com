@@ -31,7 +31,7 @@ aside.add {
 }
 
 footer {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     margin: 20px 10px 10px;
     padding: 35px;
     text-align: center;
@@ -98,7 +98,7 @@ footer a:visited {
 }
 
 .articleTitle {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     margin: 10px 0 20px
 }
 
@@ -144,7 +144,7 @@ footer a:visited {
 }
 
 .articleSection article .articleBody h1 {
-    font-size: .9em;
+    font-size: .9rem;
     text-transform: uppercase
 }
 
@@ -154,13 +154,13 @@ footer a:visited {
 }
 
 .articleSection article .articleBody p {
-    font-size: .8em;
+    font-size: .8rem;
     color: #282828;
-    margin: 3px 10px
+    margin: 3px 0;
 }
 
 .articleSection article .articleBody .readMore {
-    font-size: .8em;
+    font-size: .8rem;
     text-transform: uppercase
 }
 
@@ -181,11 +181,11 @@ blockquote.morearticle {
     border-left: 6px solid #ff7321;
     background-color: #eee;
     padding: 25px 10px;
-    font-size: 1.2em
+    font-size: 1.2rem
 }
 
 .path {
-    font-size: .8em;
+    font-size: .8rem;
     margin: 8px;
     padding: 4px;
     background-color: #eee;
@@ -200,7 +200,7 @@ blockquote.morearticle {
 }
 
 pre.prettyprint {
-    line-height: 1.4em
+    line-height: 1.4rem
 }
 
 pre.prettyprint.console {
@@ -234,15 +234,15 @@ pre.prettyprint.console {
 }
 
 .banner-msg .banner-content span.bold {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: bolder
 }
 
 .banner-msg .banner-content p {
     margin: 1px auto;
-    font-size: 1.2em
+    font-size: 1.2rem
 }
 
 .banner-msg .banner-content p.small {
-    font-size: 1em
+    font-size: 1rem
 }
