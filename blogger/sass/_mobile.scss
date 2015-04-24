@@ -1,0 +1,20 @@
+@media (max-width: 768px) {
+    .content-outer, .content-fauxcolumn-outer, .region-inner {
+        width: 100%;
+    }
+    .main-inner .columns {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .main-inner .column-right-outer {
+        position: static;
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        display: block;
+    }
+    .column-center-outer, .column-left-outer, .column-right-outer {
+        position: static;
+        float: none;
+    }
+}

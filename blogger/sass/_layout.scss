@@ -124,7 +124,8 @@ footer a:visited {
 }
 
 .articleSection article .articleImg {
-    width: 110px;
+    width: 15%;
+    max-width: 110px;
     background-color: #fff
 }
 
@@ -240,23 +241,4 @@ pre.prettyprint.console {
     font-size: 1em
 }
 
-@media (max-width: 768px) {
-    .content-outer, .content-fauxcolumn-outer, .region-inner {
-        width: 100%;
-    }
-    .main-inner .columns {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .main-inner .column-right-outer {
-        position: static;
-        float: none;
-        width: 100%;
-        margin-right: 0;
-        display: block;
-    }
-    .column-center-outer, .column-left-outer, .column-right-outer {
-        position: static;
-        float: none;
-    }
-}
+
