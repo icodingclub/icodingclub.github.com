@@ -31,10 +31,10 @@
         display: none;
     }
     .author {
-        margin: 2px;
         .pic {
             width: 40px;
             height: 40px;
+            margin: 1rem 0;
         }
     }
     .author {
@@ -45,6 +45,8 @@
             h1 {
                 font-size: .4rem;
             }
+            margin: 2px;
+
         }
     }
     header {
