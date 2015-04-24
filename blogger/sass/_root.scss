@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-size: 16px;
+}
+
 html {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased
@@ -173,16 +177,7 @@ div#tableRow {
     vertical-align: top
 }
 
-.logo:hover {
-    text-decoration: none
-}
 
-.logo h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 3.5em;
-    line-height: 2em;
-    color: #fff
-}
 
 .section-heading {
     font-size: 1em;
