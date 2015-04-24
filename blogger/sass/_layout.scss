@@ -105,9 +105,6 @@ footer a:visited {
 .articleSection {
     width: 98%;
     margin: 6px;
-    border-spacing: 20px;
-    vertical-align: top;
-    border-collapse: collapse;
     article {
         border-left: 6px solid #fff;
         margin-bottom: 1rem;
@@ -118,7 +115,6 @@ footer a:visited {
         }
         div {
             padding: 8px;
-            vertical-align: top
         }
         p.desc {
             font-size: .9rem;
