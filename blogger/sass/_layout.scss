@@ -108,11 +108,11 @@ footer a:visited {
     border-spacing: 20px;
     vertical-align: top;
     border-collapse: collapse;
-    background-color: rgba(238, 238, 238, .4);
+    
     article {
         border-left: 6px solid #fff;
-        border-bottom: 15px solid #fff;
-        margin-bottom: .2rem;
+        margin-bottom: 1rem;
+        background-color: rgba(238, 238, 238, .4);
         &:hover {
             border-left: 6px solid #69c773;
         }
