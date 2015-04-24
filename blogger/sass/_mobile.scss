@@ -5,6 +5,11 @@
 }
 
 @media (max-width: 768px) {
+    .tabs-inner .widget li a{
+        padding: 0.2rem;
+        font-size: .8rem;
+    }
+
     .content-outer, .content-fauxcolumn-outer, .region-inner {
         width: 100%;
     }
@@ -33,9 +38,6 @@
             height: 40px;
         }
     }
-    .logo {
-        h1 {}
-    }
     .author {
         .info {
             h1 {
@@ -46,8 +48,11 @@
             }
         }
     }
+    header{
+        padding-left: 2px;
+    }
     .logo h1 {
-        font-size: 1rem;
+        font-size: 1.4rem;
         line-height: 5rem;
     }
     .articleSection {
