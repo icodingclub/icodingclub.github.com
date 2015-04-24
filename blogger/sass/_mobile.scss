@@ -5,6 +5,11 @@
 }
 
 @media (max-width: 1024px) {
+     .tabs-inner .widget li a {
+        padding: 0.3rem;
+        font-size: .9rem;
+    }
+
     .logo h1 {
         font-size: 2.5em;
         line-height: 2.5em;
