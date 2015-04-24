@@ -8,6 +8,9 @@
     iframe, object, img {
         width: 100%;
     }
+    .section {
+        margin: 0 0px;
+    }
     .content-inner {
         padding: 0px;
     }
@@ -43,7 +46,9 @@
         }
     }
     .author {
+        margin: 3px;
         .info {
+            margin: 5px;
             h1 {
                 font-size: .8rem;
             }
@@ -56,8 +61,8 @@
         padding-left: 2px;
     }
     .logo h1 {
-        font-size: 1.4rem;
-        line-height: 5rem;
+        font-size: 1.2rem;
+        line-height: 6rem;
     }
     .articleSection {
         margin: 1px;
