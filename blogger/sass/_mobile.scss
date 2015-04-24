@@ -81,18 +81,16 @@
         font-weight: 500;
         position: static;
         display: inline-block;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 2px;
         padding: 5px;
-        text-align: left;
     }
     .arrow {
+        line-height: 0;
         position: static;
-        top: 100%;
-        left: 0;
         width: 0;
         height: 0;
-        border-top: 0;
-        border-left: 0;
+        border: 0;
     }
 }
