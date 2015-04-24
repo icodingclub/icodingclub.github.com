@@ -5,11 +5,10 @@
 }
 
 @media (max-width: 768px) {
-    .tabs-inner .widget li a{
+    .tabs-inner .widget li a {
         padding: 0.2rem;
         font-size: .8rem;
     }
-
     .content-outer, .content-fauxcolumn-outer, .region-inner {
         width: 100%;
     }
@@ -48,7 +47,7 @@
             }
         }
     }
-    header{
+    header {
         padding-left: 2px;
     }
     .logo h1 {
@@ -77,5 +76,23 @@
                 }
             }
         }
+    }
+    .section-heading {
+        font-weight: 500;
+        position: static;
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+        text-align: left;
+    }
+    .arrow {
+        position: static;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top: 0;
+        border-left: 0;
     }
 }
