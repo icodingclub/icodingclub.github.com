@@ -148,7 +148,7 @@ var articleCatagorys = [{
     }],
     articleBuilder = {
         articleCatagoryTemplate: "<h1 class='section-heading'>{{articleSectionHeading}}<span class='arrow'></span></h1><br><section class='articleSection'>{{articles}}</section>",
-        articleTemplate: "<article><div class='articleImg'><a href='{{link}}'><img src='{{iamge}}'></a></div><div class='articleBody'><a href='{{link}}'><h1>{{heading}}</h1></a><p class='desc'><img class='showOnMobile' src='{{iamge}}'>{{desc}}</p></div></article>",
+        articleTemplate: "<article><div class='articleBody'><a href='{{link}}'><h1>{{heading}}</h1></a><p class='desc'><img class='' src='{{iamge}}'>{{desc}}</p></div></article>",
         getArticlesByTag: function(e, i) {
             var a, t, o, n, l, r = "";
             for (o = this.articleCatagoryTemplate, o = o.replace("{{articleSectionHeading}}", i), a = 0; a < articleCatagorys.length; a++)
