@@ -5,9 +5,11 @@
 }
 
 @media (max-width: 768px) {
-
-    iframe, object, img{
+    iframe, object, img {
         width: 100%;
+    }
+    .content-inner {
+        padding: 0px;
     }
     .tabs-inner .widget li a {
         padding: 0.2rem;
@@ -48,7 +50,6 @@
             h1 {
                 font-size: .4rem;
             }
-
         }
     }
     header {
@@ -98,5 +99,4 @@
         height: 0;
         border: 0;
     }
-
 }
