@@ -1,3 +1,7 @@
+body {
+    font-size: 16px;
+}
+
 section.main {
     font-size: 105%;
     display: table-cell;
@@ -72,13 +76,13 @@ footer a:visited {
 }
 
 .author .info h1 {
-    font-size: 1.2em;
+    font-size: 1.1rem;
     text-align: right;
     color: #fff
 }
 
 .author .info h2 {
-    font-size: .7em;
+    font-size: .5rem;
     text-align: right;
     color: #fff
 }
@@ -89,7 +93,8 @@ footer a:visited {
     height: 80px;
     margin: 0 10px 0 0;
     border-radius: 40px;
-    background: url(/resource/image/me_small.png) right top no-repeat
+    background: url(/resource/image/me_small.png) right top no-repeat;
+    background-size: contain;
 }
 
 .articleTitle {
@@ -125,6 +130,7 @@ footer a:visited {
 
 .articleSection article .articleImg {
     width: 15%;
+    min-width: 70px;
     max-width: 110px;
     background-color: #fff
 }
@@ -240,7 +246,3 @@ pre.prettyprint.console {
 .banner-msg .banner-content p.small {
     font-size: 1em
 }
-
-
-
-

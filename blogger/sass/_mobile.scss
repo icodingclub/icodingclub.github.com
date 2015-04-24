@@ -1,4 +1,4 @@
-@media (min-width: 769px) {
+@media (min-width: 770px) {
     .showOnMobile {
         display: none;
     }
@@ -23,6 +23,27 @@
         position: static;
         float: none;
     }
+    .articleImg {
+        display: none;
+    }
+    .author {
+        margin: 2px;
+        .pic {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .logo {
+        h1 {}
+    }
+    .author {
+        .info {
+            h1 {
+                ont-size: .8rem;
+            }
+            h1 {
+                ont-size: .4rem;
+            }
+        }
+    }
 }
-
-

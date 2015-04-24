@@ -157,7 +157,7 @@ var articleCatagorys = [{
         },
         buildArticleTemplate: function(e) {
             var i = this.articleTemplate;
-            return i = i.replace("{{iamge}}", "http://icodingclub.github.io/resource/image/" + e.image), i = i.replace("{{heading}}", e.heading), i = i.replace("{{desc}}", e.desc), i = i.replace("{{link}}", e.link).replace("{{link}}", e.link).replace("{{link}}", e.link)
+            return i = i.replace(/{{iamge}}/ig, "http://icodingclub.github.io/resource/image/" + e.image), i = i.replace("{{heading}}", e.heading), i = i.replace("{{desc}}", e.desc), i = i.replace("{{link}}", e.link).replace("{{link}}", e.link).replace("{{link}}", e.link)
         },
         getArticleByIds: function(e) {
             var i, a, t, o = [],
