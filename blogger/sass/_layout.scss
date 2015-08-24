@@ -3,7 +3,7 @@
 }
 
 .logo h1 {
-    font-family: inherit;//'Courier New', Courier, monospace;
+    font-family: inherit; //'Courier New', Courier, monospace;
     font-size: 3.5em;
     line-height: 2em;
     color: #fff
@@ -17,7 +17,8 @@ section.main {
     background-color: #fff
 }
 
-section p, ul li {
+section p,
+ul li {
     font-size: 15px;
     margin: 5px 0
 }
@@ -153,7 +154,7 @@ blockquote.info {
 }
 
 blockquote.codeoutput {
-    font-family: inherit;//'Courier New', Courier, monospace;
+    font-family: inherit; //'Courier New', Courier, monospace;
     border-left: 6px solid #ccc;
     background-color: #f8f8f8;
     padding: 4px
@@ -198,22 +199,23 @@ pre.prettyprint.console {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10px;
+    padding: 35px 10px;
     font-family: inherit;
     background: #eb583c;
     color: #fff;
     border-bottom-color: #fff;
     border-bottom: none;
     z-index: 100 !important;
-}
+    .banner-content {
+        min-width: 500px;
+        max-width: 1600px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center
+    }
 
-.banner-msg .banner-content {
-    min-width: 500px;
-    max-width: 1600px;
-    width: 95%;
-    margin: 0 auto;
-    padding: 10px;
-    text-align: center
+
 }
 
 .banner-msg .banner-content span.bold {
@@ -223,7 +225,7 @@ pre.prettyprint.console {
 
 .banner-msg .banner-content p {
     margin: 1px auto;
-    font-size: 1.2rem
+    font-size: 1.4rem
 }
 
 .banner-msg .banner-content p.small {
