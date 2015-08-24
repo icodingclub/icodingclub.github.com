@@ -3,7 +3,7 @@
 }
 
 .logo h1 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: inherit;//'Courier New', Courier, monospace;
     font-size: 3.5em;
     line-height: 2em;
     color: #fff
@@ -153,7 +153,7 @@ blockquote.info {
 }
 
 blockquote.codeoutput {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: inherit;//'Courier New', Courier, monospace;
     border-left: 6px solid #ccc;
     background-color: #f8f8f8;
     padding: 4px
@@ -199,7 +199,7 @@ pre.prettyprint.console {
     left: 0;
     width: 100%;
     padding: 20px 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inherit;
     background: #eb583c;
     color: #fff;
     border-bottom-color: #fff;
