@@ -183,7 +183,15 @@ blockquote.morearticle {
 }
 
 pre.prettyprint {
-    line-height: 1.4rem
+    //line-height: 1.4rem;
+    
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    border: 0;
 }
 
 pre.prettyprint.console {
