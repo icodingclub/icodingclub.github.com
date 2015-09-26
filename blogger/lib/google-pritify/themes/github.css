@@ -18,7 +18,7 @@
   }
 
   .kwd {
-    color: #333333;
+    color: #ed6a43;
   }
 
   .com {
@@ -71,7 +71,7 @@
 }
 @media print, projection {
   .str {
-    color: #006600;
+    color: #183691;
   }
 
   .kwd {
