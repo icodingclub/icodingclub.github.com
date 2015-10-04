@@ -1,22 +1,28 @@
 var articleBuilder = {
 
     render: function(tag) {
-        var _articles = articles,
+        var articles = App.articles,
             template, htmlText;
-
+console.log("Before: ", articles);
+        articles = this._sortArticlesByRank(articles);
+console.log("After: ", articles);
         if (tag) {
-            _articles = this._filterBYTag(articles, tag);
+            articles = this._filterBYTag(articles, tag);
         }
 
         template = JST["article"];
         htmlText = template({
-            "articles": _articles
+            "articles": articles
         });
         $("#articlesContainer").html(htmlText);
     },
 
-    _sortArticlesByRank: function() {
+    _sortArticlesByRank: function(arr) {
+        var arr = arr.sort(function(ob1, ob2) {
+            return (ob2.rank - ob1.rank);
+        });
 
+        return arr;
     },
 
     _filterBYTag: function(articles, tag) {
@@ -32,10 +38,8 @@ var articleBuilder = {
     }
 };
 
-
-
 $(document).ready(function() {
-   setTimeout(function() {
+    setTimeout(function() {
         null == document.getElementById("tester") && $("#bannerMsg").slideDown("slow")
     }, 3e3)
 });
