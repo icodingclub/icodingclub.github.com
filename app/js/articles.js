@@ -60,7 +60,7 @@ var articles = [{
    tags: ["js", "jQuery","widget"]
 }, {
     heading: "Dojo Toolkit Tutorial: Hello world application in DOJO and AMD foundation apis.",
-    desc: "A step-by-step tutorial for Hello World application or tutorial using new DOJO AMD(Asynchronous Module Definition) concept.<br>This article also touch the AMD foundation API like require() and define() as well as DOJO api declare()",
+    desc: "A step-by-step tutorial for Hello World application or tutorial using new DOJO AMD(Asynchronous Module Definition) concept.This article also touch the AMD foundation API like require() and define() as well as DOJO api declare()",
     link: "http://icodingclub.blogspot.in/2014/10/dojo-toolkit-tutorial-amd-hello-world.html",
     image: "dojo.png",
     tags: ["js", "dojo"]
