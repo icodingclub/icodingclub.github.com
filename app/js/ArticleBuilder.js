@@ -31,3 +31,11 @@ var articleBuilder = {
         return filteredArray;
     }
 };
+
+
+
+$(document).ready(function() {
+   setTimeout(function() {
+        null == document.getElementById("tester") && $("#bannerMsg").slideDown("slow")
+    }, 3e3)
+});
