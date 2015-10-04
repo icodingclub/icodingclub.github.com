@@ -1,0 +1,203 @@
+.logo:hover {
+    text-decoration: none
+}
+
+.logo h1 {
+    font-family: inherit; //'Courier New', Courier, monospace;
+    font-size: 3.5em;
+    line-height: 2em;
+    color: #fff
+}
+
+section.main {
+    font-size: 105%;
+    display: table-cell;
+    padding: 15px;
+    vertical-align: top;
+    background-color: #fff
+}
+
+section p,
+ul li {
+    font-size: 15px;
+    margin: 5px 0
+}
+
+aside.add {
+    display: table-cell;
+    width: 315px;
+    padding: 2px 0 0 10px;
+    vertical-align: top
+}
+
+.articleTable {
+    border-spacing: 20px
+}
+
+.demo-wrraper article {
+    width: 70%
+}
+
+footer {
+    font-size: 1.1rem;
+    margin: 20px 10px 10px;
+    padding: 35px;
+    text-align: center;
+    color: #efe5d0;
+    background-color: #1086c1
+}
+
+footer a {
+    font-size: .9em;
+    color: #efe5d0!important
+}
+
+footer a:visited {
+    color: #efe5d0!important
+}
+
+.loadingBox {
+    color: #89bdff
+}
+
+.codeFrame {
+    width: 100%;
+    border: 2px solid rgba(238, 238, 238, .5)
+}
+
+.demoPageArticle {
+    display: block;
+    width: 50%!important;
+    margin: 10px
+}
+
+.author {
+    float: right;
+    margin: 15px
+}
+
+.author .info {
+    display: inline-block;
+    margin: 30px 10px 0 0;
+    vertical-align: top;
+    color: #fff
+}
+
+.author .info h1 {
+    font-size: 1.1rem;
+    text-align: right;
+    color: #fff
+}
+
+.author .info h2 {
+    font-size: .5rem;
+    text-align: right;
+    color: #fff
+}
+
+.author .pic {
+    display: inline-block;
+    width: 74px;
+    height: 80px;
+    margin: 0 10px 0 0;
+    border-radius: 40px;
+    background: url(/resource/image/me_small.png) right top no-repeat;
+    background-size: contain;
+}
+
+.articleTitle {
+    font-size: 1.3rem;
+    margin: 10px 0 20px
+}
+
+
+
+blockquote.info {
+    border-left: 6px solid #65ddab;
+    background-color: #eee;
+    padding: 4px
+}
+
+blockquote.codeoutput {
+    font-family: inherit; //'Courier New', Courier, monospace;
+    border-left: 6px solid #ccc;
+    background-color: #f8f8f8;
+    padding: 4px
+}
+
+blockquote.morearticle {
+    border-left: 6px solid #ff7321;
+    background-color: #eee;
+    padding: 25px 10px;
+    font-size: 1.2rem
+}
+
+.path {
+    font-size: .8rem;
+    margin: 8px;
+    padding: 4px;
+    background-color: #eee;
+    font-style: italic;
+    font-weight: 700
+}
+
+.path span {
+    font-style: normal;
+    font-weight: 700;
+    color: maroon
+}
+
+pre.prettyprint {
+    line-height: 1.4rem;
+    padding: 16px;
+    overflow: auto;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    border: 0;
+}
+
+pre.prettyprint.console {
+    background-color: rgba(0, 0, 0, .6)
+}
+
+.hidden {
+    display: none
+}
+
+.banner-msg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 80px 10px;
+    font-family: inherit;
+    background: rgba(114, 110, 110,0.8);
+    color: #fff;
+    border-bottom-color: #fff;
+    border-bottom: none;
+    z-index: 100 !important;
+    .banner-content {
+        min-width: 500px;
+        max-width: 1600px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center
+    }
+
+
+}
+
+.banner-msg .banner-content span.bold {
+    font-size: 1.2rem;
+    font-weight: bolder
+}
+
+.banner-msg .banner-content p {
+    margin: 1px auto;
+    font-size: 1.4rem
+}
+
+.banner-msg .banner-content p.small {
+    font-size: 1rem
+}
