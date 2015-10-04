@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                beautify: true,
+                beautify: false,
                 mangle: false,
                 compress: {
                     sequences: false, // join consecutive statemets with the “comma operator”
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'dist/main.min.js': ['app/js/templates.js', 'app/js/articles.js', "app/js/ArticleBuilder.js"]
+                    'dist/main.min.js': ['app/js/libs/handlebars2.0.min.js','app/js/templates.js', 'app/js/articles.js', "app/js/ArticleBuilder.js"]
                 }
             },
             target_advert: {
