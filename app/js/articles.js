@@ -23,7 +23,7 @@ App.articles = [{
     link: "http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html",
     image: "javascript_inheritance_class_diagram-logo.png",
     tags: ["js"],
-    rank:5
+    rank:0
 }, {
     id:19,
     heading: "Pass by Value vs Pass by reference: Javascript and Java....and C",
@@ -154,7 +154,7 @@ App.articles = [{
     rank:180
 }, {
     id:3,
-    heading: "Using JaxB/Jackson: POJO &lt; - &gt; XML &lt; - &gt; JSON",
+    heading: "Using JaxB/Jackson: POJO to XML to JSON",
     desc: "Step by step tutorial of how to conver a java pojo to XML or JSON.",
     link: "http://icodingclub.blogspot.in/2011/04/pojo-xml-json.html",
     image: "pojo_xml_json.png",
