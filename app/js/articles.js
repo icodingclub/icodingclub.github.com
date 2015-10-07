@@ -23,7 +23,7 @@ App.articles = [{
     link: "http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html",
     image: "javascript_inheritance_class_diagram-logo.png",
     tags: ["js"],
-    rank:0
+    rank:1
 }, {
     id:19,
     heading: "Pass by Value vs Pass by reference: Javascript and Java....and C",
@@ -63,7 +63,7 @@ App.articles = [{
     link: "http://icodingclub.blogspot.in/2013/07/object-oriented-ajax-framework-using.html",
     image: "jquery.png",
      tags: ["js", "jQuery","widget"],
-     rank:0
+     rank:1
 }, {
     id:14,
     heading: "Simple tree widget using JQuery",
@@ -71,7 +71,7 @@ App.articles = [{
     link: "http://icodingclub.blogspot.in/2013/10/simplest-approach-tree-widget.html",
     image: "tree-widget.png",
     tags: ["js", "jQuery","widget"],
-    rank:1
+    rank:5
 }, {
     id:13,
     heading: "Accordion widget using JQuery",
@@ -79,7 +79,7 @@ App.articles = [{
     link: "http://icodingclub.blogspot.in/2013/10/simplest-approach-accordion-widget.html",
     image: "accodion-pane.png",
    tags: ["js", "jQuery","widget"],
-   rank:1
+   rank:4
 }, {
     id:12,
     heading: "Dojo Toolkit Tutorial: Hello world application in DOJO and AMD foundation apis.",
