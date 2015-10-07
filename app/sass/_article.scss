@@ -7,12 +7,12 @@ section.article {
     width: 98%;
     margin: 10px 5px;
     padding: 2px;
-    border-left: 6px solid #fff;
     -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
     position: relative;
     &:hover {
-        border-left: 6px solid #69c773;
+        -webkit-box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
     }
     h1 {
         font-size: 1rem;
