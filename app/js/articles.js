@@ -5,7 +5,7 @@ App.articles = [{
         heading: "JAVASCRIPT MYSTERY: WHAT IS THIS?",
         desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax.",
         link: "http://icodingclub.blogspot.in/2015/10/javascript-mystery-what-is-this.html",
-        image: "javscript_this_120.jpg",
+        image: "article_js_this_120.jpg",
         tags: ["js"],
         rank: 1050
     },{
