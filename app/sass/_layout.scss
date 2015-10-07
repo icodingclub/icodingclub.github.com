@@ -108,6 +108,10 @@ footer a:visited {
 .articleTitle {
     font-size: 1.3rem;
     margin: 10px 0 20px
+
+    code{
+        text-transform: lowercase;
+    }
 }
 
 
