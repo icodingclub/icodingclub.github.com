@@ -429,7 +429,7 @@ footer a:visited {
 .articleTitle {
   font-size: 1.3rem;
   margin: 10px 0 20px code;
-  margin-text-transform: lowercase;
+  margin-text-transform: lowercase !important;
 }
 
 blockquote.info {
