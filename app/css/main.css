@@ -869,3 +869,8 @@ section.article .tags span {
   -o-transition: .1s ease-in;
   transition: .1s ease-in;
 }
+
+code.default {
+  text-transform: lowercase !important;
+  font: 14px Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+}

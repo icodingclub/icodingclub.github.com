@@ -12,7 +12,7 @@ section.article {
     position: relative;
     &:hover {
         -webkit-box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
     }
     h1 {
         font-size: 1rem;
@@ -23,25 +23,22 @@ section.article {
             color: #237dac
         }
     }
-
     .article-img {
-            display: inline-block;
-            float: left;
-            padding: 2px 15px 2px 5px;
-            width: 100px;
-            max-width: 100px;
-            img {
-                width: 100%;
-                height: auto;
-                max-width: 100%;
-            }
+        display: inline-block;
+        float: left;
+        padding: 2px 15px 2px 5px;
+        width: 100px;
+        max-width: 100px;
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
         }
-
+    }
     p {
         font-size: .9rem;
         color: #282828;
         margin: 3px 0;
-
     }
     .tags {
         span {
@@ -50,7 +47,7 @@ section.article {
             background: #e3eaf3;
             border-radius: 3px;
             font-size: 10px;
-            line-height:13px;
+            line-height: 13px;
             font-weight: 600;
             font-family: 'Open Sans', Helvetica, sans-serif;
             text-transform: uppercase;
@@ -61,4 +58,9 @@ section.article {
             transition: .1s ease-in;
         }
     }
+}
+
+code.default {
+    text-transform: lowercase !important;
+    font: 14px Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
 }

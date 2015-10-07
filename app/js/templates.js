@@ -6,7 +6,7 @@ this["JST"]["article"] = Handlebars.template({"1":function(depth0,helpers,partia
   return "    <section class=\"article\">\n        <a href=\""
     + alias3(((helper = (helper = helpers.link || (depth0 != null ? depth0.link : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"link","hash":{},"data":data}) : helper)))
     + "\"><h1>"
-    + alias3(((helper = (helper = helpers.heading || (depth0 != null ? depth0.heading : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"heading","hash":{},"data":data}) : helper)))
+    + ((stack1 = ((helper = (helper = helpers.heading || (depth0 != null ? depth0.heading : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"heading","hash":{},"data":data}) : helper))) != null ? stack1 : "")
     + "</h1></a>\n        <div class=\"table\">\n            <div class=\"tableRow\">\n                <div class=\"tableCell article-img hideOnMobile\">\n                    <img class=\"hideOnMobile\" src=\"http://icodingclub.github.io/resource/image/"
     + alias3(((helper = (helper = helpers.image || (depth0 != null ? depth0.image : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"image","hash":{},"data":data}) : helper)))
     + "\" alt=\""
