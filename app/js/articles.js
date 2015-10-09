@@ -3,7 +3,7 @@ var App = App || {};
 App.articles = [{
         id: 22,
         heading: "JAVASCRIPT MYSTERY: WHAT IS <code class='default'>this</code>?",
-        desc: "Promise api provides standard and publicly open api for working with asynchronous operations, such as Ajax.",
+        desc: "this is one of the most mystical part of Javascript. Even seasoned developer get confused on when it point to what.This article is my take on it.",
         link: "http://icodingclub.blogspot.in/2015/10/javascript-mystery-what-is-this.html",
         image: "article_js_this_120.jpg",
         tags: ["js"],
