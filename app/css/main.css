@@ -404,29 +404,28 @@ header .logo h1 {
   color: #fff;
   letter-spacing: 4px;
   text-transform: lowercase;
+  font: 3rem;
 }
 header .author .info {
   display: inline-block;
-  margin: 30px 10px 0 0;
+  margin: 8px 10px 0 0;
   vertical-align: top;
   color: #fff;
 }
+header .author .info h1, header .author .info h2 {
+  text-align: right;
+}
 header .author .info h1 {
   font-size: 1.1rem;
-  text-align: right;
-  color: #fff;
 }
 header .author .info h2 {
   font-size: 0.5rem;
-  text-align: right;
-  color: #fff;
 }
 header .author .info .pic {
   display: inline-block;
-  width: 74px;
-  height: 80px;
-  margin: 0 10px 0 0;
-  border-radius: 40px;
+  width: 66px;
+  height: 70px;
+  border-radius: 35px;
   background: url("/resource/image/me_small.png") right top no-repeat;
   background-size: contain;
 }

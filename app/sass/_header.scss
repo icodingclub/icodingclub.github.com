@@ -2,6 +2,7 @@ header {
     font-family: "steiner","Courier New";
     font-weight: bolder;
     margin-bottom: 20px;
+    background-color: ##77b8bf;
     .logo:hover {
         text-decoration: none;
     }
@@ -10,29 +11,29 @@ header {
         color: #fff;
         letter-spacing: 4px;
         text-transform: lowercase;
+        font: 3rem;
     }
     .author {
         .info {
             display: inline-block;
-            margin: 30px 10px 0 0;
+            margin: 8px 10px 0 0;
             vertical-align: top;
             color: #fff;
+            h1,h2{
+                text-align: right;
+            }
             h1 {
                 font-size: 1.1rem;
-                text-align: right;
-                color: #fff;
+
             }
             h2 {
                 font-size: 0.5rem;
-                text-align: right;
-                color: #fff;
             }
             .pic {
                 display: inline-block;
-                width: 74px;
-                height: 80px;
-                margin: 0 10px 0 0;
-                border-radius: 40px;
+                width: 66px;
+                height: 70px;
+                border-radius: 35px;
                 background: url("/resource/image/me_small.png") right top no-repeat;
                 background-size: contain;
             }
