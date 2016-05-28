@@ -2,27 +2,16 @@
     width: 98%;
     margin: 6px;
 }
-
 section.article {
-    
-
-    width: 98%;
-    margin: 10px 5px;
-    padding: 2px;
-    -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
-    position: relative;
-    &:hover {
-        -webkit-box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2);
-    }
+    border-bottom: 1px solid #cecece;
+    padding: 15px 0;
     h1 {
         font-size: 1rem;
         text-transform: uppercase;
         color: #546165;
         &:hover {
             text-decoration: underline;
-            color: #237dac
+            color: #237dac;
         }
     }
     .article-img {
@@ -38,7 +27,7 @@ section.article {
         }
     }
     p {
-        font-size: .9rem;
+        font-size: 0.9rem;
         color: #282828;
         margin: 3px 0;
     }
@@ -54,14 +43,13 @@ section.article {
             font-family: 'Open Sans', Helvetica, sans-serif;
             text-transform: uppercase;
             display: inline-block;
-            -webkit-transition: .1s ease-in;
-            -moz-transition: .1s ease-in;
-            -o-transition: .1s ease-in;
-            transition: .1s ease-in;
+            -webkit-transition: 0.1s ease-in;
+            -moz-transition: 0.1s ease-in;
+            -o-transition: 0.1s ease-in;
+            transition: 0.1s ease-in;
         }
     }
 }
-
 code.default {
     text-transform: lowercase !important;
     font: 18px Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
