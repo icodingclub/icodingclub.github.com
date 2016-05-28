@@ -396,6 +396,7 @@ header {
   font-weight: bolder;
   margin-bottom: 20px;
   background-color: #77b8bf;
+  border-bottom: 2px solid #50a2ab;
 }
 header .logo:hover {
   text-decoration: none;
@@ -405,16 +406,19 @@ header .logo h1 {
   color: #fff;
   letter-spacing: 4px;
   text-transform: lowercase;
-  font: 3rem;
+  font-size: 3rem;
+  line-height: 5rem;
+  font-weight: bolder;
 }
 header .author .info {
   display: inline-block;
   margin: 8px 10px 0 0;
   vertical-align: top;
-  color: #fff;
 }
-header .author .info h1, header .author .info h2 {
+header .author .info h1,
+header .author .info h2 {
   text-align: right;
+  color: #fff;
 }
 header .author .info h1 {
   font-size: 1.1rem;
@@ -422,7 +426,7 @@ header .author .info h1 {
 header .author .info h2 {
   font-size: 0.5rem;
 }
-header .author .info .pic {
+header .author .pic {
   display: inline-block;
   width: 66px;
   height: 70px;
@@ -847,7 +851,7 @@ div#tableRow {
   color: #fff;
   border-radius: 2px;
   background: #77b8bf;
-  background: linear-gradient(#77b8bf, #97c5b5);
+  background: linear-gradient(#77b8bf, #5caab2);
 }
 
 .arrow {
