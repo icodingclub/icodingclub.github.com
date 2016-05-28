@@ -409,6 +409,11 @@ header .logo h1 {
   font-size: 3rem;
   line-height: 5rem;
   font-weight: bolder;
+  margin-bottom: 0;
+}
+header .author {
+  float: right;
+  margin: 15px 0 0;
 }
 header .author .info {
   display: inline-block;
@@ -929,11 +934,6 @@ footer a:visited {
   display: block;
   width: 50% !important;
   margin: 10px;
-}
-
-.author {
-  float: right;
-  margin: 15px;
 }
 
 .articleTitle {
