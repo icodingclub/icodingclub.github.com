@@ -1,12 +1,4 @@
-.logo:hover {
-    text-decoration: none;
-}
-.logo h1 {
-    font-family: inherit; //'Courier New', Courier, monospace;
-    // font-size: 3.5em;
-    // line-height: 2em;
-    color: #fff;
-}
+
 section.main {
     font-size: 105%;
     display: table-cell;
@@ -62,31 +54,7 @@ footer a:visited {
     float: right;
     margin: 15px;
 }
-.author .info {
-    display: inline-block;
-    margin: 30px 10px 0 0;
-    vertical-align: top;
-    color: #fff;
-}
-.author .info h1 {
-    font-size: 1.1rem;
-    text-align: right;
-    color: #fff;
-}
-.author .info h2 {
-    font-size: 0.5rem;
-    text-align: right;
-    color: #fff;
-}
-.author .pic {
-    display: inline-block;
-    width: 74px;
-    height: 80px;
-    margin: 0 10px 0 0;
-    border-radius: 40px;
-    background: url("/resource/image/me_small.png") right top no-repeat;
-    background-size: contain;
-}
+
 .articleTitle {
     font-size: 1.3rem;
     margin:10px 0 20px code {

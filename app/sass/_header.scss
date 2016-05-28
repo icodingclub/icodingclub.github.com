@@ -1,0 +1,48 @@
+header {
+    font-family: "steiner","Courier New";
+    font-weight: bolder;
+    margin-bottom: 20px;
+    .logo:hover {
+        text-decoration: none;
+    }
+    .logo h1 {
+        font-family: inherit; //'Courier New', Courier, monospace;
+        color: #fff;
+        letter-spacing: 4px;
+        text-transform: lowercase;
+    }
+    .author {
+        .info {
+            display: inline-block;
+            margin: 30px 10px 0 0;
+            vertical-align: top;
+            color: #fff;
+            h1 {
+                font-size: 1.1rem;
+                text-align: right;
+                color: #fff;
+            }
+            h2 {
+                font-size: 0.5rem;
+                text-align: right;
+                color: #fff;
+            }
+            .pic {
+                display: inline-block;
+                width: 74px;
+                height: 80px;
+                margin: 0 10px 0 0;
+                border-radius: 40px;
+                background: url("/resource/image/me_small.png") right top no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+}
+.content-fauxcolumn-outer,
+.content-outer,
+.header-content,
+.region-inner {
+    max-width: 1250px;
+    margin: 0 auto;
+}

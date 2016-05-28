@@ -391,6 +391,54 @@ th {
   padding: 0;
 }
 
+header {
+  font-family: "steiner","Courier New";
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+header .logo:hover {
+  text-decoration: none;
+}
+header .logo h1 {
+  font-family: inherit;
+  color: #fff;
+  letter-spacing: 4px;
+  text-transform: lowercase;
+}
+header .author .info {
+  display: inline-block;
+  margin: 30px 10px 0 0;
+  vertical-align: top;
+  color: #fff;
+}
+header .author .info h1 {
+  font-size: 1.1rem;
+  text-align: right;
+  color: #fff;
+}
+header .author .info h2 {
+  font-size: 0.5rem;
+  text-align: right;
+  color: #fff;
+}
+header .author .info .pic {
+  display: inline-block;
+  width: 74px;
+  height: 80px;
+  margin: 0 10px 0 0;
+  border-radius: 40px;
+  background: url("/resource/image/me_small.png") right top no-repeat;
+  background-size: contain;
+}
+
+.content-fauxcolumn-outer,
+.content-outer,
+.header-content,
+.region-inner {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
 @font-face {
   font-family: steiner;
   src: url("../dist/fonts/steiner-font/Steinerlight.ttf");
@@ -573,13 +621,6 @@ body {
   font-size: 100%;
 }
 
-header {
-  font-family: "steiner","Courier New";
-  font-size: 3.2rem;
-  font-weight: bolder;
-  letter-spacing: 4px;
-}
-
 .PageList {
   position: fixed;
   height: 100%;
@@ -647,15 +688,6 @@ body {
   line-height: 1.875;
 }
 
-header {
-  margin-bottom: 10px;
-}
-
-.content-outer, .content-fauxcolumn-outer, .region-inner, .header-content {
-  max-width: 1250px;
-  margin: 0 auto;
-}
-
 ::selection {
   background: #e1eed3;
   color: #404040;
@@ -713,10 +745,6 @@ h6 {
   text-transform: uppercase;
 }
 
-header h1 {
-  text-transform: lowercase;
-}
-
 p {
   margin: 0 0 1.25em;
 }
@@ -763,11 +791,6 @@ ul {
 table {
   border-spacing: 0;
   border-collapse: collapse;
-}
-
-header {
-  padding-left: 80px;
-  background-color: #1086c1;
 }
 
 img {
@@ -827,15 +850,6 @@ div#tableRow {
 
 .clear-fix {
   clear: both;
-}
-
-.logo:hover {
-  text-decoration: none;
-}
-
-.logo h1 {
-  font-family: inherit;
-  color: #fff;
 }
 
 section.main {
@@ -903,35 +917,6 @@ footer a:visited {
 .author {
   float: right;
   margin: 15px;
-}
-
-.author .info {
-  display: inline-block;
-  margin: 30px 10px 0 0;
-  vertical-align: top;
-  color: #fff;
-}
-
-.author .info h1 {
-  font-size: 1.1rem;
-  text-align: right;
-  color: #fff;
-}
-
-.author .info h2 {
-  font-size: 0.5rem;
-  text-align: right;
-  color: #fff;
-}
-
-.author .pic {
-  display: inline-block;
-  width: 74px;
-  height: 80px;
-  margin: 0 10px 0 0;
-  border-radius: 40px;
-  background: url("/resource/image/me_small.png") right top no-repeat;
-  background-size: contain;
 }
 
 .articleTitle {
