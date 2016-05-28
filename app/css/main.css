@@ -984,39 +984,21 @@ pre.prettyprint.console {
 }
 
 .banner-msg {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 80px 10px;
+  padding: 40px 10px;
   font-family: inherit;
-  background: rgba(114, 110, 110, 0.8);
+  background: #726e6e;
   color: #fff;
   border-bottom-color: #fff;
   border-bottom: none;
-  z-index: 100 !important;
 }
 .banner-msg .banner-content {
   min-width: 500px;
   max-width: 1600px;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   padding: 10px;
   text-align: center;
-}
-
-.banner-msg .banner-content span.bold {
-  font-size: 1.2rem;
-  font-weight: bolder;
-}
-
-.banner-msg .banner-content p {
-  margin: 1px auto;
-  font-size: 1.4rem;
-}
-
-.banner-msg .banner-content p.small {
-  font-size: 1rem;
 }
 
 @media (min-width: 770px) {
