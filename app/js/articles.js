@@ -64,15 +64,7 @@ App.articles = [{
         image: "image_crop_fixed.png",
         tags: ["js", "html5", "canvas", "widget"],
         rank: 410
-    }, {
-        id: 15,
-        heading: "AJAX Framework using JQuery: An Object Oriented approach",
-        desc: "A very simple AJAX Framework using JQuery for light weight application, with an object oriented approach.",
-        link: "http://icodingclub.blogspot.in/2013/07/object-oriented-ajax-framework-using.html",
-        image: "jquery.png",
-        tags: ["js", "jQuery", "widget"],
-        rank: 1
-    }, {
+    },  {
         id: 14,
         heading: "Simple tree widget using JQuery",
         desc: "A very simple tree widget, made out of JQuery.",
