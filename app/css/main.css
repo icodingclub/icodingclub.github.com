@@ -647,6 +647,15 @@ body {
   line-height: 1.875;
 }
 
+header {
+  margin-bottom: 10px;
+}
+
+.content-outer, .content-fauxcolumn-outer, .region-inner, .header-content {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
 ::selection {
   background: #e1eed3;
   color: #404040;
@@ -996,7 +1005,6 @@ pre.prettyprint.console {
   max-width: 1600px;
   width: 100%;
   margin: 0 auto;
-  padding: 10px;
   text-align: center;
 }
 .banner-msg .banner-content p {
