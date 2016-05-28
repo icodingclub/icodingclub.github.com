@@ -194,23 +194,23 @@ div#tableRow {
     text-transform: uppercase;
     color: #fff;
     border-radius: 2px;
-    // background: #e54c10;
-    // background: -webkit-linear-gradient(#e54c10, #ad3608);
-    // background: -moz-linear-gradient(#e54c10, #ad3608);
-    // background: -o-linear-gradient(#e54c10, #ad3608);
-    // background: linear-gradient(#e54c10, #ad3608)
+    background: #e54c10;
+    background: -webkit-linear-gradient(#e54c10, #ad3608);
+    background: -moz-linear-gradient(#e54c10, #ad3608);
+    background: -o-linear-gradient(#e54c10, #ad3608);
+    background: linear-gradient(#e54c10, #ad3608)
 }
 
-// .arrow {
-//     line-height: 0;
-//     position: absolute;
-//     top: 100%;
-//     left: 0;
-//     width: 1px;
-//     height: 0;
-//     border-top: 10px solid #ad3608;
-//     border-left: 16px solid transparent
-// }
+.arrow {
+    line-height: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 1px;
+    height: 0;
+    border-top: 10px solid #ad3608;
+    border-left: 16px solid transparent
+}
 
 .clear-fix{
     clear: both;
