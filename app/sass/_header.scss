@@ -7,18 +7,7 @@ header {
     .logo:hover {
         text-decoration: none;
     }
-    .logo h1 {
-        font-family: inherit; //'Courier New', Courier, monospace;
-        color: #fff;
-        letter-spacing: 4px;
-        text-transform: lowercase;
-        font-size: 3rem;
-        line-height: 5rem;
-        font-weight: bolder;
-        margin-bottom: 0;
-    }
     .author {
-        float: right;
         margin: 15px 0 0;
         .info {
             display: inline-block;
