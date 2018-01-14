@@ -6,9 +6,10 @@
   "scripts": {
     "css-bundle": "scss-bundle -e ./src/sass/main.scss -d ./dist/main.css;uglifycss ./dist/main.css > ./dist/main.min.css",
     "webpack": "webpack",
+    "copy-advert": "cp src/advert/advert.js dist/advert.js",
     "watch": "webpack --watch --config webpack.prod.js;",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js;npm run css-bundle;"
+    "build": "webpack --config webpack.prod.js;npm run css-bundle;npm run copy-advert"
   },
   "author": "",
   "license": "ISC",
