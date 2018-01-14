@@ -1,0 +1,134 @@
+@media (min-width: 770px) {
+    .showOnMobile {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+     .tabs-inner .widget li a {
+        padding: 0.3rem;
+        font-size: .9rem;
+    }
+
+    .logo h1 {
+        font-size: 2.5em;
+        line-height: 3.5em;
+    }
+    .author {
+          margin: 30px 14px;
+        .pic {
+            width: 60px;
+            height: 65px;
+            margin-top: -10px;
+        }
+        .info {
+            margin: 5px;
+            h1 {
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: .6rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    iframe, object, img {
+        width: 100%;
+    }
+    .section {
+        margin: 0 0px;
+    }
+    .content-inner {
+        padding: 0px;
+    }
+    .tabs-inner .widget li a {
+        padding: 0.3rem;
+        font-size: .9rem;
+    }
+    .content-outer, .content-fauxcolumn-outer, .region-inner {
+        width: 100%;
+    }
+    .main-inner .columns {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .main-inner .column-right-outer {
+        position: static;
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        display: block;
+    }
+    .column-center-outer, .column-left-outer, .column-right-outer {
+        position: static;
+        float: none;
+    }
+    .articleImg {
+        display: none;
+    }
+    .author {
+        margin: 3px;
+        .info {
+            margin: 5px;
+            h1 {
+                font-size: .8rem;
+            }
+            h1 {
+                font-size: .4rem;
+            }
+        }
+        .pic {
+            width: 40px;
+            height: 48px;
+        }
+    }
+    header {
+        padding-left: 2px;
+    }
+    .logo h1 {
+        font-size: 1.2rem;
+        line-height: 6rem;
+    }
+    .articleSection {
+        margin: 1px;
+        article {
+            margin-bottom: 1rem;
+            border-left: 0;
+            -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+            &:hover {
+                border-left: 0;
+            }
+            div {
+                padding: 3px;
+            }
+            p.desc {
+                img {
+                    display: block;
+                    float: left;
+                    padding: 2px;
+                    width: 35%;
+                }
+            }
+        }
+    }
+    .section-heading {
+        font-weight: 400;
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 2px;
+        padding: 3px;
+        font-size: .7em;
+    }
+    .arrow {
+        line-height: 0;
+        position: static;
+        width: 0;
+        height: 0;
+        border: 0;
+    }
+}

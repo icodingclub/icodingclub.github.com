@@ -1,0 +1,124 @@
+
+section.main {
+    font-size: 105%;
+    display: table-cell;
+    padding: 15px;
+    vertical-align: top;
+    background-color: #fff;
+}
+section p,
+ul li {
+    font-size: 15px;
+    margin: 5px 0;
+}
+aside.add {
+    display: table-cell;
+    width: 315px;
+    padding: 2px 0 0 10px;
+    vertical-align: top;
+}
+.articleTable {
+    border-spacing: 20px;
+}
+.demo-wrraper article {
+    width: 70%;
+}
+footer {
+    font-size: 1.1rem;
+    margin: 20px 10px 10px;
+    padding: 35px;
+    text-align: center;
+    color: #efe5d0;
+    background-color: #1086c1;
+}
+footer a {
+    font-size: 0.9em;
+    color: #efe5d0!important;
+}
+footer a:visited {
+    color: #efe5d0!important;
+}
+.loadingBox {
+    color: #89bdff;
+}
+.codeFrame {
+    width: 100%;
+    border: 2px solid rgba(238, 238, 238, .5);
+}
+.demoPageArticle {
+    display: block;
+    width: 50%!important;
+    margin: 10px;
+}
+
+
+.articleTitle {
+    font-size: 1.3rem;
+    margin:10px 0 20px;
+    code {
+        text-transform: lowercase !important;
+    }
+}
+blockquote.info {
+    border-left: 6px solid #65ddab;
+    background-color: #eee;
+    padding: 4px;
+}
+blockquote.codeoutput {
+    font-family: inherit; //'Courier New', Courier, monospace;
+    border-left: 6px solid #ccc;
+    background-color: #f8f8f8;
+    padding: 4px;
+}
+blockquote.morearticle {
+    border-left: 6px solid #ff7321;
+    background-color: #eee;
+    padding: 25px 10px;
+    font-size: 1.2rem;
+}
+.path {
+    font-size: 0.8rem;
+    margin: 8px;
+    padding: 4px;
+    background-color: #eee;
+    font-style: italic;
+    font-weight: 700;
+}
+.path span {
+    font-style: normal;
+    font-weight: 700;
+    color: maroon;
+}
+pre.prettyprint {
+    line-height: 1.4rem;
+    padding: 16px;
+    overflow: auto;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    border: 0;
+}
+pre.prettyprint.console {
+    background-color: rgba(0, 0, 0, .6);
+}
+.hide,.hidden {
+    display: none;
+}
+.banner-msg {
+    width: 100%;
+    margin: -5px 0 18px 0;
+    font-family: inherit;
+    background: rgba(114, 110, 110,1);
+    color: #fff;
+    border-bottom-color: #fff;
+    border-bottom: none;
+    .banner-content {
+        min-width: 500px;
+        max-width: 1600px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        p {
+            margin: 0 0 0.25em;
+        }
+    }
+}

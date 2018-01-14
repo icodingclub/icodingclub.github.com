@@ -1,0 +1,33 @@
+{
+  "name": "icodingclub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css-bundle": "scss-bundle -e ./src/sass/main.scss -d ./dist/main.css;uglifycss ./dist/main.css > ./dist/main.min.css",
+    "webpack": "webpack",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js;npm run css-bundle;"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/preset-env": "^7.0.0-beta.37",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-preset-babili": "^0.1.4",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-minify": "^1.0.1",
+    "node-sass": "^4.7.2",
+    "scss-bundle": "^2.1.1",
+    "uglifycss": "0.0.27",
+    "webpack-dev-server": "^2.10.1",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "webpack": "^3.10.0"
+  }
+}
