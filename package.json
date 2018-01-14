@@ -9,7 +9,7 @@
     "copy-advert": "cp src/advert/advert.js dist/advert.js",
     "watch": "webpack --watch --config webpack.prod.js;",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js;npm run css-bundle;npm run copy-advert"
+    "build": "webpack --config webpack.prod.js;npm run copy-advert"
   },
   "author": "",
   "license": "ISC",
@@ -20,15 +20,16 @@
     "babel-loader": "^8.0.0-beta.0",
     "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.17",
-    "css-minify": "^1.0.1",
+    "css-loader": "^0.28.8",
+    "extract-text-webpack-plugin": "^3.0.2",
     "node-sass": "^4.7.2",
-    "scss-bundle": "^2.1.1",
-    "uglifycss": "0.0.27",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.1",
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "webpack": "^3.10.0"
+    "babel-polyfill": "^6.26.0"
   }
 }

@@ -1,8 +1,7 @@
 import articles from "./articles";
 import ArticleBuilder from "./ArticleBuilder";
 const articleBuilder = new ArticleBuilder({ articles });
-//window.articleBuilder = articleBuilder;
-//document.getElementById("articlesContainer").innerHTML = articleBuilder.render();
+import "../sass/main.scss";
 
 
 $(document).ready(function () {
