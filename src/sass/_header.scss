@@ -1,8 +1,8 @@
-header {
-    font-weight: bolder;
-    margin-bottom: 20px;
-    background-color: #77b8bf;
-    border-bottom: 2px solid #50a2ab;
+header, .header {
+    background: #607d8b;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    color: #fff;
+
     .logo:hover {
         text-decoration: none;
     }
