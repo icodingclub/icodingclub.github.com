@@ -8,7 +8,7 @@ $(document).ready(function () {
     const articleBuilder = new ArticleBuilder({ articles });
     window.articleBuilder = articleBuilder;
     document.getElementById("articlesContainer").innerHTML = articleBuilder.render();
-    // setTimeout(function () {
-    //     null == document.getElementById("tester") && $("#bannerMsg").slideDown("slow")
-    // }, 3e3)
+    setTimeout(function () {
+        null == document.getElementById("tester") && $("#bannerMsg").slideDown("slow")
+    }, 2000);
 });
