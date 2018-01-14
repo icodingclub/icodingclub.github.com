@@ -13,5 +13,5 @@ $(document).ready(function () {
     }
     setTimeout(function () {
         null == document.getElementById("tester") && $(".banner-msg").slideDown("slow")
-    }, 2000);
+    }, 5000);
 });
