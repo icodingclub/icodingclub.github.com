@@ -1,7 +1,9 @@
 class ArticleBuilder {
 
     constructor({articles}){
-        articles = this.sortArticlesByRank(articles);
+
+        debugger;
+        this.articles = this.sortArticlesByRank(articles);
     }
 
     sortArticlesByRank(articles) {
@@ -30,7 +32,7 @@ class ArticleBuilder {
                                         ${desc}
                                     </p>
                                     <div class="tags">
-                                       ${renderTags(tags)}
+                                       ${this.renderTags(tags)}
                                     </div>
                                 </div>
                             </div>
@@ -43,10 +45,9 @@ class ArticleBuilder {
 
     render() {
         let template = "";
-        console.log(articles);
 
-        return articles.reduce((template, article) => {
-            return template + renderArticle(article);
+        return this.articles.reduce((template, article) => {
+            return template + this.renderArticle(article);
         }, "");
     }
 }

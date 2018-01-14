@@ -5,8 +5,8 @@ const articleBuilder = new ArticleBuilder({articles});
 
 document.getElementById("articlesContainer").innerHTML =articleBuilder.render();
 
-$(document).ready(function() {
-    setTimeout(function() {
-        null == document.getElementById("tester") && $("#bannerMsg").slideDown("slow")
-    }, 3e3)
-});
+// $(document).ready(function() {
+//     setTimeout(function() {
+//         null == document.getElementById("tester") && $("#bannerMsg").slideDown("slow")
+//     }, 3e3)
+// });
