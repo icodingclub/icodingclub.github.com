@@ -7,8 +7,11 @@ import "../sass/main.scss";
 $(document).ready(function () {
     const articleBuilder = new ArticleBuilder({ articles });
     window.articleBuilder = articleBuilder;
-    document.getElementById("articlesContainer").innerHTML = articleBuilder.render();
+    const articlesContainer =  document.getElementById("articlesContainer");
+    if(articlesContainer){
+        articlesContainer.innerHTML = articleBuilder.render();
+    }
     setTimeout(function () {
-        null == document.getElementById("tester") && $("#bannerMsg").slideDown("slow")
+        null == document.getElementById("tester") && $(".banner-msg").slideDown("slow")
     }, 2000);
 });
