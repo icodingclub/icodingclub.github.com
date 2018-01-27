@@ -2,9 +2,9 @@ const articles =  [{
         id: 23,
         heading: "JavaScript Recipes: How to elegantly iterate on Object properties in ES6 and beyond?",
         desc: "JavaScript Recipes: How to elegantly iterate on Object properties in ES6 and beyond?",
-        link: "https://medium.com/@ipraveen/javascript-recipes-how-to-elegantly-iterate-on-object-properties-in-es6-and-beyond-16d672fcf1e2",
-        image: "article_js_this_120.jpg",
-        tags: ["js"],
+        link: "http://icodingclub.blogspot.in/2018/01/javascript-recipes-how-to-elegantly.html",
+        image: "js-logo.png",
+        tags: ["js", "es6"],
         rank: 1050
     },{
         id: 22,

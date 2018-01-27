@@ -1,16 +1,109 @@
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
+html,
 body {
-    font-size: 16px;
+    overflow-x: hidden;
 }
 
-html {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+:focus {
+    outline: 0
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+}
+
+.clearfix {
+    *display: inline-block;
+    height: 1%;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 body {
@@ -18,9 +111,7 @@ body {
     padding: 0;
     color: #404040;
     background: #fff;
-    //font-family: 'Open Sans', Helvetica, sans-serif;
     font-family:'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
-
     font-size: 1.125em;
     line-height: 1.875
 }
@@ -179,7 +270,7 @@ div#tableRow {
 
 
 
-.section-heading {
+.section-heading, h2 {
     font-size: 1em;
     font-weight: 700;
     position: relative;
@@ -205,6 +296,18 @@ div#tableRow {
     height: 0;
     border-top: 10px solid #4b979f;
     border-left: 16px solid transparent
+}
+
+h2::before {
+    content: " ";
+    line-height: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 1px;
+    height: 0;
+    border-top: 10px solid #4b979f;
+    border-left: 16px solid transparent;
 }
 
 .clear-fix{
