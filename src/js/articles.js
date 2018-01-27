@@ -5,7 +5,7 @@ const articles =  [{
         link: "http://icodingclub.blogspot.in/2018/01/javascript-recipes-how-to-elegantly.html",
         image: "js-logo.png",
         tags: ["js", "es6"],
-        rank: 1050
+        rank: 870
     },{
         id: 22,
         heading: "HANDLING ASYNCHRONOUS JAVASCRIPT and foundation of DEFERRED AND PROMISE",
@@ -13,7 +13,7 @@ const articles =  [{
         link: "http://icodingclub.blogspot.in/2014/11/handling-asynchronous-javascript-using.html",
         image: "promise-js-logo.png",
         tags: ["js", "html5"],
-        rank: 810
+        rank: 860
     }, {
         id: 21,
         heading: "HTML5 AJAX File upload (Image or HTML5 Canvas data) to Java backend",
@@ -21,7 +21,7 @@ const articles =  [{
         link: "http://icodingclub.blogspot.in/2014/10/html5-ajax-file-upload-image-or-html5.html",
         image: "image-upload.png",
         tags: ["js", "html5", "java"],
-        rank: 1000
+        rank: 850
     }, {
         id: 20,
         heading: "Simple Inheritance in Javascript",
@@ -29,7 +29,7 @@ const articles =  [{
         link: "http://icodingclub.blogspot.in/2014/12/simple-inheritance-in-javascript.html",
         image: "javascript_inheritance_class_diagram-logo.png",
         tags: ["js"],
-        rank: 1
+        rank: 700
     }, {
         id: 19,
         heading: "Pass by Value vs Pass by reference: Javascript and Java....and C",
@@ -37,7 +37,7 @@ const articles =  [{
         link: "http://icodingclub.blogspot.in/2014/10/pass-by-value-vs-pass-by-reference.html",
         image: "passByValRef.png",
         tags: ["js"],
-        rank: 830
+        rank: 810
     }, {
         id: 18,
         heading: "Tiles 3 with Spring 3 with JSP or FTL view",
@@ -62,22 +62,6 @@ const articles =  [{
         image: "image_crop_fixed.png",
         tags: ["js", "html5", "canvas", "widget"],
         rank: 410
-    },  {
-        id: 14,
-        heading: "Simple tree widget using JQuery",
-        desc: "A very simple tree widget, made out of JQuery.",
-        link: "http://icodingclub.blogspot.in/2013/10/simplest-approach-tree-widget.html",
-        image: "tree-widget.png",
-        tags: ["js", "jQuery", "widget"],
-        rank: 5
-    }, {
-        id: 13,
-        heading: "Accordion widget using JQuery",
-        desc: "A very simple Accordion widget built out of Javascript and JQuery",
-        link: "http://icodingclub.blogspot.in/2013/10/simplest-approach-accordion-widget.html",
-        image: "accodion-pane.png",
-        tags: ["js", "jQuery", "widget"],
-        rank: 4
     }, {
         id: 12,
         heading: "Dojo Toolkit Tutorial: Hello world application in DOJO and AMD foundation apis.",

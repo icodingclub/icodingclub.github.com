@@ -13,7 +13,7 @@ class ArticleBuilder {
     }
 
     renderTags(tags) {
-        return tags.reduce((reducedTag, tag) => ` <span>${tag}</span>`, "");
+        return tags.map((tag) => ` <span>${tag}</span>`);
     }
 
     renderArticle(article) {
