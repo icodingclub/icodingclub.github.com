@@ -53,3 +53,15 @@ code.default {
     text-transform: lowercase !important;
     font: 18px Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
 }
+
+
+.linenums{
+    li{
+        list-style-type: none !important  
+    }
+}
+
+pre.prettyprint {
+    padding: 5px;
+    border: 0 !important;
+}
