@@ -126,12 +126,13 @@ blockquote:before, blockquote:after, q:before, q:after {
   content: none;
 }
 blockquote {
-	padding: 0 0 0 1.875em;
-	margin: 1.875em 0;
-	font-weight: 300;
-	font-size: 1.250em; /*20px*/
-	color: #738a9f;
-	border-left: solid 10px #e3eaf3;
+  padding: 5px 15px;
+  padding-bottom: 1px;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  background-color: #f9f9f9;
+  border-left: 7px solid #adb2b7;
+  vertical-align: middle;
 }
 
 

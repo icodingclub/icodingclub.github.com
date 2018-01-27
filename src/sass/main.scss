@@ -3,5 +3,11 @@
 @import "root";
 @import "layout";
 @import "mobile";
-@import "google-pretify-github-theme";
 @import "article";
+
+.linenums{
+    li{
+        list-style-type: none !important  
+    }
+}
+

@@ -20,14 +20,14 @@ for (key in obj) {
     }
 }</code></pre>
 <h4 id="output">Output:</h4>
-<p><img src="images/iterartion-output.png" alt="object-iteration-es6" /></p>
+<p><img src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/object-iteration-es6/images/iterartion-output.png" alt="object-iteration-es6" /></p>
 <p>in above code 'if' block make most of the new JavaScript developer tumble. They either don't put this check or forget to understand it.</p>
 <p>As we know, it is very critical to avoid iteration on Object’s parent properties and it’s parent properties i.e. You will end up writing a slow code if you miss putting this check.</p>
 <blockquote>
   <p>Modern linting tools you give you prompt warning or error if miss &gt; to add this check.</p>
 </blockquote>
 <h2 id="iteration-in-es6-and-beyond">Iteration in ES6 and beyond</h2>
-<p>New iteration technique is made possible due to introduction of <code class="prettyprint">js Object.entries()</code></p>
+<p>New iteration technique is made possible due to introduction of Object.entries()</p>
 <blockquote>
   <p>The Object.entries() method returns an array of a given object’s own enumerable property [key, value] pairs, in the same order<br />
   as that provided by a for...in loop (the difference being that a for-in loop enumerates properties<br />
@@ -41,7 +41,7 @@ for (key in obj) {
 };
 console.log(Object.entries(obj));</code></pre>
 <p>will give output like below, An array of arrays of two elements, where at index: 0, we will have key and at index:1, we will have value</p>
-<p><img src="images/entries-out.png" alt="entries-out" /></p>
+<p><img src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/object-iteration-es6/images/entries-out.png" alt="entries-out" /></p>
 <p>Now this simple function will lead to an elegant iteration of technique</p>
 <pre class="prettyprint linenums"><code class="js language-js">const obj = {
     a: 1,
@@ -52,7 +52,7 @@ for (const [key, value] of Object.entries(obj)) {
     console.log(`${key} : ${value}`);
 }</code></pre>
 <h4 id="output-1">Output:</h4>
-<p><img src="images/iterartion-output.png" alt="object-iteration-es6" /></p>
+<p><img src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/object-iteration-es6/images/iterartion-output.png" alt="object-iteration-es6" /></p>
 <p>In similar fashion, we can forEach or map</p>
 <pre class="prettyprint linenums"><code class="js language-js">const obj = {
     a: 1,
@@ -63,7 +63,7 @@ Object.entries(obj).forEach(([key, value]) =&gt; {
     console.info(`${key} : ${value}`);
 });</code></pre>
 <h4 id="output-2">Output:</h4>
-<p><img src="images/iterartion-output.png" alt="object-iteration-es6" /></p>
+<p><img src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/object-iteration-es6/images/iterartion-output.png" alt="object-iteration-es6" /></p>
 <p>An example of bit less elegant but closer to ES5 way is below</p>
 <pre class="prettyprint linenums"><code class="js language-js">const obj = {
     a: 1,
@@ -77,3 +77,4 @@ for (const key of Object.keys(obj)) {
 }</code></pre>
 <p>That's all folks!</p>
 <p>Pick any example from above and you will be the master of ES6 Object iteration.</p>
+<script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'> </script>
