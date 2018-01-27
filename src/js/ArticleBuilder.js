@@ -13,7 +13,7 @@ class ArticleBuilder {
     }
 
     renderTags(tags) {
-        return tags.map((tag) => ` <span>${tag}</span>`);
+    return tags.reduce((reducedTag, tag) => `${reducedTag}<span>${tag}</span>`, "");
     }
 
     renderArticle(article) {
@@ -44,6 +44,8 @@ class ArticleBuilder {
 
 
     render() {
+
+        debugger;
         let template = "";
 
         return this.articles.reduce((template, article) => {

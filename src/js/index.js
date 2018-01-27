@@ -1,6 +1,5 @@
 import articles from "./articles";
 import ArticleBuilder from "./ArticleBuilder";
-const articleBuilder = new ArticleBuilder({ articles });
 import "../sass/main.scss";
 
 
