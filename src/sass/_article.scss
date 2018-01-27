@@ -57,11 +57,18 @@ code.default {
 
 .linenums{
     li{
-        list-style-type: none !important  
+        list-style-type: none !important;  
+        background: none !important;
     }
 }
 
+
+pre.prettyprint.console {
+    background-color: rgba(0, 0, 0, .6);
+}
+
 pre.prettyprint {
-    padding: 5px;
+    background-color: #f7f7f7;
+    border-radius: 3px;
     border: 0 !important;
 }
