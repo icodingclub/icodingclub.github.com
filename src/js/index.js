@@ -11,7 +11,7 @@ $(document).ready(function () {
         articlesContainer.innerHTML = articleBuilder.render();
     }
     setTimeout(function () {
-        null == document.getElementById("tester") && $(".banner-msg").slideDown("slow");
+       // null == document.getElementById("tester") && $(".banner-msg").slideDown("slow");
         PR.prettyPrint && PR.prettyPrint();
 
     }, 5000);
