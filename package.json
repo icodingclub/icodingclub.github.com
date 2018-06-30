@@ -10,7 +10,8 @@
     "watch": "webpack --watch --config webpack.prod.js;",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js;npm run copy-advert",
-    "md-watch": "fswatch -o articles/object-iteration-es6/story.md | xargs -n1 node scripts/mdToHtml.js"
+    "md-watch": "fswatch -o articles/object-iteration-es6/story.md | xargs -n1 node scripts/mdToHtml.js",
+    "TO BUILD": "npm run build;git add .;git commit -m 'a';git push;"
   },
   "author": "",
   "license": "ISC",

@@ -6,7 +6,7 @@ export default [{
         heading: "JavaScript Recipes: How to elegantly iterate on Object properties in ES6 and beyond?",
         link: "http://icodingclub.blogspot.in/2018/01/javascript-recipes-how-to-elegantly.html"
     }, {
-        heading: "HANDLING ASYNCHRONOUS JAVASCRIPT and foundation of DEFERRED AND PROMISE",
+        heading: "Handling Asynchronous Javascript And Foundation Of Deferred And Promise",
         link: "http://icodingclub.blogspot.in/2014/11/handling-asynchronous-javascript-using.html",
         logo: "promise-js-logo.png",
     }, {
@@ -73,16 +73,16 @@ export default [{
         heading: "Dojo Toolkit Tutorial: Simple template based widget using AMD concepts",
         link: "http://icodingclub.blogspot.in/2014/10/dojo-toolkit-tutorial-amd-simple.html"
     }, {
-        heading: "Dojo Toolkit Tutorial: JAVA LIKE INHERITANCE IN JAVASCRIPT USING DOJO",
+        heading: "Dojo Toolkit Tutorial: Java Like Inheritance In Javascript Using Dojo",
         link: "http://icodingclub.blogspot.in/2014/12/dojo-toolkit-tutorial-amd-java-like.html"
     }, {
         heading: "Dojo Toolkit Tutorial: MixIn based Inheritance in DOJO.",
         link: "http://icodingclub.blogspot.in/2014/10/dojo-toolkit-tutorial-amd-inheritance.html"
     }, {
-        heading: "Dojo Toolkit Tutorial: DEFERRED AND PROMISE IN DOJO TOOLKIT",
+        heading: "Dojo Toolkit Tutorial: Deferred And Promise In Dojo Toolkit",
         link: "http://icodingclub.blogspot.in/2014/11/deferred-and-promise-in-dojo-toolkit.html"
     }, {
-        heading: "Dojo Toolkit Tutorial: DOJO XHR using DEFERRED AND PROMISE",
+        heading: "Dojo Toolkit Tutorial: Dojo Xhr Using Deferred And Promise",
         link: "http://icodingclub.blogspot.in/2015/01/dojo-xhr-using-deferred-and-promise.html"
     }]
 }];
