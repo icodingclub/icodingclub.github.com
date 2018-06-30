@@ -1,56 +1,56 @@
 class ArticleBuilder {
 
-    constructor({articles}){
-
-        debugger;
-        this.articles = this.sortArticlesByRank(articles);
+    constructor({ articles }) {
+        this.groups = articles;
     }
 
-    sortArticlesByRank(articles) {
-        return articles.sort(function(ob1, ob2) {
-            return (ob2.rank - ob1.rank);
+    render() {
+        const groupTemplate = this.groups.map(group => {
+            return this.renderGroups(group);
         });
+
+        return (
+            `<div class="articles">
+                ${groupTemplate.join("")} 
+            </div>`
+        );
     }
 
-    renderTags(tags) {
-    return tags.reduce((reducedTag, tag) => `${reducedTag}<span>${tag}</span>`, "");
-    }
-
-    renderArticle(article) {
-        const { heading, desc, link, image, tags, rank } = article;
+    renderGroups(article) {
+        const { groupHeading, articles, logo } = article;
         return (
             `
-                <section class="article">
-                        <a href="${link}"><h1>${heading}</h1></a>
-                        <div class="table">
-                            <div class="tableRow">
-                                <div class="tableCell article-img hideOnMobile">
-                                    <img class="hideOnMobile" src="http://icodingclub.github.io/resource/image/${image}" alt="${image}">
-                                </div>
-                                <div class="tableCell">
-                                    <p>
-                                        ${desc}
-                                    </p>
-                                    <div class="tags">
-                                       ${this.renderTags(tags)}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+            <div class="article">
+                <h1>${groupHeading}</h1>
+                <div class="article-container">
+                    ${this.renderArticles(articles, logo)}
+                </div>
+            </div>
+            <div class="separator">&nbsp;</div>
             `
         );
     }
 
-
-    render() {
-
-        debugger;
-        let template = "";
-
-        return this.articles.reduce((template, article) => {
-            return template + this.renderArticle(article);
-        }, "");
+    renderArticles(articles, groupLogo) {
+        const template = articles.map((article) => {
+            const { heading, link, logo = groupLogo } = article;
+            return (`
+                    <a href="${link}"> 
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="table-cell logo">
+                                       <img class="hideOnMobile" src="http://icodingclub.github.io/resource/image/${logo}" alt="logo">
+                                </div>
+                                <div class="table-cell heading">
+                                    <span>${heading}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <div class="separator">&nbsp;</div>
+            `);
+        });
+        return template.join("");
     }
 }
 
