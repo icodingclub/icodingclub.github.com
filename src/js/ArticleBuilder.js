@@ -20,8 +20,8 @@ class ArticleBuilder {
         const { groupHeading, articles, logo } = article;
         return (
             `
+            <h1 class="section-heading">${groupHeading}<span class="arrow"></span></h1>
             <div class="article">
-                <h1>${groupHeading}</h1>
                 <div class="article-container">
                     ${this.renderArticles(articles, logo)}
                 </div>
