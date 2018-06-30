@@ -2,7 +2,7 @@ import articles from "./articles";
 import ArticleBuilder from "./ArticleBuilder";
 import "../sass/main.scss";
 
-//$(document).ready(function () {
+$(document).ready(function () {
     const articleBuilder = new ArticleBuilder({ articles });
     window.articleBuilder = articleBuilder;
     const articlesContainer =  document.getElementById("articlesContainer");
@@ -14,4 +14,4 @@ import "../sass/main.scss";
         PR.prettyPrint && PR.prettyPrint();
 
     }, 5000);
-//});
+});
