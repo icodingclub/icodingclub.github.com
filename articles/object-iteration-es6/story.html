@@ -1,26 +1,17 @@
 <p><link rel="stylesheet" href="/dist/main.min.css"><br />
 <link rel="stylesheet" href="/articles/style/editor.css"></p>
-<h1 id="javascript-recipes-how-to-elegantly-iterate-on-object-properties-in-es6-and-beyond">JavaScript Recipes: How to elegantly iterate on Object properties in ES6 and beyond?</h1>
-<p>JavaScript is one of the languages which let you iterate on Object properties without using any complex tool or api.<br />
-However, till ES5, even though we had support for it but it was far from elegant.</p>
-<p>ES6 introduced a simple and elegant way to do this job!</p>
-<h2 id="iteration-in-es5">Iteration in ES5</h2>
-<p>Let have a look at below code and then we can talk further</p>
-<pre class="prettyprint linenums"><code>var obj = {
-    a: 1,
-    b: 2,
-    c: 3
-}, key;
-
-
-for (key in obj) {
-    if (obj.hasOwnProperty(key)) {
-        var value = obj[key];
-        console.log(key, " : ", value)
-    }
-}</code></pre>
+<h1 id="react-basic-how-react-16-context-api-work">React basic: How React 16 context API work?</h1>
+<p>We have been waiting for this…from very long. <br />
+A experienced React developer might says, that we have context apis from long. In fact, it is available from very first version of React.<br />
+but that is an experimental version of API, something, very clearly warned by React online docs, can break your application.</p>
+<p>However, finally we have a good news….React 16 context APIs are public and good for any application.</p>
+<h2 id="what-is-react-16-context-api-and-why-should-i-care">What is React 16 context API and why should I care?</h2>
+<p>Context is designed to share data that can be considered “global” for a tree of React Components.<br />
+It sit next to React props and state.</p>
+<p>In other words, Context provides a way to pass data through the component tree without having to pass props down manually at every level.</p>
+<p><img src="images/react-context-data-flow.jpg" alt="react-context-data-flow.jpg" /></p>
 <h4 id="output">Output:</h4>
-<p><img src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/object-iteration-es6/images/iterartion-output.png" alt="object-iteration-es6" /></p>
+<p><img src="images/react-context-data-flow.jpg" alt="react-context-data-flow.jpg" /></p>
 <p>in above code 'if' block make most of the new JavaScript developer tumble. They either don't put this check or forget to understand it.</p>
 <p>As we know, it is very critical to avoid iteration on Object’s parent properties and it’s parent properties i.e. You will end up writing a slow code if you miss putting this check.</p>
 <blockquote>
@@ -77,4 +68,4 @@ for (const key of Object.keys(obj)) {
 }</code></pre>
 <p>That's all folks!</p>
 <p>Pick any example from above and you will be the master of ES6 Object iteration.</p>
-<script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'> </script>
+<script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst'></script>
