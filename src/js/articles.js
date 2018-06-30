@@ -1,6 +1,20 @@
 export default [{
+    group: "react",
+    groupHeading: "React Articles",
+    logo: "react.png",
+    articles: [{
+        heading: "React basic: How React 16 context API work?",
+        link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-context-api.html"
+    },{
+        heading: "React basic: How React 16 error boundaries works?",
+        link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-error.html"
+    },{
+        heading: "React basic: How React 16 new lifecycles methods works?",
+        link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-new-lifecycles.html"
+    }]
+}, {
     group: "javascript",
-    groupHeading: "JavaScript tutorials",
+    groupHeading: "JavaScript Articles",
     logo: "js-logo.png",
     articles: [{
         heading: "JavaScript Recipes: How to elegantly iterate on Object properties in ES6 and beyond?",
@@ -32,7 +46,7 @@ export default [{
     }]
 }, {
     group: "java",
-    groupHeading: "Java tutorials",
+    groupHeading: "Java Articles",
     articles: [{
         heading: "Tiles 3 with Spring 3 with JSP or FTL view",
         link: "http://icodingclub.blogspot.in/2013/12/tutorial-tiles-3-with-spring-3-with-jsp.html",
@@ -64,7 +78,7 @@ export default [{
     }]
 }, {
     group: "Dojo",
-    groupHeading: "Dojo tutorials",
+    groupHeading: "Dojo Articles",
     logo: "dojo.png",
     articles: [{
         heading: "Dojo Toolkit Tutorial: Hello world application in DOJO and AMD foundation apis.",
