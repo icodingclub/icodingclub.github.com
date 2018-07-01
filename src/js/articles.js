@@ -4,8 +4,7 @@ export default [{
     logo: "react.png",
     articles: [{
         heading: "React basic: How React 16 context API work?",
-        link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-context-api.html",
-        logo: "react-context-data-flow-logo.jpg",
+        link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-context-api.html"
     },{
         heading: "React basic: How React 16 error boundaries works?",
         link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-error.html"
