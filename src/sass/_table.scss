@@ -21,7 +21,7 @@ table.view-table  th {
 
 table.view-table  thead tr {
     height: 60px;
-    background: #FFED86;
+    background: #E3F1D5;
     font-size: 16px;
 }
 
@@ -34,22 +34,10 @@ table.view-table  tbody tr:last-child {
     border: 0;
 }
 
-table.view-table  td,
 table.view-table  th {
+    text-align: center;
+}
+
+table.view-table  td{
     text-align: left;
-}
-
-table.view-table  td.l,
-table.view-table  th.l {
-    text-align: right;
-}
-
-table.view-table  td.c,
-table.view-table  th.c {
-    text-align: center;
-}
-
-table.view-table  td.r,
-table.view-table  th.r {
-    text-align: center;
 }

@@ -6,10 +6,14 @@ Error boundaries are React components that catch JavaScript errors anywhere in t
 ## How it works?
 
 <table class="view-table">
+<thead>
 <tr>
 <th>Handles</th>
 <th>Do not handle</th>
 </tr>
+</thead>
+
+<tbody>
 
 <tr>
 <td>
@@ -31,6 +35,7 @@ Error boundaries are React components that catch JavaScript errors anywhere in t
 </ul>
 </td>
 </tr>
+</tbody>
 
 </table>
 
