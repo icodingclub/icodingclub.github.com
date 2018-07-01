@@ -3,8 +3,6 @@
     margin: 10px auto;
 }
 
-
-
 .articles .separator{
     height: 20px;
     display: block;
@@ -23,7 +21,7 @@
 }
 
 .article .table{
-    border-bottom: 1px solid #eceef1;
+    border-bottom: 2px solid #eceef1;
     color: rgb(173, 167, 167);
     width: 100%;
     border-left: 5px solid white;
@@ -45,7 +43,7 @@
 }
 .article .heading{
     padding: 14px;
-    color: darkslategray;
+    color: #736666;
     column-span: all;
 }
 
