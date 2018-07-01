@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="/dist/main.min.css">
-<link rel="stylesheet" href="/articles/style/editor.css">
 
 # React basic: How React 16 context API work?
 
@@ -17,7 +15,7 @@ It sit next to React props and state.
 
 In other words, Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
-![react-context-data-flow.jpg] (images/react-context-data-flow.jpg)
+![react-context-data-flow.jpg] (https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/react-16-context-api/images/react-context-data-flow.jpg)
 
 ## Main api
 ### Step 1: Initialize context
@@ -62,13 +60,31 @@ class TodoList extends React.Component {
 ### What we are building in this article?
 
 We are building a Todo App
-![react-context-data-flow.jpg] (images/todo-app.jpg)
+![react-context-data-flow.jpg] (https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/react-16-context-api/images/todo-app.jpg)
 
 
 ### High level code view of Todo App
 
 We are building a todo app
-![todo-app-context-architecure.jpg] (images/todo-app-context-architecure.jpg)
+![todo-app-context-architecure.jpg] (https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/react-16-context-api/images/todo-app-context-architecure.jpg)
 
 
-<script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'/>
+### Let's dive to Demo
+
+<a href="https://placeholder.com"><img src="https://via.placeholder.com/550x450"></a>
+
+
+### Github code repo
+
+<a href="https://github.com/ipraveen/react-16-context-poc"><img src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/resource/image/github.jpg"></a>
+
+![Code]()
+
+
+
+<!-- DO NOT COPY-->
+
+<link rel="stylesheet" href="/dist/main.min.css">
+<link rel="stylesheet" href="/articles/style/editor.css">
+<script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst'/>
+

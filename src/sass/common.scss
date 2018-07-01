@@ -152,23 +152,21 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 600;
+h2{
+    
     line-height: 1.5;
     margin: 0 0 .5em;
     text-transform: uppercase
 }
 
 h1 {
+    font-weight: 600;
     font-size: 1.4em;
     color: #404040
 }
 
 h2 {
+    font-weight: 600;
     font-size: 1.1em;
     color: #545d65
 }
