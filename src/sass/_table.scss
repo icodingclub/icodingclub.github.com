@@ -20,14 +20,14 @@ table.view-table  th {
 }
 
 table.view-table  thead tr {
-    height: 60px;
-    background: #E3F1D5;
+    height: 40px;
+    background: #327a81;
     font-size: 16px;
 }
 
 table.view-table  tbody tr {
     height: 48px;
-    border-bottom: 1px solid #E3F1D5;
+    border-bottom: 1px solid #327a81;
 }
 
 table.view-table  tbody tr:last-child {
@@ -36,6 +36,7 @@ table.view-table  tbody tr:last-child {
 
 table.view-table  th {
     text-align: center;
+    vertical-align: middle;
 }
 
 table.view-table  td{
