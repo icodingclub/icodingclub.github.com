@@ -25,7 +25,6 @@ const Context = React.createContext('light');
 ```
 
 
-
 ### Step 2: Expose it via Context.Provide
 
 ```js
@@ -57,26 +56,38 @@ class TodoList extends React.Component {
 ```
 
 
-### What we are building in this article?
+## What we are building in this article?
 
 We are building a Todo App
 ![react-context-data-flow.jpg] (https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/react-16-context-api/images/todo-app.jpg)
 
 
-### High level code view of Todo App
+## High level code view of Todo App
 
 We are building a todo app
 ![todo-app-context-architecure.jpg] (https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/react-16-context-api/images/todo-app-context-architecure.jpg)
 
 
-### Let's dive to Demo
+## Let's dive to Demo
 
-<a href="https://placeholder.com"><img src="https://via.placeholder.com/550x450"></a>
+### Part 1:
+<iframe width="90%" height="315" src="https://www.youtube.com/embed/-XE-gH68DQ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+### Part 2:
+<iframe width="90%" height="480" src="https://www.youtube.com/embed/dxMrLhp6Xug" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-### Github code repo
+### Part 3:
+
+<iframe width="90%" height="480" src="https://www.youtube.com/embed/-XE-gH68DQ8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+## Github code repository
 
 <a href="https://github.com/ipraveen/react-16-context-poc"><img   height="120" width="120" src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/resource/image/github.jpg"></a>
+
+
+
 
 
 <!-- DO NOT COPY-->

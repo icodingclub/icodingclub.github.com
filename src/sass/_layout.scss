@@ -52,6 +52,16 @@ footer a:visited {
 }
 
 
+blockquote {
+    border-left: 6px solid #65ddab;
+    background-color: #eee;
+    padding: 4px;
+    padding: 11px 21px;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-family: initial;
+}
+
 blockquote.info {
     border-left: 6px solid #65ddab;
     background-color: #eee;
@@ -69,6 +79,7 @@ blockquote.morearticle {
     padding: 25px 10px;
     font-size: 1.2rem;
 }
+
 .path {
     font-size: 0.8rem;
     margin: 8px;
