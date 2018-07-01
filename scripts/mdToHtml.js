@@ -8,7 +8,7 @@ function writeFile(file, data) {
     fs.writeFileSync(file, data, 'utf8');
 }
 
-const filePath = "react-16-context-api/story";
+const filePath = "error-boundaries/story";
 
 const inPath = `${__dirname}/../articles/${filePath}.md`;
 const outPath = `${__dirname}/../articles/${filePath}.html`;

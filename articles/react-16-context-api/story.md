@@ -76,10 +76,7 @@ We are building a todo app
 
 ### Github code repo
 
-<a href="https://github.com/ipraveen/react-16-context-poc"><img src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/resource/image/github.jpg"></a>
-
-![Code]()
-
+<a href="https://github.com/ipraveen/react-16-context-poc"><img   height="120" width="120" src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/resource/image/github.jpg"></a>
 
 
 <!-- DO NOT COPY-->

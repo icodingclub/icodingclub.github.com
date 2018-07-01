@@ -1,0 +1,55 @@
+table.view-table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+table.view-table  * {
+    position: relative;
+}
+
+table.view-table  td,
+table.view-table  th {
+    padding-left: 8px;
+}
+
+table.view-table  thead tr {
+    height: 60px;
+    background: #FFED86;
+    font-size: 16px;
+}
+
+table.view-table  tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+}
+
+table.view-table  tbody tr:last-child {
+    border: 0;
+}
+
+table.view-table  td,
+table.view-table  th {
+    text-align: left;
+}
+
+table.view-table  td.l,
+table.view-table  th.l {
+    text-align: right;
+}
+
+table.view-table  td.c,
+table.view-table  th.c {
+    text-align: center;
+}
+
+table.view-table  td.r,
+table.view-table  th.r {
+    text-align: center;
+}

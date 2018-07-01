@@ -8,9 +8,6 @@ export default [{
     },{
         heading: "React basic: How React 16 error boundaries works?",
         link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-error.html"
-    },{
-        heading: "React basic: How React 16 new lifecycles methods works?",
-        link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-new-lifecycles.html"
     }]
 }, {
     group: "javascript",
