@@ -42,7 +42,14 @@ React error boundaries is the way to handle errors in React component, not in ge
    </tbody>
 </table>
 
-## Main api
+## How it works?
+
+![react-error-boundaries.jpg] (https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/error-boundaries/images/react-error-boundaries.jpg)
+
+
+## Sample code
+
+*src/error-boundaries/List/ListController.js*
 
 ```js
 
@@ -69,6 +76,67 @@ class ListController extends React.Component {
 }
 
 ```
+
+*src/error-boundaries/List/List.js*
+
+```js
+
+import React from "react";
+
+class TodoList extends React.Component {
+
+    componentDidMount(){
+        //throw new Error("custom error from TodoList.render");
+    }
+
+    handleClick = () =>{
+        throw new Error("custom error from TodoList.render");
+    }
+
+    componentWillUnmount(){
+        console.log("In componentWillUnmount");
+    }
+    render() {
+        const { list } = this.props;
+
+        return (
+            <ol>
+                {list.map((item, index) => <li key={index} onClick={this.handleClick}>{item}</li>)}
+            </ol>
+        );
+    }
+}
+
+export default TodoList;
+
+
+```
+
+*src/error-boundaries/List/ErrorBanner.js*
+
+```js
+import React from "react";
+
+export default class ErrorBanner extends React.Component {
+
+    render() {
+        const { errorInfo, error = {} } = this.props;
+        const errorMsg = error.message || "Something wrong happen, please try after some time.";
+
+        return (
+            <div className="error-section">
+                <b>{errorMsg}</b>
+                <pre>
+                    {errorInfo.componentStack}
+                </pre>
+            </div>
+        );
+    }
+}
+
+```
+
+
 ### Let's dive to Demo
 
 <a href="https://placeholder.com"><img src="https://via.placeholder.com/550x450"></a>

@@ -34,7 +34,10 @@
       </tr>
    </tbody>
 </table>
-<h2 id="main-api">Main api</h2>
+<h2 id="how-it-works-1">How it works?</h2>
+<p><img src="https://raw.githubusercontent.com/icodingclub/icodingclub.github.com/master/articles/error-boundaries/images/react-error-boundaries.jpg" alt="react-error-boundaries.jpg" /></p>
+<h2 id="sample-code">Sample code</h2>
+<p><em>src/error-boundaries/List/ListController.js</em></p>
 <pre class="prettyprint linenums"><code class="js language-js">class ListController extends React.Component {
 
    //Lifecycle method for error boundary
@@ -55,6 +58,53 @@
            &lt;/div&gt;
        );
    }
+}</code></pre>
+<p><em>src/error-boundaries/List/List.js</em></p>
+<pre class="prettyprint linenums"><code class="js language-js">import React from "react";
+
+class TodoList extends React.Component {
+
+    componentDidMount(){
+        //throw new Error("custom error from TodoList.render");
+    }
+
+    handleClick = () =&gt;{
+        throw new Error("custom error from TodoList.render");
+    }
+
+    componentWillUnmount(){
+        console.log("In componentWillUnmount");
+    }
+    render() {
+        const { list } = this.props;
+
+        return (
+            &lt;ol&gt;
+                {list.map((item, index) =&gt; &lt;li key={index} onClick={this.handleClick}&gt;{item}&lt;/li&gt;)}
+            &lt;/ol&gt;
+        );
+    }
+}
+
+export default TodoList;</code></pre>
+<p><em>src/error-boundaries/List/ErrorBanner.js</em></p>
+<pre class="prettyprint linenums"><code class="js language-js">import React from "react";
+
+export default class ErrorBanner extends React.Component {
+
+    render() {
+        const { errorInfo, error = {} } = this.props;
+        const errorMsg = error.message || "Something wrong happen, please try after some time.";
+
+        return (
+            &lt;div className="error-section"&gt;
+                &lt;b&gt;{errorMsg}&lt;/b&gt;
+                &lt;pre&gt;
+                    {errorInfo.componentStack}
+                &lt;/pre&gt;
+            &lt;/div&gt;
+        );
+    }
 }</code></pre>
 <h3 id="lets-dive-to-demo">Let's dive to Demo</h3>
 <p><a href="https://placeholder.com"><img src="https://via.placeholder.com/550x450"></a></p>

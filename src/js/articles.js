@@ -3,7 +3,7 @@ export default [{
     groupHeading: "React Articles",
     logo: "react.png",
     articles: [{
-        heading: "React basic: How React 16 context API work?",
+        heading: "React basic: How React 16 context API works?",
         link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-context-api.html"
     },{
         heading: "React basic: How React 16 error boundaries works?",
