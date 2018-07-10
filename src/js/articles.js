@@ -4,10 +4,10 @@ export default [{
     logo: "react.png",
     articles: [{
         heading: "React basic: How React 16 context API works?",
-        link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-context-api.html"
+        link: "https://medium.com/@ipraveen/react-basic-how-react-16-context-api-work-7257591589fc"
     },{
         heading: "React basic: How React 16 error boundaries works?",
-        link: "http://icodingclub.blogspot.com/2018/06/react-basic-how-react-16-error.html"
+        link: "https://medium.com/@ipraveen/react-basic-how-react-16-error-boundaries-works-80276ee9d100"
     }]
 }, {
     group: "javascript",
@@ -15,7 +15,7 @@ export default [{
     logo: "js-logo.png",
     articles: [{
         heading: "JavaScript Recipes: How to elegantly iterate on Object properties in ES6 and beyond?",
-        link: "http://icodingclub.blogspot.in/2018/01/javascript-recipes-how-to-elegantly.html"
+        link: "https://medium.com/@ipraveen/javascript-recipes-how-to-elegantly-iterate-on-object-properties-in-es6-and-beyond-16d672fcf1e2"
     }, {
         heading: "Handling Asynchronous Javascript And Foundation Of Deferred And Promise",
         link: "http://icodingclub.blogspot.in/2014/11/handling-asynchronous-javascript-using.html",
