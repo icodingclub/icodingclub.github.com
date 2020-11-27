@@ -1,0 +1,189 @@
+I"�-<h1 id="what-is-a-debounceanyway">What is a Debounce anyway?</h1>
+<p>Debounce is a pattern to limit the rate at which function can fire. It returns a function, which can only be triggered when there is a user-provided delay in its invocations. If the function is getting triggered continuously, without the delay, it will not be called.</p>
+
+<h2 id="variations">Variations</h2>
+<ol>
+  <li><em>Lazy</em>: function invocation happens on the trailing edge.</li>
+  <li><em>Early</em>: function invocation happens on the leading edge.</li>
+</ol>
+
+<h2 id="advantages">Advantages</h2>
+<ol>
+  <li>Improve the performance by regulating the rate at which a function can be triggered.</li>
+  <li>Make your code more meaningful, by calling the handler only when we need for it.</li>
+</ol>
+
+<h2 id="conceptual-diagram">Conceptual Diagram</h2>
+<p><img src="assets/post-images/debounce-architecure.png" alt="" /></p>
+
+<h2 id="case-study-google-autocomplete-suggestions">Case Study - Google autocomplete suggestions</h2>
+
+<p><img src="assets/post-images/debounce-google.png" alt="" /></p>
+
+<p>Google search is an interesting case of debounce pattern. If you are designing this page, you may want to consider the following</p>
+
+<ol>
+  <li>On every meaning full keyword, we want to provide autocomplete suggestions to the user.</li>
+  <li>Providing suggestions too early, maybe at every keypress, would be meaningless. Also, it will put unnecessary load on the server.</li>
+  <li>Providing it too late would defeat the purpose of autocomplete suggestions.</li>
+</ol>
+
+<p>Debounce is a standard pattern to solve this kind of problem.</p>
+
+<h2 id="step-by-step-guide-for-building-a-debounce-function">Step by step guide for building a Debounce function.</h2>
+<blockquote>
+  <p>Note: if you are in a hurry, you can directly jump to the section “Final working sample.” and copy the code :)
+Else, let’s follow below step by step guide.</p>
+</blockquote>
+
+<h3 id="step-1-delay-the-functioncall">Step 1: Delay the function call.</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ * DEBOUNCE
+ */</span>
+<span class="kd">function</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">wait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">wait</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+<span class="cm">/*
+ * TEST
+ */</span>
+<span class="kd">const</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello Debounce!</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">logMsg</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">msg</span><span class="p">}</span><span class="err"> Time: </span><span class="p">${</span><span class="nx">timer</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">smartLogMsg</span> <span class="o">=</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">logMsg</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+<span class="nx">smartLogMsg</span><span class="p">();</span> <span class="c1">// will be called at 400+ ms.</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">smartLogMsg</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span> <span class="c1">// will be called at 700+ ms.</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">smartLogMsg</span><span class="p">,</span> <span class="mi">800</span><span class="p">);</span> <span class="c1">// will be called at 1200+ ms.</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello Debounce! Time: 402.9799999552779
+test.js:18 Hello Debounce! Time: 705.5549999931827
+test.js:18 Hello Debounce! Time: 1200.894999958109
+
+</code></pre></div></div>
+
+<h2 id="step-2-limit-the-number-of-functioncalls">Step 2: Limit the number of function calls.</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ * DEBOUNCE
+ */</span>
+<span class="kd">function</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">wait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">timeout</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// Clear the timeout if it get called before the wait period.</span>
+    <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">);</span>
+    <span class="nx">timeout</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">wait</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="cm">/*
+ * TEST
+ */</span>
+<span class="kd">const</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello Debounce!</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">logMsg</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">msg</span><span class="p">}</span><span class="err"> Time: </span><span class="p">${</span><span class="nx">timer</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">smartLogMsg</span> <span class="o">=</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">logMsg</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+<span class="nx">smartLogMsg</span><span class="p">();</span> <span class="c1">// will be called at 400+ ms.</span>
+<span class="c1">// will be called at 700+ ms, hence cancel the previous.</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">smartLogMsg</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+<span class="c1">// will be called at 1200+ ms, will log normally</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">smartLogMsg</span><span class="p">,</span> <span class="mi">800</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>Output:</p>
+
+<p>At this point, our debounce function is half complete and working for a few happy scenarios. To fix things further, and to understand the value of it, we have to add a little bit of complexity now.
+Let’s build a small App!… What it will do, you might ask?
+Take user input.
+Put through the debounce.
+Use a “fake” XHR call, which pretends that it’s processing the data on the server.
+Put back the “processed text” on the view, at a delayed rate.</p>
+
+<p>Starting code:</p>
+
+<p>However, if you run your code now, you will get output like below
+Can you notice “undefined”….try in below fiddle (play with it)</p>
+
+<p>What’s wrong here?…well, everything which can go wrong with this.We are losing the context. Let’s try to fix that.
+Step 3: Fix the context
+function debounce(func, wait) {
+    let timeout;
+    return function() {
+        const context = this;
+        const executor = function() {
+            timeout = null;
+            func.apply(context);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(executor, wait);
+    };
+}
+now the output is like below
+Hurray!
+No no….not so fast!….one more thing is pending. Can you see something odd in below section of code
+…
+function handleInput() {
+      doXhr(this.value).then(data =&gt; (output.innerHTML += <code class="language-plaintext highlighter-rouge">&lt;li&gt;${data}&lt;/li&gt;</code>));
+ }
+…
+Well, we are using this.value to get the entered text; nothing wrong in it, it’s just we can also use event.target.value instead of that. let’s do the change and see the output.
+Changes:
+…
+function handleInput(event) {
+        const inputData = event.target.value;
+        doXhr(inputData).then(data =&gt; (output.innerHTML += <code class="language-plaintext highlighter-rouge">&lt;li&gt;${data}&lt;/li&gt;</code>));
+      }
+…
+and when we run the code, disappointment is there on console
+Why?…point is, we are not mapping the argument passed to the function properly. Let’s fix that.
+Step 4: Fix the function arguments
+function debounce(func, wait) {
+    let timeout;
+    return function(…args) {
+        const context = this;
+        const executor = function() {
+            timeout = null;
+            func.apply(context, args);
+        };
+clearTimeout(timeout);
+        timeout = setTimeout(executor, wait);
+    };
+}
+Now if you run the app, it will work like a charm, try below fiddle now.
+Final working sample.</p>
+
+<p>Bonus: Early Debounce
+Normally, in debounce we wait and then trigger the event. We do have a variant of debounce in which you first trigger and then wait for a fixed interval - it is called “Ealy Debounce”.
+This can be implemented as below with an optional argument.
+function debounce(func, wait = 500, early = false) {
+    let timeout;
+return function(…args) {
+        const context = this;
+        const isEarlyEnable = !timeout &amp;&amp; early;
+        const executor = function() {
+            timeout = null;
+            !early &amp;&amp; func.apply(context, args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(executor, wait);
+        isEarlyEnable &amp;&amp; func.apply(context, args);
+    };
+}
+Thank You!
+That’s all folk! let me know in the comment section if this article helped you.</p>
+
+:ET

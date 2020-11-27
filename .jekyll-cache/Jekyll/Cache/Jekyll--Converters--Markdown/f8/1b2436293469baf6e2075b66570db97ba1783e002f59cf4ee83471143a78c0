@@ -1,0 +1,19 @@
+I"<h1 id="capability">Capability</h1>
+<p>Observability Logging Pipeline</p>
+
+<h1 id="summary">Summary</h1>
+<p>Low cost, low latency and high throughput logging pipeline for App logs (specifically IKS)</p>
+
+<h1 id="bbci-goal-alignment">BB/CI Goal Alignment:</h1>
+<p>Tech 1.2 - Increased reliability for Logging</p>
+
+<h1 id="exec-presentation">Exec Presentation:</h1>
+<p><a href="https://docs.google.com/document/d/1sjgtKvMCWqDGmbYu5g7_GQz2wLpSDcLwTQBQdyCOZ8A/edit">IKS2.x S3 log pipeline</a></p>
+
+<h1 id="technical-approach">Technical Approach:</h1>
+
+<p><a href="https://docs.google.com/document/d/1sjgtKvMCWqDGmbYu5g7_GQz2wLpSDcLwTQBQdyCOZ8A/edit">IKS2.x S3 log pipeline details</a></p>
+
+<h1 id="metric-impact">Metric Impact:</h1>
+<p>500% increase in throughput, &gt;90% cost savings</p>
+:ET

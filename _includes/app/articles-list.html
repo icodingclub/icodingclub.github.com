@@ -1,0 +1,16 @@
+<section class="features-articles py-3 bg-light">
+    <h1 class="stats-heading text-center my-1">Achievements</h1>
+    <div class="container grid">
+       
+        {% for post in site.posts %}
+        <div class="card flex">
+            <i class="fas fa-pager fa-3x"> </i>
+            <div>
+                <h1 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h1>
+                {{ post.summary_card }}
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</section>

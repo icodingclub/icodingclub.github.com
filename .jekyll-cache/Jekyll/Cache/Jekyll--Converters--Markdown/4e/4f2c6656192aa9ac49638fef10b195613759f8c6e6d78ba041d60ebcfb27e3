@@ -1,0 +1,19 @@
+I"p<h1 id="capability">Capability</h1>
+<p>AWS Cost Optimization</p>
+
+<h1 id="summary">Summary</h1>
+<p>Intuit spends ~$225m annually on AWS hosting. Continually optimizing the hosting cost through actionable insights and savings opportunities is one of the key deliverables for Cloud Engineering &amp; Operations team. As part of this effort, the team is constantly analysing design and utilization efficiencies across Intuit accounts, automating the recommendations and providing insights through cost optimization dashboards.</p>
+
+<h1 id="bbci-goal-alignment">BB/CI Goal Alignment</h1>
+<p>Tech4.1 [ Cost Waste Sensors ]</p>
+
+<h1 id="exec-presentation">Exec Presentation</h1>
+<p><a href="https://docs.google.com/presentation/d/1K2rk48L3QGuqFtbvvTneWFByVoHoOrPk4wIN25Cjv6I/edit#slide=id.g9b42e16462_40_1213">AWS Cost Optimization Exec Presentation</a></p>
+
+<h1 id="technical-approach">Technical Approach</h1>
+<p><a href="https://docs.google.com/document/d/1Kow4RMXc5SeHU--J71koBIL5MtAv9ve7-FswwgWRSz0/edit?ts=5e9ecec1">Waste Sensor Documentation</a></p>
+
+<h1 id="metric-impact">Metric Impact:</h1>
+<p>$217K monthly savings opportunity</p>
+
+:ET

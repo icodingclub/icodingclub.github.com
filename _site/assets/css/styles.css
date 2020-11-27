@@ -127,6 +127,8 @@ code, pre { background-color: #333; color: #fff; }
 @keyframes slideFromBottom { 0% { transform: translateY(100%); }
   100% { transform: translateY(0%); } }
 
+.logo { font-family: monospace; font-size: 40px; padding: 5px; }
+
 .navbar { background-color: var(--primary-color); color: #ffffff; height: 70px; }
 
 .navbar ul { display: flex; }
@@ -139,27 +141,19 @@ code, pre { background-color: #333; color: #fff; }
 
 @media (max-width: 500px) { .navbar { height: 110px; } .navbar .flex { flex-direction: column; } .navbar ul { padding: 10px; background-color: rgba(0, 0, 0, 0.1); } }
 
-.showcase { height: 400px; background-color: var(--primary-color); position: relative; color: #ffffff; }
+.showcase { height: 220px; background-color: var(--primary-color); position: relative; color: #ffffff; }
 
-.showcase h1 { font-size: 40px; }
+.showcase .grid { grid-template-columns: 60% 40%; }
+
+.showcase .showcase-text { display: flex; align-items: center; justify-content: center; flex-direction: column; align-self: flex-start; margin-top: 50px; }
+
+.showcase h2 { text-transform: uppercase; font-size: 1.2rem; font-weight: bold; }
 
 .showcase p { margin: 20px 0; }
 
-.showcase .grid { grid-template-columns: 55% 45%; }
+.showcase small { text-transform: uppercase; font-size: .8rem; }
 
-.showcase .showcase-text { animation: slideFromLeft 1s ease-in; }
-
-.showcase .showcase-form { position: relative; top: 60px; height: 350px; width: 400px; padding: 40px; overflow: visible; z-index: 100; animation: slideFromRight 1s ease-in; }
-
-.showcase .showcase-form .form-control { margin: 30px 0; }
-
-.showcase .showcase-form input[type='text'], .showcase .showcase-form input[type='email'] { border: 0; border-bottom: 1px solid #b4becb; width: 100%; padding: 3px; font-size: 16px; }
-
-.showcase .showcase-form input:focus { outline: 0; }
-
-.showcase::before, .showcase::after { content: ''; position: absolute; height: 100px; bottom: -70px; right: 0; left: 0; background-color: white; transform: skewY(-2deg); }
-
-@media (max-width: 768px) { .showcase { height: auto; } .showcase .showcase-text { text-align: center; margin-top: 40px; } .showcase .showcase-form { justify-self: center; margin: auto; } }
+.showcase img { width: 80%; }
 
 .stats { padding-top: 100px; animation: slideFromBottom 1s ease-in; }
 
