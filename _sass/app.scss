@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+$mobile-breakpoint: 500px;
+$tablet-breakpoint: 768px;
+
+:root {
+    --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+@import 'reset';
+@import 'util';
+@import 'animations';
+@import 'header';
+@import 'home';
+@import 'features';
+@import 'docs';
+@import 'footer';
+
+@media (max-width: $tablet-breakpoint) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}

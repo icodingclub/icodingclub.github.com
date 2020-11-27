@@ -1,0 +1,36 @@
+.navbar {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    height: 70px;
+
+    ul {
+        display: flex;
+    }
+
+    a {
+        color: white;
+        padding: 10px;
+        margin: 0 5px;
+    }
+
+    a:hover {
+        border-bottom: 2px #ffffff solid;
+    }
+
+    .flex {
+        justify-content: space-between;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+        height: 110px;
+
+        .flex {
+            flex-direction: column;
+        }
+
+        ul {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
