@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Elegantly Iterate On Object</title>
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous"
+    />
+
+    <!-- <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+    crossorigin="anonymous"
+/> -->
+    
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+    </head>
+
+    <body>
+          <div class="navbar">
+    <div class="container flex">
+        <h1 class="logo">&lt;iCodingClub&gt;</h1>
+        <!-- <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/pages/features">Features</a></li>
+                <li><a href="/pages/docs">Docs</a></li>
+            </ul>
+        </nav> -->
+    </div>
+</div>
+
+          <main>
+            <section class="post">
+    <div class="post-banner bg-primary">
+        <div class="container">
+            <h1>Elegantly Iterate On Object</h1>
+            <div class="bio">
+                <img src="/assets/images/praveen.png" alt="" />
+                <div class="info">
+                    <span class="author">Praveen Singh</span>
+                    <span class="date">08 May 2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <article><p>JavaScript is one of the programming languages which lets you iterate on Object properties without using any complex tool or API.
+In this article, we are going to explore, how this simple technique evolved over the years and Why we have something now, which can be classified as elegant!
+A historical way if Iteration (Read till ES5)
+Let have a look on below code and then we can talk further
+var obj = { // Yes ‘var’…bad old days!
+    a: 1,
+    b: 2,
+    c: 3,
+};
+for (var key in obj) {
+    if (obj.hasOwnProperty(key)) { // &lt;- Ahh…What’s this??
+        var value = obj[key];
+        console.log(key, ‘ : ‘, value);
+    }
+}
+Output:
+a : 1
+b : 2
+c : 3
+Many of us miss out the check obj.hasOwnProperty
+In JavaScript, when you are iterating, it is very critical to avoid iteration on Object’s parent properties( and it’s parent properties and it’s parent…You got the idea!). Missing may result into a slow code.
+Luckily, most of us working with some kind of linting tool which will give a warning if you miss this check.
+Modern way — Iteration in ES6+
+Now let’s move to modern JavaScript or ES6+!
+Acknowledging this problem, ECMA team has added support for simple iteration in ES6.
+And it starts with — Object.entries()
+The Object.entries() method returns an array of a given object’s own enumerable property [key, value] pairs, in the same order as that provided by a for…in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
+For example, below code
+const obj = {
+    a: 1,
+    b: 2,
+    c: 3
+};
+console.log(Object.entries(obj));
+will give output like below, An array of arrays of two elements, where at index: 0, we will have key and at index:1, we will have value</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[["a",1],["b",2],["c",3]]
+</code></pre></div></div>
+</article>
+    </div>
+</section>
+
+          </main>
+        <footer class="footer bg-dark py-5">
+    <div class="container grid grid-3">
+        <div>
+            <h1>Loruki</h1>
+            <p>Copyright &copy; 2020</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="docs.html">Docs</a></li>
+            </ul>
+        </nav>
+        <div class="social">
+            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+            <a href="#"><i class="fab fa-github fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+    </div>
+</footer>
+
+      </div>
+
+
+       <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+       <!-- <script
+       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+       crossorigin="anonymous"
+   ></script>
+   <script
+       src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+       crossorigin="anonymous"
+   ></script> -->
+    </body>
+</html>

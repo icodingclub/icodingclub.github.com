@@ -2,18 +2,20 @@
 layout: default
 ---
 
-<section class="features-head py-3">
-    <div class="container">
-        <div class="post">
-            <header>
-                <h1>{{ page.title }}</h1>
-                <i>Author: {{ page.author }}</i>
-                <br />
-                <i>Date: {{ page.date | date_to_string }}</i>
-            </header>
-            <article>
-            {{ content }}
-            </article>
+<section class="post">
+    <div class="post-banner bg-primary">
+        <div class="container">
+            <h1>{{ page.title }}</h1>
+            <div class="bio">
+                <img src="/assets/images/praveen.png" alt="" />
+                <div class="info">
+                    <span class="author">Praveen Singh</span>
+                    <span class="date">{{ page.date | date_to_string }}</span>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="container">
+        <article>{{ content }}</article>
     </div>
 </section>

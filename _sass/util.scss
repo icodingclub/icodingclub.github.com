@@ -94,7 +94,7 @@
 
 // Alerts
 
-.alert{
+.alert {
     padding: 10px 20px;
     margin: 15px 0;
     font-weight: bold;
@@ -102,12 +102,12 @@
         margin-right: 10px;
     }
 
-    &.alert-success{
+    &.alert-success {
         background-color: var(--success-color);
         color: #fff;
     }
 
-    &.alert-error{
+    &.alert-error {
         background-color: var(--error-color);
         color: #fff;
     }
@@ -115,11 +115,11 @@
 
 // Code
 
-code, pre{
-    background-color: #333;
-    color: #fff;
+code,
+pre {
+    padding: 20px 40px;
+    font-size: 14px;
 }
-
 
 // Fonts
 
@@ -184,6 +184,15 @@ code, pre{
 
     &-5 {
         margin: 4rem 0;
+    }
+    &-6 {
+        margin: 5.5rem 0;
+    }
+    &-7 {
+        margin: 6.5rem 0;
+    }
+    &-8 {
+        margin: 7.5rem 0;
     }
 }
 

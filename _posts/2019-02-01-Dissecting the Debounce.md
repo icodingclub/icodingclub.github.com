@@ -3,7 +3,9 @@ layout: post
 author: Praveen Singh
 tags: javascript
 title: Dissecting the Debounce
-summary_card: Step by Step guide of Debounce in JavaScript
+summary: Step by Step guide of Debounce in JavaScript
+iconClass: fa-js
+showcase: true
 ---
 
 
@@ -19,11 +21,11 @@ Debounce is a pattern to limit the rate at which function can fire. It returns a
 1. Make your code more meaningful, by calling the handler only when we need for it.
 
 ## Conceptual Diagram
-<img src="assets/post-images/debounce-architecure.png" alt="" />
+<img src="/assets/post-images/debounce-architecure.png" alt="" />
 
 ## Case Study - Google autocomplete suggestions
 
-<img src="assets/post-images/debounce-google.png" alt="" />
+<img src="/assets/post-images/debounce-google.png" alt="" />
 
 
 Google search is an interesting case of debounce pattern. If you are designing this page, you may want to consider the following
@@ -40,7 +42,9 @@ Debounce is a standard pattern to solve this kind of problem.
 
 ### Step 1: Delay the function call.
 
+
 ```js
+
 /*
  * DEBOUNCE
  */
@@ -218,11 +222,11 @@ return function(...args) {
 ```
 
 
-<iframe width="100%" height="300" src="//jsfiddle.net/ipraveen/bhjd7cx5/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
 
 Thank You!
 That's all folk! let me know in the comment section if this article helped you.
+
+<script async src="//jsfiddle.net/ipraveen/bhjd7cx5/embed/result,js,html/"></script>
 
 
 

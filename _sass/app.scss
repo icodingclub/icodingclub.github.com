@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 $mobile-breakpoint: 500px;
 $tablet-breakpoint: 768px;
 
 :root {
-    --primary-color: #047aed;
+    --primary-color: rgb(107, 182, 149);;
     --secondary-color: #1c3fa8;
     --dark-color: #002240;
     --light-color: #f4f4f4;
@@ -17,9 +17,9 @@ $tablet-breakpoint: 768px;
 @import 'animations';
 @import 'header';
 @import 'home';
-@import 'features';
-@import 'docs';
+@import 'post';
 @import 'footer';
+@import "native";
 
 @media (max-width: $tablet-breakpoint) {
     .grid {

@@ -1,13 +1,15 @@
 .logo {
     font-family: monospace;
-    font-size: 40px;
+    font-size: 50px;
     padding: 5px;
 }
 
 .navbar {
+    // background-color: rgb(91, 165, 132);
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: #fff;
     height: 70px;
+    padding: 30px 0;
 
     ul {
         display: flex;

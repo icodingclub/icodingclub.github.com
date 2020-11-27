@@ -1,4 +1,4 @@
-I"�I<h1 id="what-is-a-debounceanyway">What is a Debounce anyway?</h1>
+I"�H<h1 id="what-is-a-debounceanyway">What is a Debounce anyway?</h1>
 <p>Debounce is a pattern to limit the rate at which function can fire. It returns a function, which can only be triggered when there is a user-provided delay in its invocations. If the function is getting triggered continuously, without the delay, it will not be called.</p>
 
 <h2 id="variations">Variations</h2>
@@ -38,7 +38,8 @@ Else, let’s follow below step by step guide.</p>
 
 <h3 id="step-1-delay-the-functioncall">Step 1: Delay the function call.</h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/*
  * DEBOUNCE
  */</span>
 <span class="kd">function</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">wait</span><span class="p">)</span> <span class="p">{</span>
@@ -55,7 +56,7 @@ Else, let’s follow below step by step guide.</p>
 <span class="p">}</span>
 <span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello Debounce!</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">function</span> <span class="nx">logMsg</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">msg</span><span class="p">}</span><span class="err"> Time: </span><span class="p">${</span><span class="nx">timer</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">msg</span><span class="p">}</span><span class="s2"> Time: </span><span class="p">${</span><span class="nx">timer</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="kd">const</span> <span class="nx">smartLogMsg</span> <span class="o">=</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">logMsg</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
 <span class="nx">smartLogMsg</span><span class="p">();</span> <span class="c1">// will be called at 400+ ms.</span>
@@ -93,7 +94,7 @@ test.js:18 Hello Debounce! Time: 1200.894999958109
 <span class="p">}</span>
 <span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello Debounce!</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">function</span> <span class="nx">logMsg</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">msg</span><span class="p">}</span><span class="err"> Time: </span><span class="p">${</span><span class="nx">timer</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">msg</span><span class="p">}</span><span class="s2"> Time: </span><span class="p">${</span><span class="nx">timer</span><span class="p">()}</span><span class="s2">`</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="kd">const</span> <span class="nx">smartLogMsg</span> <span class="o">=</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">logMsg</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
 <span class="nx">smartLogMsg</span><span class="p">();</span> <span class="c1">// will be called at 400+ ms.</span>
@@ -142,10 +143,10 @@ Can you notice “undefined”….try in below fiddle (play with it)</p>
 <span class="nx">Hurray</span><span class="o">!</span>
 <span class="nx">No</span> <span class="nx">no</span><span class="err">…</span><span class="p">.</span><span class="nx">not</span> <span class="nx">so</span> <span class="nx">fast</span><span class="o">!</span><span class="err">…</span><span class="p">.</span><span class="nx">one</span> <span class="nx">more</span> <span class="nx">thing</span> <span class="nx">is</span> <span class="nx">pending</span><span class="p">.</span> <span class="nx">Can</span> <span class="nx">you</span> <span class="nx">see</span> <span class="nx">something</span> <span class="nx">odd</span> <span class="k">in</span> <span class="nx">below</span> <span class="nx">section</span> <span class="k">of</span> <span class="nx">code</span>
 
-<span class="s2">```</span><span class="err">js
+<span class="s2">```js
 ...
 function handleInput() {
-      doXhr(this.value).then(data =&gt; (output.innerHTML += </span><span class="s2">`</span><span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li&gt;`</span><span class="se">))</span><span class="err">;
+      doXhr(this.value).then(data =&gt; (output.innerHTML += `</span><span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/li&gt;`</span><span class="se">))</span><span class="err">;
 </span> <span class="p">}</span>
 <span class="p">...</span>
 
@@ -155,7 +156,7 @@ Changes:</p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
 <span class="kd">function</span> <span class="nx">handleInput</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">const</span> <span class="nx">inputData</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
-        <span class="nx">doXhr</span><span class="p">(</span><span class="nx">inputData</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">`</span><span class="err">&lt;li&gt;</span><span class="p">${</span><span class="nx">data</span><span class="p">}</span><span class="err">&lt;/li&gt;</span><span class="s2">`</span><span class="p">));</span>
+        <span class="nx">doXhr</span><span class="p">(</span><span class="nx">inputData</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">output</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">`&lt;li&gt;</span><span class="p">${</span><span class="nx">data</span><span class="p">}</span><span class="s2">&lt;/li&gt;`</span><span class="p">));</span>
       <span class="p">}</span>
 <span class="p">...</span>
 </code></pre></div></div>
@@ -202,9 +203,9 @@ This can be implemented as below with an optional argument.</p>
 
 </code></pre></div></div>
 
-<iframe width="100%" height="300" src="//jsfiddle.net/ipraveen/bhjd7cx5/embedded/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0"></iframe>
-
 <p>Thank You!
 That’s all folk! let me know in the comment section if this article helped you.</p>
+
+<script async="" src="//jsfiddle.net/ipraveen/bhjd7cx5/embed/result,js,html/"></script>
 
 :ET
