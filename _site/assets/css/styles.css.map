@@ -11,7 +11,7 @@
 		"_sass/home.scss",
 		"_sass/post.scss",
 		"_sass/footer.scss",
-		"_sass/native.css"
+		"_sass/native.scss"
 	],
 	"sourcesContent": [
 		"@import 'app';\n",
