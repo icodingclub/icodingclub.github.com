@@ -113,10 +113,10 @@
 .posts {
     .card {
         h1 {
-            font-size: 2rem;
+            font-size: 1.2rem;
         }
     }
-    .card.grid {
+    .card .grid {
         justify-content: space-between;
         grid-template-columns: 60px auto;
         justify-content: flex-start;

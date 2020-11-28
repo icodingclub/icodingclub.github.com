@@ -2,7 +2,7 @@
 layout: post
 author: Praveen Singh
 tags: javascript
-title: Elegantly Iterate On Object
+title: Elegantly Iterate On Object In Javascript (ES6+)
 summary: How To Elegantly Iterate On Object Properties In Javascript (ES6+)?
 iconClass: fa-js
 ---

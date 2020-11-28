@@ -3,10 +3,10 @@
     <div class="container grid">
         {% for post in site.posts %}
         <a href="{{site.baseurl}}{{ post.url }}">
-            <div class="card grid">
-                <i class="fab {{post.iconClass }} fa-4x"></i>
-                <div>
-                    <h1 class="title">{{ post.title }}</h1>
+            <div class="card">
+                <h1>{{ post.title }}</h1>
+                <div class="grid">
+                    <i class="fab {{post.iconClass }} fa-4x"></i>
                     <p>{{ post.summary }}</p>
                 </div>
             </div>

@@ -2,10 +2,9 @@
 layout: post
 author: Praveen Singh
 tags: javascript
-title: JavaScript Reversing Problems: String, Number and Array
-summary: Leran how to handle Reversing Problems in JavaScript - starting from String, to number to Array
+title: Reversing JavaScript - String, Number and Array
+summary: Learn how to handle Reversing Problems in JavaScript - starting from String, to number to Array
 iconClass: fa-js
-showcase: true
 status: draft
 ---
 

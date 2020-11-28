@@ -2,7 +2,7 @@
 layout: post
 author: Praveen Singh
 tags: javascript
-title: Dissecting the Debounce
+title: Build a Debounce function in JavaScript from scratch
 summary: Step by Step guide of Debounce in JavaScript
 iconClass: fa-js
 showcase: true
