@@ -37,3 +37,37 @@ img {
     visibility: hidden;
     height: 0;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0px 15px 0px rgba(0, 0, 0, 0.15);
+    margin: 30px 0;
+
+    thead {
+        th {
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.4;
+            background-color: var( --primary-color);
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+    }
+
+    tbody {
+        td {
+            font-size: 15px;
+            color: #808080;
+            line-height: 1.4;
+            padding: 15px;
+            padding-bottom: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f6ff;
+        }
+    }
+}

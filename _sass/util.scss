@@ -113,10 +113,18 @@
     }
 }
 
-
 pre {
     padding: 20px 30px;
     font-size: 14px;
+    margin: 40px 0;
+}
+
+code.language-plaintext {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: .9rem;
+    background-color: rgb(234, 237, 240);
+    border-radius: 6px;
 }
 
 // Fonts

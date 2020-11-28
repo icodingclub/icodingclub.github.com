@@ -2,13 +2,15 @@
 layout: post
 author: Praveen Singh
 tags: javascript
-title: Reversing JavaScript - String, Number and Array
+title: Reversing JavaScript - String, Number, and Array
 summary: Learn how to handle Reversing Problems in JavaScript - starting from String, to number to Array
 iconClass: fa-js
 status: draft
 ---
 
-Can you reverse a string in JavaScript?...A humble and innocent problem which can turn up in any JvaScript Interview. Beware! its a slow trap! Not much, just a little!
+**Can you reverse a string in JavaScript?**
+
+A humble and innocent question that can turn up in any JvaScript Interview. Though it seems easy - it has it's own tricky parts!
 
 We will break this question, slowly and step by step.
 
@@ -16,15 +18,15 @@ We will break this question, slowly and step by step.
 
 This problem has different levels.
 
-## Level 1: Reverse using JavaScript's built in methods. For this, you need to know following.
+## Level 1: Reverse using JavaScript's built-in methods. 
 
-1. `split`: Using this method you can split a String in an array chars by providing a target token for split.
-1. `reverse`: Well, this just reverse an Array.
+For this, you need to know the following.
+
+1. `split`: Using this method you can split a string in an array of chars by providing a target token for the split.
+1. `reverse`: Well, this just reverses an Array.
 1. `join`: Join an Array back.
 
-Thats it!
-
-### Example:
+### Code:
 
 ```js
 const reverse = (str) => str.split('').reverse().join('');
@@ -32,10 +34,10 @@ const reverse = (str) => str.split('').reverse().join('');
 
 Yes, just one line what you need!
 
-Next, let's go bit fancy here! Same can be achieve by Array destructing as well, though things are not super clear
+Next, let's go a bit fancy here! The same can be achieved by Array destructing as well, though things are not super clear
 
 ```js
-const reverse = (str) => [...str].reverse().join(''); //Fancy, isn't it!
+const reverse = (str) => [...str].reverse().join('');
 ```
 
 ## Level 2: Programmatically
@@ -65,20 +67,20 @@ function reverse(str) {
 console.log(reverse('abc') === 'cba'); //true
 ```
 
-We have more possibilities but I think we are good by above!
+We have more possibilities but I think we are good by the above!
 
 # Reversing a Number
 
-This one is bit tricky! Take few examples
+This one is a bit tricky! Take a few examples
 
-| Input | Output |
+| String | Reversed |
 | ----- | ------ |
 | 123   | 321    |
 | 100   | 1      |
 | -123  | -321   |
 | -100  | -1     |
 
-You see, just converting into string and then just reversing is not sufficient here! We need to do more.
+You see, just converting into the string and then just reversing is not sufficient here! We need to do more.
 
 What more? See it by yourself
 
