@@ -21,6 +21,6 @@ npm-debug.log
 .tmp/
 
 
-#jekyll
-_site
-.jekyll-cache
+# #jekyll
+# _site
+# .jekyll-cache

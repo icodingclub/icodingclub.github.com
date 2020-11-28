@@ -1,0 +1,16 @@
+{
+  "name": "idc.github.intuit.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "jekyll serve --livereload"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.intuit.com:idc/idc.github.intuit.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
