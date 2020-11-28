@@ -21,21 +21,19 @@
     </head>
 
     <body>
-          <div class="navbar">
-    <div class="container flex">
-        <h1 class="logo">&lt;iCodingClub&gt;</h1>
-        <!-- <nav>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/pages/features">Features</a></li>
-                <li><a href="/pages/docs">Docs</a></li>
-            </ul>
-        </nav> -->
+          <section class="header">
+    <div class="container">
+        <a href="/">
+            <div class="logo">
+                <img src="/assets/images/logo.png" alt="iCodingClub" srcset="" />
+                <h1>&lt;iCodingClub&gt;</h1>
+            </div>
+        </a>
     </div>
-</div>
+</section>
 
           <main>
-            <section class="post">
+            <section class="post bg-light">
     <div class="post-banner bg-primary">
         <div class="container">
             <h1>Elegantly Iterate On Object</h1>
@@ -48,45 +46,169 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <article><p>JavaScript is one of the programming languages which lets you iterate on Object properties without using any complex tool or API.
-In this article, we are going to explore, how this simple technique evolved over the years and Why we have something now, which can be classified as elegant!
-A historical way if Iteration (Read till ES5)
-Let have a look on below code and then we can talk further
-var obj = { // Yes ‘var’…bad old days!
-    a: 1,
-    b: 2,
-    c: 3,
-};
-for (var key in obj) {
-    if (obj.hasOwnProperty(key)) { // &lt;- Ahh…What’s this??
-        var value = obj[key];
-        console.log(key, ‘ : ‘, value);
-    }
-}
-Output:
-a : 1
-b : 2
-c : 3
-Many of us miss out the check obj.hasOwnProperty
-In JavaScript, when you are iterating, it is very critical to avoid iteration on Object’s parent properties( and it’s parent properties and it’s parent…You got the idea!). Missing may result into a slow code.
-Luckily, most of us working with some kind of linting tool which will give a warning if you miss this check.
-Modern way — Iteration in ES6+
-Now let’s move to modern JavaScript or ES6+!
-Acknowledging this problem, ECMA team has added support for simple iteration in ES6.
-And it starts with — Object.entries()
-The Object.entries() method returns an array of a given object’s own enumerable property [key, value] pairs, in the same order as that provided by a for…in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
-For example, below code
-const obj = {
-    a: 1,
-    b: 2,
-    c: 3
-};
-console.log(Object.entries(obj));
-will give output like below, An array of arrays of two elements, where at index: 0, we will have key and at index:1, we will have value</p>
+    <div class="container grid">
+        <div class="social">
+    <a target="_blank" href="https://www.youtube.com/channel/UCpWyMAAKdvAUs6nSuelIgOA"><i class="fab fa-youtube fa-2x"></i></a>
+    <a target="_blank" href="https://github.com/icodingclub"><i class="fab fa-github fa-2x"></i></a>
+    <a target="_blank" href="https://twitter.com/i_praveensingh"><i class="fab fa-twitter fa-2x"></i></a>
+</div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[["a",1],["b",2],["c",3]]
+        <article><p>JavaScript is one of the programming languages which lets you iterate on Object properties without using any complex tool or API.</p>
+
+<p>In this article, we are going to explore, how this simple technique evolved over the years and Why we have something now, which can be classified as elegant!</p>
+
+<h1 id="a-historical-way-if-iteration-read-till-es5">A historical way if Iteration (Read till ES5)</h1>
+
+<p>Let have a look on below code and then we can talk further</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// Yes 'var'...bad old days!</span>
+    <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// &lt;- Ahh...What's this??</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="dl">'</span><span class="s1"> : </span><span class="dl">'</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
+
+<h3 id="output">Output:</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nl">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nl">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Many of us miss out the check obj.hasOwnProperty</p>
+</blockquote>
+
+<p>In JavaScript, when you are iterating, it is very critical to avoid iteration on Object’s parent properties( and it’s parent properties and it’s parent…You got the idea!). Missing may result into a slow code.</p>
+
+<p>Luckily, most of us working with some kind of linting tool which will give a warning if you miss this check.</p>
+
+<h1 id="modern-way--iteration-in-es6">Modern way — Iteration in ES6+</h1>
+
+<p>Now let’s move to modern JavaScript or ES6+!</p>
+
+<p>Acknowledging this problem, ECMA team has added support for simple iteration in ES6.</p>
+
+<p><strong>And it starts with — Object.entries()</strong></p>
+
+<blockquote>
+  <p>The Object.entries() method returns an array of a given object’s own enumerable property [key, value] pairs, in the same order as that provided by a for…in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).</p>
+</blockquote>
+
+<p>For example, below code</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">obj</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>will give output like below, An array of arrays of two elements, where at index: 0, we will have key and at index:1, we will have value</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="s2">"b"</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="s2">"c"</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Now this simple function will lead to an elegant iteration of Object, check out below code.</p>
+
+<h1 id="step-1-start-with-objectentries">Step 1: Start with <code class="language-plaintext highlighter-rouge">Object.entries</code></h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// Notice use of Object.entries in for...of loop</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">obj</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`key: </span><span class="p">${</span><span class="nx">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span><span class="s2"> : value: </span><span class="p">${</span><span class="nx">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="output-1">Output:</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">key</span><span class="p">:</span> <span class="nx">a</span><span class="p">:</span> <span class="nx">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nl">key</span><span class="p">:</span> <span class="nl">b</span><span class="p">:</span> <span class="nl">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nl">key</span><span class="p">:</span> <span class="nl">c</span><span class="p">:</span> <span class="nl">value</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>It’s already been good, but let’s make it awesome</p>
+
+<h2 id="step-2-use-destructing">Step 2: Use Destructing</h2>
+
+<p>Let’s understand the “entry” if we update the above for loop as below</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">entry</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">obj</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>the output will be like below</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="mi">2</span><span class="p">)[(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)](</span><span class="mi">2</span><span class="p">)[(</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)](</span><span class="mi">2</span><span class="p">)[(</span><span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">)];</span>
+</code></pre></div></div>
+
+<p>Hmm….what we have here?</p>
+
+<p>Well, each entry is an Array with exactly two elements (call it ‘tuple’), so using ES6 Array destructuring, we can write code like</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">entry</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="o">=</span> <span class="nx">entry</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`key: </span><span class="p">${</span><span class="nx">key</span><span class="p">}</span><span class="s2"> : value: </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Let’s apply the same concept on for loop</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">obj</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">key</span><span class="p">}</span><span class="s2"> : </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Woohoo… it is indeed Awesome!</p>
+</blockquote>
+
+<h1 id="iteration-with-foreach">Iteration with forEach</h1>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(([</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">key</span><span class="p">}</span><span class="s2"> : </span><span class="p">${</span><span class="nx">value</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="output-2">Output:</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nl">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nl">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Thank You!
+That’s all folk! let me know in the comment section if this article helped you.</p>
 </article>
     </div>
 </section>
@@ -106,10 +228,11 @@ will give output like below, An array of arrays of two elements, where at index:
             </ul>
         </nav>
         <div class="social">
-            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
-            <a href="#"><i class="fab fa-github fa-2x"></i></a>
-            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-        </div>
+    <a target="_blank" href="https://www.youtube.com/channel/UCpWyMAAKdvAUs6nSuelIgOA"><i class="fab fa-youtube fa-2x"></i></a>
+    <a target="_blank" href="https://github.com/icodingclub"><i class="fab fa-github fa-2x"></i></a>
+    <a target="_blank" href="https://twitter.com/i_praveensingh"><i class="fab fa-twitter fa-2x"></i></a>
+</div>
+
     </div>
 </footer>
 

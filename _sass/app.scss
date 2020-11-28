@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 $mobile-breakpoint: 500px;
 $tablet-breakpoint: 768px;
 
 :root {
-    --primary-color: rgb(107, 182, 149);;
+    --primary-color: #6bb696;
     --secondary-color: #1c3fa8;
     --dark-color: #002240;
     --light-color: #f4f4f4;
@@ -19,7 +20,8 @@ $tablet-breakpoint: 768px;
 @import 'home';
 @import 'post';
 @import 'footer';
-@import "native";
+@import 'native';
+
 
 @media (max-width: $tablet-breakpoint) {
     .grid {

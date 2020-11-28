@@ -20,3 +20,8 @@ npm-debug.log
 
 #Mocha
 .tmp/
+
+
+#jekyll
+_site
+.jekyll-cache

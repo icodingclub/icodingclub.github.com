@@ -2,14 +2,15 @@
     <h1 class="stats-heading text-center my-1">Articles</h1>
     <div class="container grid">
         {% for post in site.posts %}
-        <div class="card grid">
-            <i class="fab {{post.iconClass }} fa-4x"></i>
-            <div>
-                <h1 class="title"><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h1>
-                <p>{{ post.summary }}</p>
+        <a href="{{site.baseurl}}{{ post.url }}">
+            <div class="card grid">
+                <i class="fab {{post.iconClass }} fa-4x"></i>
+                <div>
+                    <h1 class="title">{{ post.title }}</h1>
+                    <p>{{ post.summary }}</p>
+                </div>
             </div>
-        </div>
-
+        </a>
         {% endfor %}
     </div>
 </section>

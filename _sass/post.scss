@@ -1,6 +1,20 @@
 .post {
     font-size: 18px;
     color: rgb(49, 67, 81);
+
+    .grid{
+        grid-template-columns: 80px auto;
+        margin-top: 50px;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-start;
+        padding-top: 15px;
+    }
     .post-banner {
         h1 {
             margin: 0px;
@@ -99,7 +113,7 @@
 .posts {
     .card {
         h1 {
-            font-size: 2rem;;
+            font-size: 2rem;
         }
     }
     .card.grid {

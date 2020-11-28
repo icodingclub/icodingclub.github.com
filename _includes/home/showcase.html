@@ -3,37 +3,13 @@
         <div class="showcase-text">
             <h1>Welcome to iCodingClub!</h1>
             <p>
-                Join this premium club for Developers! We write articles on Web Developments. All Articles and tutorials on this website are free to use and share.
+                Join this premium club for Developers! We write articles on Web Developments. All Articles and tutorials
+                on this website are free to use and share.
             </p>
-            <div class="social">
-                <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
-                <a href="#"><i class="fab fa-github fa-2x"></i></a>
-                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-            </div>
+            {% include app/social.html %}
         </div>
-        <div class="showcase-form card">
-            <img src="{{site.baseurl}}/assets/images/undraw_Taking_notes_re_bnaf.png" />
-            
-            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    {% for post in site.posts %}
-                    <div class="carousel-item {% if post.showcase == true %}active{% endif %}">
-                        <div class="leaders-talk grid">
-                            <img src="{{site.baseurl}}/assets/images/praveen.png" />
-                            <div class="info">
-                                <a href="{{site.baseurl}}{{ post.url }}"> <h1>{{ post.title }}</h1></a>
-                                <p>{{ post.summary }}</p>
-                                <a href="{{site.baseurl}}{{ post.url }}">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                </ol>
-            </div> -->
+        <div class="card">
+            <img src="{{site.baseurl}}/assets/images/undraw_completed_tasks_vs6q.png" />
         </div>
     </div>
 </section>

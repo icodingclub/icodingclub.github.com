@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="post">
+<section class="post bg-light">
     <div class="post-banner bg-primary">
         <div class="container">
             <h1>{{ page.title }}</h1>
@@ -15,7 +15,8 @@ layout: default
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container grid">
+        {% include app/social.html %}
         <article>{{ content }}</article>
     </div>
 </section>

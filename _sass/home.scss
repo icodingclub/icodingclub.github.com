@@ -1,8 +1,9 @@
 .showcase {
-    height: 260px;
+    height: 280px;
     background-color: var(--primary-color);
     position: relative;
     color: #ffffff;
+
 
     .grid {
         grid-template-columns: 65% 35%;
@@ -16,8 +17,12 @@
         }
     }
 
+    .showcase-image{
+        color: var(--primary-color);;
+    }
 
-    .showcase-form {
+
+    .card {
         position: relative;
         top: 30px;
         height: 300px;
@@ -25,7 +30,7 @@
         padding: 40px;
         overflow: visible;
         z-index: 100;
-        // animation: slideFromRight 1s ease-in;
+        overflow: hidden;
     }
 
     h1 {
