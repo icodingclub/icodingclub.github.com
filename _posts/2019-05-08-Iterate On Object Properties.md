@@ -39,9 +39,9 @@ b: 2;
 c: 3;
 ```
 
-> Many of us miss out the check obj.hasOwnProperty
+> Many of us miss out on the check `obj.hasOwnProperty`
 
-In JavaScript, when you are iterating, it is very critical to avoid iteration on Object’s parent properties( and it’s parent properties and it’s parent…You got the idea!). Missing may result into a slow code.
+In JavaScript, when you are iterating, it is very critical to avoid iteration on Object’s parent properties( and it’s parent properties and it’s parent…You got the idea!). Missing may result in a slow code.
 
 Luckily, most of us working with some kind of linting tool which will give a warning if you miss this check.
 
@@ -53,7 +53,7 @@ Acknowledging this problem, ECMA team has added support for simple iteration in 
 
 **And it starts with — Object.entries()**
 
-> The Object.entries() method returns an array of a given object’s own enumerable property [key, value] pairs, in the same order as that provided by a for…in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
+> The `Object.entries()` method returns an array of a given object’s own enumerable property [key, value] pairs, in the same order as that provided by a for…in the loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
 
 For example, below code
 
@@ -76,7 +76,7 @@ will give output like below, An array of arrays of two elements, where at index:
 ]
 ```
 
-Now this simple function will lead to an elegant iteration of Object, check out below code.
+Now this simple function will lead to an elegant iteration of Object, check out the below code.
 
 # Step 1: Start with `Object.entries`
 

@@ -120,11 +120,28 @@ pre {
 }
 
 code.language-plaintext {
-    padding: .2em .4em;
+    padding: 0.2em 0.4em;
     margin: 0;
-    font-size: .9rem;
+    font-size: 0.9rem;
     background-color: rgb(234, 237, 240);
     border-radius: 6px;
+}
+
+h1 {
+    code.language-plaintext {
+        font-size: 1.8rem;
+    }
+}
+h2 {
+    code.language-plaintext {
+        font-size: 1.4rem;
+    }
+}
+
+h3 {
+    code.language-plaintext {
+        font-size: 1rem;
+    }
 }
 
 // Fonts
