@@ -23,4 +23,5 @@ npm-debug.log
 
 
 #jekyll
+_site
 .jekyll-cache
