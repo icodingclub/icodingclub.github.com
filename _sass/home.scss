@@ -1,26 +1,31 @@
+
 .showcase {
     height: 280px;
     background-color: var(--primary-color);
     position: relative;
     color: #ffffff;
 
+    @media (max-width: $tablet-breakpoint) {
+        & {
+            display: none;
+        }
+    }
 
     .grid {
         grid-template-columns: 65% 35%;
     }
 
-    .social{
+    .social {
         color: #ffffff;
 
-        .fab{
+        .fab {
             margin-right: 15px;
         }
     }
 
-    .showcase-image{
-        color: var(--primary-color);;
+    .showcase-image {
+        color: var(--primary-color);
     }
-
 
     .card {
         position: relative;
@@ -43,7 +48,7 @@
     }
 }
 
-.carousel-item{
+.carousel-item {
     min-height: 200px;
 }
 
@@ -72,7 +77,6 @@
 //         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 //     }
 // }
-
 
 @media (max-width: $tablet-breakpoint) {
     .showcase .grid,

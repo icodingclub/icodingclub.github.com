@@ -22,6 +22,9 @@ $tablet-breakpoint: 768px;
 @import 'footer';
 @import 'native';
 
+main {
+    min-height: calc(100vh-100px);
+}
 
 @media (max-width: $tablet-breakpoint) {
     .grid {
