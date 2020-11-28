@@ -1,3 +1,0 @@
-I"V<h1 id="what-is-a-debounceanyway">What is a Debounce anyway?</h1>
-<p>Debounce is a pattern to limit the rate at which function can fire. It returns a function, which can only be triggered when there is a user-provided delay in its invocations. If the function is getting triggered continuously, without the delay, it will not be called.</p>
-:ET
