@@ -20,21 +20,15 @@ This problem has different levels.
 
 ## Level 1: Reverse using JavaScript's built-in methods. 
 
-For this, you need to know the following.
-
-1. `split`: Using this method you can split a string in an array of chars by providing a target token for the split.
-1. `reverse`: Well, this just reverses an Array.
-1. `join`: Join an Array back.
-
-### Code:
+If you know the functions you will be need for the Job, this one is very easy.
 
 ```js
 const reverse = (str) => str.split('').reverse().join('');
 ```
 
-Yes, just one line what you need!
+_Yes, just one line what you need!_
 
-Next, let's go a bit fancy here! The same can be achieved by Array destructing as well, though things are not super clear
+Using Array destructuring, you can replace the `split` function, but I find above one much clear.
 
 ```js
 const reverse = (str) => [...str].reverse().join('');
@@ -42,7 +36,7 @@ const reverse = (str) => [...str].reverse().join('');
 
 ## Level 2: Programmatically
 
-### Using for...of loop
+### Using `for...of` loop
 
 ```js
 function reverse(str) {
@@ -50,14 +44,13 @@ function reverse(str) {
     for (const ch of str) {
         out = ch + out;
     }
-
     return out;
 }
 
 console.log(reverse('abc') === 'cba'); //true
 ```
 
-### A less clear version using `reduce`
+### Using `reduce`
 
 ```js
 function reverse(str) {
@@ -117,4 +110,4 @@ function reverse(_array) {
 console.log(reverse([1, 2, 3, 4, 5])); // [5, 4, 3, 2, 1]
 ```
 
-That's All folk! 
+That's All folks! Have a nice day! 

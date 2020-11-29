@@ -12,10 +12,6 @@ showcase: true
 # What is a Debounce anyway?
 Debounce is a pattern to limit the rate at which function can fire. It returns a function, which can only be triggered when there is a user-provided delay in its invocations. If the function is getting triggered continuously, without the delay, it will not be called.
 
-## Variations
-1. *Lazy*: function invocation happens on the trailing edge.
-1. *Early*: function invocation happens on the leading edge.
-
 ## Advantages
 1. Improve the performance by regulating the rate at which a function can be triggered.
 1. Make your code more meaningful, by calling the handler only when we need for it.
@@ -37,8 +33,6 @@ Google search is an interesting case of debounce pattern. If you are designing t
 Debounce is a standard pattern to solve this kind of problem.
 
 ## Step by step guide for building a Debounce function.
-> Note: if you are in a hurry, you can directly jump to the section "Final working sample." and copy the code :)
-> Else, let's follow below step by step guide.
 
 ### Step 1: Delay the function call.
 
@@ -72,11 +66,10 @@ setTimeout(smartLogMsg, 800); // will be called at 1200+ ms.
 
 Output: 
 
-```csv
+```console
 Hello Debounce! Time: 402.9799999552779
-test.js:18 Hello Debounce! Time: 705.5549999931827
-test.js:18 Hello Debounce! Time: 1200.894999958109
-
+Hello Debounce! Time: 705.5549999931827
+Hello Debounce! Time: 1200.894999958109
 ```
 
 ## Step 2: Limit the number of function calls.
@@ -115,25 +108,35 @@ setTimeout(smartLogMsg, 800);
 
 Output:
 
-TODO
+```console
+Hello Debounce! Time: 705.0699999999779 
+Hello Debounce! Time: 1200.7099999991624 
 
-At this point, our debounce function is half complete and working for a few happy scenarios. To fix things further, and to understand the value of it, we have to add a little bit of complexity now.
-Let's build a small App!… What it will do, you might ask?
-Take user input.
-Put through the debounce.
-Use a "fake" XHR call, which pretends that it's processing the data on the server.
-Put back the "processed text" on the view, at a delayed rate.
+```
 
-Starting code:
+At this point, our debounce function is half complete and working for a few happy scenarios. 
+
+To fix things further, and to understand the value of it, we have to add a little bit of complexity now.
+Let's build a small App with following features
+
+1. Take user input.
+1. Put through the debounce.
+1. Use a "fake" XHR call, which pretends that it's processing the data on the server.
+1. Put back the "processed text" on the view, at a delayed rate.
+
+# Starting code:
+Let's use below code as starting point
+<script async src="//jsfiddle.net/ipraveen/f9am6xeo/embed/html/"></script>
+
+If you run the code, use below fiddle, you will see that we are getting output but all are just undefined.
+
+Let's use below fiddle as starting point
+
+<script async src="//jsfiddle.net/ipraveen/f9am6xeo/embed/result/"></script>
 
 
-
-However, if you run your code now, you will get output like below
-Can you notice "undefined"….try in below fiddle (play with it)
-
-
-
-What's wrong here?…well, everything which can go wrong with this.We are losing the context. Let's try to fix that.
+### What's wrong here?
+well, everything which can go wrong with this. We are losing the context. Let's try to fix that.
 
 ## Step 3: Fix the context
 
@@ -141,20 +144,28 @@ What's wrong here?…well, everything which can go wrong with this.We are losing
 function debounce(func, wait) {
     let timeout;
     return function() {
-        const context = this;
+        const context = this; // Preserving the context
         const executor = function() {
             timeout = null;
-            func.apply(context);
+            func.apply(context); // Calling function with context
         };
         clearTimeout(timeout);
         timeout = setTimeout(executor, wait);
     };
 }
+```
 
 
-now the output is like below
+Now, if you replace the `debounce` function in fiddle, you will see following output like below for input `abc a`.
+
+```console
+XHR with payload: abc
+XHR with payload: abc
+XHR with payload: abc a
+```
+
 Hurray!
-No no….not so fast!….one more thing is pending. Can you see something odd in below section of code
+No no….not so fast!….one last thing is pending. Can you see something odd in below section of code
 
 ```js
 ...
@@ -164,7 +175,10 @@ function handleInput() {
 ...
 
 ```
-Well, we are using this.value to get the entered text; nothing wrong in it, it's just we can also use event.target.value instead of that. let's do the change and see the output.
+Well, we are using `this.value` to get the entered text; nothing wrong in it, it's just we can also use `event.target.value` instead of that. let's do the change and see the output.
+
+### Try `event.target.value`
+
 Changes:
 ```js
 ...
@@ -175,6 +189,9 @@ function handleInput(event) {
 ...
 ```
 and when we run the code, disappointment is there on console
+
+>  Uncaught TypeError: Cannot read property 'target' of undefined"
+
 Why?…point is, we are not mapping the argument passed to the function properly. Let's fix that.
 
 ## Step 4: Fix the function arguments
@@ -195,39 +212,15 @@ clearTimeout(timeout);
 
 ```
 Now if you run the app, it will work like a charm, try below fiddle now.
-Final working sample.
 
+# Final working sample.
 
+<script async src="//jsfiddle.net/ipraveen/bhjd7cx5/embed/result/"></script>
 
-Bonus: Early Debounce
-Normally, in debounce we wait and then trigger the event. We do have a variant of debounce in which you first trigger and then wait for a fixed interval - it is called "Ealy Debounce".
-This can be implemented as below with an optional argument.
+## Final Code
 
-```js
-function debounce(func, wait = 500, early = false) {
-    let timeout;
-return function(...args) {
-        const context = this;
-        const isEarlyEnable = !timeout && early;
-        const executor = function() {
-            timeout = null;
-            !early && func.apply(context, args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(executor, wait);
-        isEarlyEnable && func.apply(context, args);
-    };
-}
-
-```
-
+<script async src="//jsfiddle.net/ipraveen/bhjd7cx5/embed/html/"></script>
 
 
 Thank You!
 That's all folk! let me know in the comment section if this article helped you.
-
-<script async src="//jsfiddle.net/ipraveen/bhjd7cx5/embed/result,js,html/"></script>
-
-
-
-

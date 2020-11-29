@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "jekyll serve --livereload"
+    "start": "jekyll serve --livereload",
+    "push": "git add .;git commit -m \"push\";git push"
+
   },
   "repository": {
     "type": "git",

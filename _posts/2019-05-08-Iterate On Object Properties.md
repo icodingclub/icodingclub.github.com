@@ -33,10 +33,10 @@ for (var key in obj) {
 
 ### Output:
 
-```js
-a: 1;
-b: 2;
-c: 3;
+```console
+a : 1;
+b : 2;
+c : 3;
 ```
 
 > Many of us miss out on the check `obj.hasOwnProperty`
@@ -51,7 +51,9 @@ Now let’s move to modern JavaScript or ES6+!
 
 Acknowledging this problem, ECMA team has added support for simple iteration in ES6.
 
-**And it starts with — Object.entries()**
+**And it starts with — `Object.entries()`**
+
+## `Object.entries()`
 
 > The `Object.entries()` method returns an array of a given object’s own enumerable property [key, value] pairs, in the same order as that provided by a for…in the loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
 
@@ -68,7 +70,7 @@ console.log(Object.entries(obj));
 
 will give output like below, An array of arrays of two elements, where at index: 0, we will have key and at index:1, we will have value
 
-```json
+```console
 [
     ["a", 1],
     ["b", 2],
@@ -78,7 +80,7 @@ will give output like below, An array of arrays of two elements, where at index:
 
 Now this simple function will lead to an elegant iteration of Object, check out the below code.
 
-# Step 1: Start with `Object.entries`
+## Start with `Object.entries`
 
 ```js
 const obj = {
@@ -95,7 +97,7 @@ for (const entry of Object.entries(obj)) {
 
 ### Output:
 
-```js
+```console
 key: a: value: 1;
 key: b: value: 2;
 key: c: value: 3;
@@ -103,35 +105,7 @@ key: c: value: 3;
 
 It’s already been good, but let’s make it awesome
 
-## Step 2: Use Destructing
-
-Let’s understand the “entry” if we update the above for loop as below
-
-```js
-...
-for (const entry of Object.entries(obj)) {
-    console.log(entry);
-}
-
-```
-
-the output will be like below
-
-```js
-(2)[('a', 1)](2)[('b', 2)](2)[('c', 3)];
-```
-
-Hmm….what we have here?
-
-Well, each entry is an Array with exactly two elements (call it ‘tuple’), so using ES6 Array destructuring, we can write code like
-
-```js
-const entry = ['a', 1];
-const [key, value] = entry;
-console.log(`key: ${key} : value: ${value}`);
-```
-
-Let’s apply the same concept on for loop
+## Use Destructing to make loop better looking and more usable.
 
 ```js
 const obj = {
@@ -144,9 +118,7 @@ for (const [key, value] of Object.entries(obj)) {
 }
 ```
 
-> Woohoo… it is indeed Awesome!
-
-# Iteration with forEach
+# Apply same concept in `forEach`
 
 ```js
 const obj = {
@@ -161,7 +133,7 @@ Object.entries(obj).forEach(([key, value]) => {
 
 ### Output:
 
-```js
+```console
 a: 1;
 b: 2;
 c: 3;
