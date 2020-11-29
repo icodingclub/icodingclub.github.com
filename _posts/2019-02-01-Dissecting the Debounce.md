@@ -213,11 +213,30 @@ clearTimeout(timeout);
 ```
 Now if you run the app, it will work like a charm, try below fiddle now.
 
-# Final working sample.
+# Final Application.
 
+## Debounce function
+```js
+ function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+          const context = this;
+          const executor = function() {
+            timeout = null;
+            func.apply(context, args);
+          };
+
+          clearTimeout(timeout);
+          timeout = setTimeout(executor, wait);
+        };
+      }
+
+```
+
+## Final Fiddle
 <script async src="//jsfiddle.net/ipraveen/bhjd7cx5/embed/result/"></script>
 
-## Final Code
+## Final Fiddle Code
 
 <script async src="//jsfiddle.net/ipraveen/bhjd7cx5/embed/html/"></script>
 
