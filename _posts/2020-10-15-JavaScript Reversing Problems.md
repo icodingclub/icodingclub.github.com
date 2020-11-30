@@ -8,7 +8,7 @@ iconClass: fa-js
 status: draft
 ---
 
-**Can you reverse a string in JavaScript?**
+# Can you reverse a string in JavaScript?
 
 A humble and innocent question that can turn up in any JvaScript Interview. Though it seems easy - it has it's own tricky parts!
 

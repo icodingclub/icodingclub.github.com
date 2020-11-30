@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    // font-family: 'Slabo 27px', serif;
     line-height: 1.6;
 }
 
@@ -20,13 +21,24 @@ a {
 
 h1,
 h2 {
-    font-weight: 300;
     line-height: 1.2;
     margin: 10px 0;
+}
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+h2 {
+    font-weight: 500;
 }
 
 p {
     margin: 10px 0;
+    font-weight: 300;
 }
 
 img {
@@ -51,7 +63,7 @@ table {
             font-size: 18px;
             color: #fff;
             line-height: 1.4;
-            background-color: var( --primary-color);
+            background-color: var(--primary-color);
             padding-top: 18px;
             padding-bottom: 18px;
         }
