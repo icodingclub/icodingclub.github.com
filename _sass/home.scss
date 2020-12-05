@@ -3,7 +3,7 @@
     height: 280px;
     background-color: var(--primary-color);
     position: relative;
-    color: #ffffff;
+    color: var(--primary-invert-color);
 
     @media (max-width: $tablet-breakpoint) {
         & {
@@ -45,6 +45,7 @@
 
     p {
         margin: 20px 0;
+        color: var(--primary-invert-color);
     }
 }
 

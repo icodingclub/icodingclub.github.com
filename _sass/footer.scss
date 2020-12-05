@@ -3,6 +3,11 @@
         text-align: end;
         a {
             margin: 0 10px;
+            color: var(--primary-invert-color);
         }
+    }
+
+    p {
+        color: var(--primary-invert-color);
     }
 }

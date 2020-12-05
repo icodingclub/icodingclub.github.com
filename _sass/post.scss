@@ -2,10 +2,9 @@
     font-size: 18px;
     color: rgb(49, 67, 81);
 
-    article{
+    article {
         overflow-y: auto;
     }
-  
 
     @media (max-width: $tablet-breakpoint) {
         padding: 10px;
@@ -42,12 +41,13 @@
             margin: 0px;
             border-bottom: 2px solid transparent;
             transition: border 0.2s ease 0s;
-            font-size: 52px;
+            font-size: 46px;
             line-height: 1.2;
+            font-weight: 500;
             letter-spacing: -0.01em;
-            font-family: Graphik, Helvetica, Arial, sans-serif;
             padding: 66px 0;
             -webkit-font-smoothing: auto;
+            color: var(--primary-invert-bold-color);
 
             @media (max-width: $tablet-breakpoint) {
                 font-size: 1.8rem;
@@ -56,48 +56,9 @@
         }
     }
 
-    h1,
-    h2,
-    h3 {
-        line-height: 1.2;
-        letter-spacing: -0.01em;
-        font-weight: 500;
-        margin: 1.8em 0px 0.8em;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-    h2 {
-        font-size: 1.4rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-    }
-
-    p {
-        line-height: 1.8;
-        letter-spacing: -0.005em;
-        color: rgb(49, 67, 81);
-    }
-
-    ol,
-    ul {
-        padding: revert;
-        margin: revert;
-    }
-
-    blockquote {
-        border-left: 3px solid rgb(29, 43, 54);
-        margin: 35px 0px;
-        padding: 5px 0px 5px 18px;
-        background: #cccccc3d;
-    }
-
     .bio {
         display: flex;
-        color: rgba(29, 43, 54, 0.9);
+        color: var(--primary-invert-color);
         letter-spacing: -0.005em;
         display: flex;
         justify-content: flex-start;
@@ -130,9 +91,47 @@
                 line-height: 1.8;
                 display: block;
                 font-style: italic;
-                color: #495961;
             }
         }
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin: 1.8em 0px 0.8em;
+        color: var(--primary-post-color);
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        line-height: 1.4;
+        letter-spacing: -0.005em;
+        color: var(--primary-post-color);
+    }
+
+    ol,
+    ul {
+        padding: revert;
+        margin: revert;
+    }
+
+    blockquote {
+        border-left: 3px solid rgb(29, 43, 54);
+        margin: 35px 0px;
+        padding: 5px 0px 5px 18px;
+        background: #cccccc3d;
     }
 }
 
