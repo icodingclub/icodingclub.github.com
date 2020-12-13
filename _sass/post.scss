@@ -2,17 +2,13 @@
     font-size: 18px;
     color: rgb(49, 67, 81);
 
-    article {
-        overflow-y: auto;
-    }
-
     @media (max-width: $tablet-breakpoint) {
         padding: 10px;
     }
 
     .grid {
         grid-template-columns: 80px auto;
-        margin-top: 50px;
+        margin-top: 30px;
 
         @media (max-width: $tablet-breakpoint) {
             grid-template-columns: auto;
@@ -26,7 +22,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         align-self: flex-start;
-        padding-top: 15px;
+        padding-top: 48px;
         gap: 30px;
 
         @media (max-width: $tablet-breakpoint) {
@@ -39,14 +35,9 @@
     .post-banner {
         h1 {
             margin: 0px;
-            border-bottom: 2px solid transparent;
-            transition: border 0.2s ease 0s;
-            font-size: 46px;
-            line-height: 1.2;
+            font-size: 2.6rem;
             font-weight: 500;
-            letter-spacing: -0.01em;
-            padding: 66px 0;
-            -webkit-font-smoothing: auto;
+            margin: 0 0 30px 0;
             color: var(--primary-invert-bold-color);
 
             @media (max-width: $tablet-breakpoint) {
@@ -59,7 +50,6 @@
     .bio {
         display: flex;
         color: var(--primary-invert-color);
-        letter-spacing: -0.005em;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -67,7 +57,6 @@
         .info {
             display: flex;
             flex-direction: column;
-            padding: 30px 0;
         }
 
         img {
@@ -136,7 +125,7 @@
 }
 
 .posts {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 60px;
 
     @media (max-width: $tablet-breakpoint) {
@@ -151,6 +140,7 @@
         justify-content: space-between;
         grid-template-columns: 60px auto;
         justify-content: flex-start;
+        grid-auto-rows: 80px;
     }
 
     .fab {

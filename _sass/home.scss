@@ -1,18 +1,10 @@
 
-.showcase {
-    height: 280px;
-    background-color: var(--primary-color);
-    position: relative;
-    color: var(--primary-invert-color);
+.showcase.home {
 
     @media (max-width: $tablet-breakpoint) {
         & {
             display: none;
         }
-    }
-
-    .grid {
-        grid-template-columns: 65% 35%;
     }
 
     .social {
@@ -53,34 +45,7 @@
     min-height: 200px;
 }
 
-// .leaders-talk {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-
-//     & p {
-//         margin: 0;
-//         padding: 0;
-//         flex: 0 0 100%;
-
-//         & a {
-//             display: block;
-//             color: var(--primary-color);
-//             margin-top: 10px;
-//         }
-//     }
-//     & img {
-//         flex: 1 1 100px;
-//         width: 70px;
-//         border-radius: 50%;
-//         margin: 10px;
-//         margin-right: 50px;
-//         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-//     }
-// }
-
 @media (max-width: $tablet-breakpoint) {
-    .showcase .grid,
     .cli .grid,
     .cloud .grid {
         grid-template-columns: 1fr;
