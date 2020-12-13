@@ -1,1 +1,3 @@
 # baseurl: "https://github.intuit.com/pages/idc/"
+sass:
+    style: compressed

@@ -19,6 +19,7 @@ Debounce is a pattern to limit the rate at which function can fire. It returns a
 ## Conceptual Diagram
 <img src="/assets/post-images/debounce-architecure.png" alt="" />
 
+
 ## Case Study - Google autocomplete suggestions
 
 <img src="/assets/post-images/debounce-google.png" alt="" />
